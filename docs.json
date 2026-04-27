@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "GamerHash",
   "colors": {
-    "primary": "#2563EB",
-    "light": "#3B82F6",
-    "dark": "#1D4ED8"
+    "primary": "#2AD46F",
+    "light": "#5DDF8F",
+    "dark": "#1FB85C"
   },
   "favicon": "/favicon.svg",
   "navigation": {
