@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#171A1F"/>
+      <stop offset="100%" stop-color="#10221C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2AD46F" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#2AD46F" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#2AD46F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A2230"/>
+      <stop offset="100%" stop-color="#0F1419"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <circle cx="600" cy="320" r="360" fill="url(#glow)"/>
+  <g opacity="0.18" stroke="#2AD46F" stroke-width="1" fill="none">
+    <path d="M0 480 Q 300 380 600 480 T 1200 480"/>
+    <path d="M0 520 Q 300 420 600 520 T 1200 520"/>
+    <path d="M0 560 Q 300 460 600 560 T 1200 560"/>
+  </g>
+  <g transform="translate(600 220)">
+    <rect x="-60" y="-60" width="120" height="120" rx="28" fill="#171A1F" stroke="#2AD46F" stroke-width="3"/>
+    <path d="M22 -22H-2C-22 -22 -38 -6 -38 14V30C-38 50 -22 66 -2 66H22C36 66 46 56 46 42V14H8" stroke="#2AD46F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <text x="600" y="380" text-anchor="middle" fill="#F9F9F9" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700">GamerHash AI</text>
+  <text x="600" y="430" text-anchor="middle" fill="#9DA4AE" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="400">Run AI on your GPU. Earn while you do.</text>
+  <g transform="translate(600 490)" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+    <g transform="translate(-280 0)">
+      <rect x="0" y="0" width="170" height="48" rx="12" fill="url(#card)" stroke="#2AD46F" stroke-opacity="0.4"/>
+      <text x="85" y="30" text-anchor="middle" fill="#2AD46F">800,000+ users</text>
+    </g>
+    <g transform="translate(-85 0)">
+      <rect x="0" y="0" width="170" height="48" rx="12" fill="url(#card)" stroke="#2AD46F" stroke-opacity="0.4"/>
+      <text x="85" y="30" text-anchor="middle" fill="#2AD46F">Distributed GPU</text>
+    </g>
+    <g transform="translate(110 0)">
+      <rect x="0" y="0" width="170" height="48" rx="12" fill="url(#card)" stroke="#2AD46F" stroke-opacity="0.4"/>
+      <text x="85" y="30" text-anchor="middle" fill="#2AD46F">Founded 2017</text>
+    </g>
+  </g>
+</svg>

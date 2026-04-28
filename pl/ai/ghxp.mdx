@@ -1,0 +1,65 @@
+---
+title: "GHXP — mnożnik zaangażowania"
+description: "Jak działają punkty GamerHash Experience, co odblokowują i dlaczego trzymanie GHX je przyspiesza."
+---
+
+**GHXP (GamerHash Experience Points)** to wewnątrzaplikacyjny system reputacji. To **nie token** — nie ma kontraktu, płynności ani transferowalności. To mnożnik nagród, które zarabiasz udostępniając moc GPU, plus klucz do programów społecznościowych.
+
+<Frame>
+  <img src="/images/ghxp-flow.svg" alt="Przepływ GHXP: uruchamiaj aplikację, by naliczać punkty co minutę, trzymaj GHX w MetaMask by aktywować boost, wyższe GHXP zwiększa rangę zarobkową, a efektem jest więcej GHX za zadanie." />
+</Frame>
+
+## Jak naliczają się GHXP
+
+- **Co minutę** działania aplikacji AI naliczasz GHXP.
+- Punkty pojawiają się jako **Pending** w trakcie aktywnej godziny i są **zaksięgowane na koncie** na początku każdej kolejnej godziny. Zamknięcie aplikacji przed końcem godziny kasuje pending punkty z tej godziny.
+- Działanie w tle się liczy — aplikacja nie musi być na pierwszym planie.
+- Ankiety i jednorazowe aktywności w aplikacji (np. wypróbowanie nowego modułu, ukończenie onboardingu) dają dodatkowe GHXP.
+
+## GHX Boost
+
+GHX trzymany w **MetaMask** pod tym samym kontem, na którym działa aplikacja AI, **mnoży** naliczanie GHXP. Im więcej GHX trzymasz, tym wyższy mnożnik — z limitem, ale znaczący.
+
+- Boost jest sprawdzany cyklicznie i stosowany automatycznie.
+- Nie blokujesz ani nie stake'ujesz GHX dla boostu — wystarczy, że jest w portfelu, który podpiąłeś.
+- Boost stackuje się z bonusem za czas zaangażowania.
+
+## Po co to istnieje
+
+GHXP nie da się zamienić na GHX. To **mnożnik twojego udziału w puli nagród**. Dwóch kontrybutorów z identycznymi GPU może zarabiać bardzo różne kwoty, jeśli jeden uruchamia aplikację od miesięcy, a drugi wczoraj — to celowy projekt. Nagradza konsekwencję zamiast spekulacji.
+
+GHXP odblokowuje też:
+
+- **Wyższą rangę nagrody** przy dystrybucji przychodu do kontrybutorów.
+- **Uprawnienia** do airdropów, konkursów i programów społecznościowych.
+- **Widoczność** w leaderboardach (opt-in, po nazwie wyświetlanej).
+
+## Czym GHXP *nie jest*
+
+- Nie tokenem. Brak adresu kontraktu. Brak ceny rynkowej.
+- Nie do przeniesienia. Przypisane do twojego konta GamerHash.
+- Nie bezpośrednio wymienialne. Nie handlujesz GHXP za GHX — używasz go, żeby zarabiać *więcej* GHX za zadanie.
+
+## Jak je maksymalizować
+
+1. **Uruchamiaj aplikację bez przerwy, gdy GPU jest bezczynne.** Pauza traci pending GHXP z tej godziny.
+2. **Trzymaj GHX w MetaMask** dla boosta.
+3. **Używaj nowych modułów** w miarę ich premier — zadania onboardingowe zazwyczaj dają jednorazowe GHXP.
+4. **Wypełniaj ankiety w aplikacji** gdy się pojawiają (zwykle 2 000 GHXP).
+
+## Uwaga na
+
+- Zamknięcie aplikacji w środku godziny kasuje pending punkty z tej godziny. Planuj restarty na granicy godzin.
+- Boost odczytuje on-chain GHX **tylko z MetaMask** (na razie). Inne integracje portfeli są na roadmapie.
+- GHXP jest per-konto, nie per-maszyna. Uruchamianie wielu maszyn na tym samym koncie jest okej — punkty się kumulują.
+
+## Dalej
+
+<CardGroup cols={2}>
+  <Card title="Model zarobków" icon="coins" href="/pl/ai/earning">
+    Jak ranga GHXP przekłada się na wypłaty GUSD.
+  </Card>
+  <Card title="Wymagania sprzętowe" icon="microchip" href="/pl/ai/hardware-requirements">
+    Które GPU dostaje które zadania.
+  </Card>
+</CardGroup>

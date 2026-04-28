@@ -1,0 +1,74 @@
+---
+title: "deAPI overview"
+description: "The public, OpenAI-compatible API that exposes the GamerHash GPU network to developers."
+---
+
+[**deAPI**](https://deapi.ai) is the developer integration layer for the GamerHash GPU network. It turns 800,000+ idle gaming GPUs into a single, addressable, OpenAI-compatible REST endpoint — so any application or workflow can route AI workloads to the network without custom infrastructure.
+
+<Frame>
+  <img src="/images/deapi-integration.svg" alt="deAPI integration: clients (your app, n8n, OpenAI SDK, bots) call deAPI which authenticates, bills, rate-limits, then dispatches the workload across the GamerHash GPU network." />
+</Frame>
+
+## What you get
+
+- **OpenAI-compatible REST**. Drop-in for code already using the OpenAI SDK — change `base_url` and an API key. Same chat completions, same streaming, same response shape.
+- **Multi-modal coverage** — text, image, video, embeddings, transcription. One credential, every model class.
+- **An official [n8n](https://n8n.io) node** — call the network from any n8n workflow without writing API code.
+- **Routing & failover handled** — deAPI dispatches to whichever GPU is free, retries on transient failures, balances by model fit.
+- **Cost transparency** — per-model pricing, dashboard with live usage, budgets.
+- **Stripe + crypto payments** — pay in USD via Stripe, or with crypto if you prefer.
+
+## Who's using it
+
+- **AI app builders** — Telegram and Discord bots that route LLM calls to deAPI instead of OpenAI.
+- **n8n workflow operators** — automation pipelines that need cheap, private inference.
+- **Indie devs** — MVP backends for chat, image, and video features.
+- **Web3 projects** — agents that need both on-chain and off-chain compute.
+
+As of early 2026, deAPI has **6,000+ developers registered**.
+
+## Why use deAPI instead of OpenAI / Anthropic / etc.
+
+- **Cost** — workloads run on consumer GPUs that would otherwise be idle. The unit economics are different from hyperscaler clouds.
+- **Open-source models, no rate limits per model** — you choose between Llama 3, Qwen 3, FLUX, LTX-Video, and more. No proprietary restrictions.
+- **Privacy** — content is dispatched and discarded; the network does not retain prompts or outputs after settlement.
+- **Real money to real users** — your spend funds the people running the GPUs, not a hyperscaler's margin.
+
+## Trade-offs to be aware of
+
+- **Latency** — consumer GPUs are not co-located in a single datacentre. First-token latency is higher than a centralised cloud, especially for cold-start workloads.
+- **Model availability** — the catalogue is curated and grows steadily, but it isn't infinite. Niche or proprietary models may not be available.
+- **Capacity** — at peak demand, queue times can extend. Standard rate limits apply.
+
+## Architecture
+
+A deAPI request flows like this:
+
+```
+Your client
+   │  HTTPS (OpenAI-compatible request)
+   ▼
+deAPI gateway
+   │  authenticate, bill, route
+   ▼
+GamerHash dispatcher
+   │  match model + VRAM + region
+   ▼
+GPU node (a contributor running the AI App)
+   │  inference
+   ▼
+Result returns the same path
+```
+
+You don't need to know about the GPU side to use the API. But it helps to understand: every dollar that flows through deAPI is split between **platform infrastructure**, **GHX buy-and-burn**, and **direct contributor pay** in GUSD.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Getting started" icon="rocket" href="/deapi/getting-started">
+    Make your first request in under five minutes.
+  </Card>
+  <Card title="deAPI website" icon="external-link" href="https://deapi.ai">
+    Sign up, manage keys, view usage.
+  </Card>
+</CardGroup>

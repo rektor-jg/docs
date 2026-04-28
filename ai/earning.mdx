@@ -1,0 +1,74 @@
+---
+title: "Earning model"
+description: "How GPU sharing pays — GUSD per workload, GHXP multipliers, and what to do with the credit."
+---
+
+The earning module turns the AI App from a free local-AI workstation into a side income. You opt in once; the network does the rest.
+
+<Frame>
+  <img src="/images/earning-flow.svg" alt="Earning flow: idle GPU receives an AI workload, completes inference, gets credited in GUSD, GHXP rank multiplies the reward, then the user can convert to GHX, withdraw USDC, or spend in the store." />
+</Frame>
+
+## The mechanics
+
+1. **You opt in** — toggle the earning module on. Set hours / GPU usage cap if you want.
+2. **The network dispatches a workload** — text, image, video, embedding, transcription. Whatever fits your VRAM and is in the queue.
+3. **Your GPU runs it** — typically seconds to a few minutes per workload, depending on type.
+4. **You're paid in GUSD** — credited to your in-app wallet on completion. 1 GUSD ≈ 1 USD.
+5. **GHXP rank multiplies the reward** — same workload pays more for higher-ranked contributors.
+
+## What determines per-machine yield
+
+Yield depends on a handful of variables — not all under your control:
+
+- **GPU class & VRAM** — a 4080 unlocks higher-paying workload classes than a 3060.
+- **Uptime** — more hours online = more workloads matched.
+- **GHXP rank** — long-running, GHX-holding accounts earn more per workload.
+- **Network demand** — pay scales with deAPI volume. As demand grows, contributor pay grows.
+- **Region / latency** — some workloads have geographic preferences for low-latency dispatch.
+
+The dashboard inside the AI App shows live per-hour earnings and historical totals.
+
+## What you can do with GUSD
+
+GUSD is virtual currency inside the platform — pegged 1:1 to USD. Three exit routes:
+
+<CardGroup cols={3}>
+  <Card title="Convert to GHX" icon="arrow-right-arrow-left">
+    HODL on Ethereum, BNB Chain, or Solana. Stake or LP for up to 25% APR — see [GHX staking docs](https://docs.gamercoin.com/tokenomics/staking).
+  </Card>
+  <Card title="Withdraw USDC" icon="building-columns">
+    Out to Binance via integration. Internal transfer is free of GamerHash fees.
+  </Card>
+  <Card title="Spend in Store" icon="cart-shopping">
+    600+ digital goods — games, gift cards, prepaid vouchers. See [Store](/apps/store).
+  </Card>
+</CardGroup>
+
+## What this is *not*
+
+- **Not mining.** No PoW, no hash rates, no algorithm tuning. The platform serves AI inference jobs.
+- **Not crypto trading.** GUSD is a stable USD-equivalent credit; the GHX conversion is optional.
+- **Not guaranteed.** Yield depends on demand. There are no fixed APRs on the earning side — APR exists only on the [staking](https://docs.gamercoin.com/tokenomics/staking) side.
+
+## Newcomer head start
+
+For the first **30 days** after registration, new contributors keep **100% of credited earnings**. After 30 days the standard rank-based contribution applies — see the in-app dashboard for current rates.
+
+## Optimisation tips
+
+- **Run the app continuously** — most pay comes from being online when a workload arrives.
+- **Hold some GHX** for the GHXP Boost (see [GHXP](/ai/ghxp)).
+- **Don't compete with gaming sessions** — set a GPU usage cap so the app doesn't fight your game for VRAM.
+- **Update the driver and the app** — performance improvements ship constantly; out-of-date stacks miss workloads.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
+    Which workloads your GPU qualifies for.
+  </Card>
+  <Card title="Privacy" icon="shield" href="/ai/privacy">
+    What's transmitted, what's logged, what stays local.
+  </Card>
+</CardGroup>

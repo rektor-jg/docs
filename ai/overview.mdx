@@ -1,14 +1,74 @@
 ---
-title: "GamerHash AI"
-description: "Overview of the GamerHash AI suite."
+title: "GamerHash AI overview"
+description: "The flagship app — what it does, how it earns, and what hardware you need."
 ---
 
-GamerHash AI utilizes the power of gamers' GPUs to support AI computations while offering rewards to users. Currently, these rewards mainly consist of GHXP (GamerHash Experience Points) - GHX airdrops will happen later. Moreover, this product offers attractive opportunities for users themselves, such as AI Image Generation and AI Chat functionalities providing full privacy & security with no usage limits like you are used to in generic online equivalents.
+import { Win } from '/snippets/chains.mdx'
 
-GamerHash AI essentially serves as an application that effectively addresses the needs of 2 parties interested in utilizing computational power. The first group comprises of projects that rely on computational power, often requiring external purchases. The second group consists of individuals capable of contributing a portion of this power, which, when combined with the resources of other users, becomes an attractive proposition for end clients.
+The **GamerHash AI App** is a free <Win /> desktop application that does two things at once:
 
-GamerHash AI enables one group to start generating income from previously untapped computational power, while the other gains access to this power under more favorable terms than before.
+1. **Lets you use private AI tools locally** — chat, image, video, voice, multimodal Q&A — all running on your own GPU, without sending data to a third-party cloud.
+2. **Lets you earn from idle GPU time** — opt in and the app dispatches AI inference jobs from the network onto your machine, paying you in **GUSD** per workload.
 
-GamerHash AI is our second desktop application, available to download from http://gamerhash.com/.
+Same app, same install, same login. You decide whether to use it as a private AI workstation, an earning machine, or both.
 
-![](https://docs.gamercoin.com/gamercoin-ghx-documentation-1/~gitbook/image?url=https%3A%2F%2F2362937230-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F4tvJXnu8OfosPPFIV3jX%252Fuploads%252FOSdpFrhipPASMVoJ4BwX%252FFrame%25202609409.png%3Falt%3Dmedia%26token%3D1ebced9a-de8f-4b29-be01-0a2fc4d21873&width=768&dpr=3&quality=100&sign=63ddffbc&sv=2)
+<Frame>
+  <img src="/images/ai-modules.svg" alt="GamerHash AI App modules: text-to-text chat, text-to-image, image/text-to-video, voice synthesis, multimodal Q&A, and the GPU-sharing earning module." />
+</Frame>
+
+## What's inside
+
+<CardGroup cols={2}>
+  <Card title="Modules" icon="layer-group" href="/ai/modules">
+    Text-to-text, text-to-image, text/image-to-video, voice, multimodal — every module the app ships.
+  </Card>
+  <Card title="GHXP" icon="bolt" href="/ai/ghxp">
+    The engagement multiplier. Run the app + hold GHX → higher reward share.
+  </Card>
+  <Card title="Earning model" icon="coins" href="/ai/earning">
+    GUSD per workload, GHXP rank, and the path from credit to spendable assets.
+  </Card>
+  <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
+    Minimum and recommended GPUs for chat, image, and video.
+  </Card>
+  <Card title="Privacy" icon="shield" href="/ai/privacy">
+    What stays on your machine, what's transmitted, what's logged.
+  </Card>
+  <Card title="Install the app" icon="download" href="/tutorials/install-ai-app">
+    Five-minute walkthrough — download to first run.
+  </Card>
+</CardGroup>
+
+## Why local AI
+
+Cloud AI services have three structural costs that GamerHash AI removes:
+
+- **Per-token pricing.** Big cloud providers charge per call. The AI App is free for personal use — your only cost is electricity and your existing GPU.
+- **Privacy compromises.** Prompts and outputs are transmitted to third-party clouds and may be logged. The AI App generates entirely locally; nothing leaves your machine for personal-use modules.
+- **Usage limits.** Free tiers cap message counts and resolution. The AI App has no usage caps for local-only modules — your GPU is the only limiter.
+
+## Why share GPU?
+
+A modern gaming GPU is idle most of the time it's powered on. The earning module dispatches AI inference jobs from paying customers (via [deAPI](https://deapi.ai) and direct partners) onto your machine while you're not using it.
+
+You don't pick the workloads — the network routes whatever fits your VRAM and the queue depth. You earn **GUSD per workload completed**, with a **GHXP-based multiplier** for consistent, high-engagement contributors.
+
+## What you need
+
+- **Windows 10 or 11**
+- **NVIDIA RTX GPU with 8 GB+ VRAM** (minimum). Higher VRAM unlocks bigger models and higher per-workload pay.
+- **Recent NVIDIA driver** (the app prompts if your driver is too old)
+- **A GamerHash account** (created on first run; email or Google sign-in)
+
+Detailed hardware breakdown — including which models run on 8 GB vs 12 GB vs 24 GB — is in [Hardware requirements](/ai/hardware-requirements).
+
+## Get going
+
+<CardGroup cols={2}>
+  <Card title="Download the AI App" icon="download" href="https://gamerhash.com/en/app-download">
+    Direct download from gamerhash.com.
+  </Card>
+  <Card title="Step-by-step install" icon="play" href="/tutorials/install-ai-app">
+    Walk through the install with screenshots and gotchas.
+  </Card>
+</CardGroup>

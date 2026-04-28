@@ -1,0 +1,132 @@
+---
+title: "GPU 공유로 수익 얻기"
+description: "단계별 가이드: 수익 모듈 활성화, 경계 설정, GUSD 출금."
+---
+
+이 문서는 [AI App 설치](/ko/tutorials/install-ai-app) 위에 빌드합니다. 앱이 이미 설치되어 있고, 로그인되어 있으며, GPU가 벤치마크되었다고 가정합니다. 시간: 셋업에 **10분**, 그 후에는 백그라운드에서 실행됩니다.
+
+## 무엇을 얻는가
+
+- **워크로드당 GUSD** — 추론 작업이 완료되는 즉시 자동으로 적립.
+- **GHXP** — GHXP Boost를 통해 향후 수익을 곱하는 인게이지먼트 포인트.
+- **선택적 GHX 부스트** — MetaMask에 GHX를 보유해 GHXP 적립 가속화.
+
+전체 메커니즘은 [수익 모델](/ko/ai/earning)을 참고하세요.
+
+## 1. 수익 모듈 열기
+
+<Steps>
+  <Step title="사이드바 → Earning">
+    수익 섹션은 로컬 AI 모듈과 분리되어 있습니다. 대시보드는 활성화하기 전에 무엇이 제공되는지 설명합니다.
+  </Step>
+  <Step title="공시 사항 확인">
+    이 모듈은 외부 워크로드를 본인 머신에 디스패치합니다. 활성화하기 전에 이에 동의하는지 확인하세요 — [프라이버시](/ko/ai/privacy)를 참고하세요.
+  </Step>
+  <Step title="모듈 활성화">
+    **Earning** 스위치를 켜세요. GPU가 디스패치 풀에 합류합니다.
+  </Step>
+</Steps>
+
+## 2. 경계 설정
+
+<Steps>
+  <Step title="활성 시간">
+    모듈이 디스패치되는 시간을 선택하세요. 일반적인 패턴:
+
+    - **유휴 시 항상** — GPU가 사용 중이지 않을 때마다 수익.
+    - **업무 외 시간만** — 게임을 하지 않는 야간 + 업무 시간.
+    - **피크 외 전기료** — 본인 요금제의 저렴한 시간대에 맞추기.
+  </Step>
+  <Step title="GPU 사용량 상한">
+    기본 상한은 다른 애플리케이션을 위한 여유를 남깁니다. 모듈이 실행되는 동안 게임에서 프레임 드롭이 발생한다면 낮추세요.
+  </Step>
+  <Step title="게임 실행 시 자동 일시 중지 (선택)">
+    런처가 지원되는 경우, AI App은 게임이 시작되면 수익을 일시 중지하고 종료되면 재개할 수 있습니다.
+  </Step>
+</Steps>
+
+## 3. 수익 극대화
+
+<Steps>
+  <Step title="부스트를 위한 GHX 보유">
+    가장 큰 수익 멀티플라이어입니다. 동일한 계정의 MetaMask에 GHX를 보유하세요 — [GHXP](/ko/ai/ghxp)를 참고하세요. 부스트는 자동으로 적용됩니다.
+  </Step>
+  <Step title="지속적으로 실행">
+    앱이 재시작 없이 오래 실행될수록 시간당 적립되는 GHXP가 커집니다. 시간 중간에 재시작하면 해당 시간의 보류 포인트가 사라집니다.
+  </Step>
+  <Step title="여러 머신을 다른 계정에서 실행하지 마세요">
+    GHXP와 랭크는 계정당 통합됩니다. 모든 GPU를 하나의 계정에서 실행하세요 — 더 빠르게 랭크 업합니다.
+  </Step>
+</Steps>
+
+## 4. 수익 추적
+
+<Steps>
+  <Step title="앱 내 대시보드">
+    실시간 시간당, 일별, 월별 수치. 워크로드 수와 워크로드당 평균 보상.
+  </Step>
+  <Step title="모바일 앱">
+    [모바일 앱](/ko/apps/mobile)도 동일한 수치를 표시합니다 — PC에서 떨어져 있을 때 유용합니다.
+  </Step>
+  <Step title="이메일 다이제스트">
+    가입한 이메일 주소로 주간 요약이 도착합니다. 원하지 않는다면 끄세요.
+  </Step>
+</Steps>
+
+## 5. GUSD 출금
+
+세 가지 출금 경로 — 언제든지 선택 가능:
+
+<Tabs>
+  <Tab title="GHX로 전환">
+    1. 앱 내 **Wallet** → **Convert** → GUSD → GHX.
+    2. 체인을 선택하세요 (이더리움 / BNB Chain / Solana).
+    3. 확인하세요. GHX가 연결된 지갑에 도착합니다.
+    4. 거기서 **HODL** 또는 [staking.gamercoin.com](https://staking.gamercoin.com)을 통해 최대 25% APR을 위한 **스테이킹**.
+  </Tab>
+  <Tab title="Binance로 USDC 출금">
+    1. 아직 연결하지 않았다면 Binance 계정을 연결하세요 (계정 설정에서 일회성).
+    2. **Wallet** → **Withdraw USDC** → 금액을 선택하세요.
+    3. Binance 주소로 내부 이체. GamerHash 수수료 없음.
+  </Tab>
+  <Tab title="스토어에서 사용">
+    1. [스토어](https://gamerhash.com/en/shop)를 탐색하세요.
+    2. 체크아웃 시 결제 방법으로 **GUSD**를 선택하세요.
+    3. 계정 PIN을 입력하세요. 디지털 상품이 즉시 배송됩니다.
+  </Tab>
+</Tabs>
+
+## 문제 해결
+
+<AccordionGroup>
+  <Accordion title="모듈이 켜져 있지만 워크로드를 받지 못함">
+    여러 원인:
+
+    - **GPU 클래스** — 오래되거나 작은 GPU는 워크로드의 일부 하위 집합에만 적합합니다. 벤치마크를 실행하고 실시간 워크로드 풀 크기를 확인하세요.
+    - **네트워크 수요** — 수요 신호에 대해 [Medium의 최신 커뮤니티 업데이트](https://medium.com/we-are-the-gamerhash)를 확인하세요.
+    - **연결 문제** — 앱을 재시작하고, 디스패치 트래픽을 차단하는 회사 VPN 뒤에 있지 않은지 확인하세요.
+  </Accordion>
+  <Accordion title="GHXP 랭크가 떨어진 것 같음">
+    GHXP 활동은 감소하지 않지만 랭크는 *상대적*입니다. 새로운 고참여 기여자가 랭크 순서를 바꿀 수 있습니다. 리더보드를 확인하세요. 시간이 지나면 일관성이 승리합니다.
+  </Accordion>
+  <Accordion title="모듈이 켜져 있을 때 게임 프레임 레이트가 떨어짐">
+    GPU 사용량 상한을 낮추거나 모듈을 **게임 실행 시 자동 일시 중지**로 설정하세요. 일부 게임은 백그라운드 VRAM 사용에 매우 민감합니다.
+  </Accordion>
+  <Accordion title="GUSD 잔액은 표시되지만 전환할 수 없음">
+    플랫폼 유지보수 중에는 전환이 가끔 제한됩니다. Wallet 페이지에 예정된 윈도우가 표시됩니다. 보통 한 시간 내에 해결됩니다.
+  </Accordion>
+  <Accordion title="USDC 출금이 멈춤">
+    Binance로의 내부 이체는 몇 분 내에 정산됩니다. 24시간 이상 멈춰 있다면, Wallet 로그에 표시된 트랜잭션 참조와 함께 Discord `#support`에 문의하세요.
+  </Accordion>
+</AccordionGroup>
+
+## 다음
+
+<CardGroup cols={2}>
+  <Card title="GHXP 메커니즘" icon="bolt-lightning" href="/ko/ai/ghxp">
+    GHX 보유가 수익을 가속하는 이유.
+  </Card>
+  <Card title="GHX 스테이킹 문서" icon="lock" href="https://docs.gamercoin.com/tokenomics/staking">
+    토큰 APR과 GPU 수익을 결합하기.
+  </Card>
+</CardGroup>

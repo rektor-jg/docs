@@ -1,0 +1,65 @@
+---
+title: "Wymagania sprzętowe"
+description: "Jakie GPU obsługuje co — minimalne specyfikacje, rekomendowane i dopasowanie moduł po module."
+---
+
+import { Win } from '/snippets/chains.mdx'
+
+Aplikacja AI jest zależna od GPU. CPU i RAM mają mniejsze znaczenie; o tym, czy model się uruchomi, decyduje **VRAM** i **generacja GPU**.
+
+## Minimum
+
+- **OS** — <Win /> 10 (22H2+) albo 11
+- **GPU** — NVIDIA RTX z **8 GB VRAM** (np. RTX 3060, 4060, 5060)
+- **Driver** — aktualny driver NVIDIA studio albo game-ready. Aplikacja ostrzeże, jeśli za stary.
+- **Dysk** — ~30 GB wolnego miejsca na pobrane modele (więcej, jeśli trzymasz wiele w Model Center)
+- **Sieć** — szerokopasmowa; pobieranie modeli jest duże, ale jednorazowe
+
+8 GB odblokowuje: AI Chat (modele 7B/8B w kwantyzacji), Stable Diffusion 1.5 / Sana Sprint, podstawowe zadania zarobkowe.
+
+## Rekomendowane
+
+- **GPU** — RTX 4070 / 5070 lub lepsze, **12–16 GB VRAM**
+- 12 GB odblokowuje: modele czatowe 14B, generowanie obrazów FLUX, LTX-Video w 480p.
+- 16 GB+ odblokowuje: modele czatowe 20B (GPT-OSS-20B), FLUX w wysokiej rozdzielczości, dłuższe klipy LTX-Video, multimodalne wizja.
+
+## High-end
+
+- **GPU** — RTX 4090 / 5090 / Blackwell pro, **24 GB+ VRAM**
+- Pełen dostęp do Model Center, najlepiej płatne zadania zarobkowe, wideo w wyższej rozdzielczości / dłuższe.
+
+## Co nie jest wspierane
+
+- GPU AMD w aplikacji AI dziś (istnieją eksperymentalne buildy; domyślna instalacja jest tylko-NVIDIA).
+- macOS (aplikacja AI jest tylko na Windows; [aplikacja mobilna](/pl/apps/mobile) jest na iOS/Android, ale do zarządzania kontem, nie lokalnego AI).
+- Linux — tak samo jak macOS dla aplikacji AI. Role po stronie serwera przez deAPI to inna sprawa — zobacz [deAPI](/pl/deapi/overview).
+- iGPU — zintegrowana grafika nie ma wystarczającego VRAM.
+
+## Dopasowanie per moduł
+
+| Moduł | Min VRAM | Rekomendowane |
+| --- | --- | --- |
+| Text-to-Text (czat, 7B/8B kwantyzacja) | 8 GB | 12 GB+ |
+| Text-to-Text (14B–20B) | 12 GB | 16 GB+ |
+| Text-to-Image (SD, Sana Sprint) | 8 GB | 12 GB |
+| Text-to-Image (FLUX, HiDream) | 12 GB | 16 GB+ |
+| Image / Text → Video (LTX-Video) | 12 GB | 16 GB+ |
+| Multimodal (LLM-y wizyjne) | 12 GB | 16 GB+ |
+| Moduł zarobkowy | 8 GB | 12 GB+ dla lepiej płatnych zadań |
+
+Model Center w aplikacji pokazuje na żywo szacunki dopasowania per model do twojego sprzętu.
+
+## Wymiana sprzętu w trakcie
+
+Możesz zmienić GPU bez zakładania konta od nowa. Aplikacja AI wykryje nową kartę przy kolejnym starcie i przeprowadzi benchmark od nowa. GHXP i stan konta przechodzą.
+
+## Dalej
+
+<CardGroup cols={2}>
+  <Card title="Moduły" icon="layer-group" href="/pl/ai/modules">
+    Dopasuj moduły do tego, co uruchomi twoje GPU.
+  </Card>
+  <Card title="Model zarobków" icon="coins" href="/pl/ai/earning">
+    Które zadania płacą więcej i jak czytać kolejkę.
+  </Card>
+</CardGroup>

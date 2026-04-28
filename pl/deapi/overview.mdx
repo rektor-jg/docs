@@ -1,0 +1,74 @@
+---
+title: "Przegląd deAPI"
+description: "Publiczne, kompatybilne z OpenAI API, które udostępnia sieć GPU GamerHash deweloperom."
+---
+
+[**deAPI**](https://deapi.ai) to warstwa integracyjna dla deweloperów korzystających z sieci GPU GamerHash. Zamienia ponad 800 000 bezczynnych kart graficznych do gier w jeden, adresowalny endpoint REST kompatybilny z OpenAI — dzięki czemu dowolna aplikacja lub workflow może kierować obciążenia AI do sieci bez budowania własnej infrastruktury.
+
+<Frame>
+  <img src="/images/deapi-integration.svg" alt="Integracja deAPI: klienci (twoja aplikacja, n8n, OpenAI SDK, boty) wywołują deAPI, które uwierzytelnia, rozlicza, ogranicza ruch, a następnie rozdziela obciążenia w sieci GPU GamerHash." />
+</Frame>
+
+## Co otrzymujesz
+
+- **REST kompatybilny z OpenAI**. Działa od ręki w kodzie używającym SDK OpenAI — wystarczy zmienić `base_url` i klucz API. Te same chat completions, ten sam streaming, ten sam kształt odpowiedzi.
+- **Obsługa multimodalna** — tekst, obraz, wideo, embeddings, transkrypcja. Jedno poświadczenie, każda klasa modeli.
+- **Oficjalny węzeł [n8n](https://n8n.io)** — wywołuj sieć z dowolnego workflow n8n bez pisania kodu API.
+- **Routing i failover po naszej stronie** — deAPI kieruje zapytania do wolnej karty GPU, ponawia próby przy chwilowych błędach, balansuje pod kątem dopasowania modelu.
+- **Przejrzystość kosztów** — cennik per model, panel z bieżącym zużyciem, budżety.
+- **Płatności Stripe + krypto** — płać w USD przez Stripe lub w kryptowalucie, jeśli wolisz.
+
+## Kto z tego korzysta
+
+- **Twórcy aplikacji AI** — boty Telegram i Discord kierujące zapytania LLM do deAPI zamiast OpenAI.
+- **Operatorzy workflow w n8n** — pipeline'y automatyzacyjne, które potrzebują taniej, prywatnej inferencji.
+- **Niezależni deweloperzy** — backendy MVP dla funkcji czatu, obrazu i wideo.
+- **Projekty Web3** — agenci wymagający zarówno obliczeń on-chain, jak i off-chain.
+
+Na początek 2026 roku w deAPI zarejestrowanych jest **ponad 6 000 deweloperów**.
+
+## Dlaczego deAPI zamiast OpenAI / Anthropic / itp.
+
+- **Koszt** — obciążenia działają na konsumenckich GPU, które inaczej stałyby bezczynne. Ekonomia jednostkowa różni się od chmur hyperscale.
+- **Modele open-source, brak limitów per model** — wybierasz między Llama 3, Qwen 3, FLUX, LTX-Video i innymi. Bez ograniczeń własnościowych.
+- **Prywatność** — treści są rozdzielane i odrzucane; sieć nie zachowuje promptów ani odpowiedzi po rozliczeniu.
+- **Realne pieniądze dla realnych użytkowników** — twoje wydatki finansują osoby udostępniające GPU, a nie marżę hyperscalera.
+
+## Kompromisy, o których warto wiedzieć
+
+- **Opóźnienia** — konsumenckie GPU nie znajdują się w jednym centrum danych. Czas do pierwszego tokena jest wyższy niż w scentralizowanej chmurze, zwłaszcza przy zimnym starcie.
+- **Dostępność modeli** — katalog jest kuratorski i stale rośnie, ale nie jest nieskończony. Niszowe lub własnościowe modele mogą być niedostępne.
+- **Pojemność** — w szczytach popytu kolejki potrafią się wydłużać. Obowiązują standardowe limity zapytań.
+
+## Architektura
+
+Zapytanie do deAPI przechodzi tak:
+
+```
+Twój klient
+   │  HTTPS (zapytanie kompatybilne z OpenAI)
+   ▼
+brama deAPI
+   │  uwierzytelnij, rozlicz, kieruj
+   ▼
+dispatcher GamerHash
+   │  dopasuj model + VRAM + region
+   ▼
+węzeł GPU (kontrybutor uruchomił AI App)
+   │  inferencja
+   ▼
+Wynik wraca tą samą drogą
+```
+
+Nie musisz znać strony GPU, żeby korzystać z API. Warto jednak wiedzieć: każdy dolar przepływający przez deAPI dzieli się między **infrastrukturę platformy**, **buy-and-burn GHX** oraz **bezpośrednie wynagrodzenie kontrybutorów** w GUSD.
+
+## Dalej
+
+<CardGroup cols={2}>
+  <Card title="Pierwsze kroki" icon="rocket" href="/pl/deapi/getting-started">
+    Wykonaj pierwsze zapytanie w mniej niż pięć minut.
+  </Card>
+  <Card title="Strona deAPI" icon="external-link" href="https://deapi.ai">
+    Zarejestruj się, zarządzaj kluczami, sprawdzaj zużycie.
+  </Card>
+</CardGroup>

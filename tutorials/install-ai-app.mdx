@@ -1,0 +1,132 @@
+---
+title: "Install the GamerHash AI App"
+description: "Step-by-step: from download to first chat, in five minutes."
+---
+
+import { Win } from '/snippets/chains.mdx'
+
+This walks you from downloading the AI App to your first chat completion. Time: **5 minutes** plus model download (which happens in the background and varies by model size).
+
+## Before you start
+
+<CardGroup cols={2}>
+  <Card title="Hardware check" icon="microchip">
+    <Win /> 10/11, NVIDIA RTX with **8 GB+ VRAM**, recent driver. Full breakdown in [Hardware requirements](/ai/hardware-requirements).
+  </Card>
+  <Card title="Disk space" icon="hard-drive">
+    ~30 GB free for downloaded models. More if you keep many models cached.
+  </Card>
+  <Card title="GamerHash account" icon="user">
+    Created during install — email or Google login.
+  </Card>
+  <Card title="Network" icon="wifi">
+    Broadband. Initial model downloads are large (4–20 GB depending on model).
+  </Card>
+</CardGroup>
+
+## 1. Download
+
+<Steps>
+  <Step title="Open the download page">
+    Go to [gamerhash.com/en/app-download](https://gamerhash.com/en/app-download) and click **Download GamerHash AI**. The installer is `.exe` and signed.
+  </Step>
+  <Step title="Run the installer">
+    Double-click the downloaded `.exe`. Windows may ask for admin permission — accept. The installer is signed by GamerHash; if Windows SmartScreen warns, click **More info → Run anyway**.
+  </Step>
+  <Step title="Pick install path">
+    Default is fine for most users. If you have multiple drives, pick the one with the most free space — model files end up here.
+  </Step>
+</Steps>
+
+## 2. First run
+
+<Steps>
+  <Step title="Sign in or create an account">
+    On first launch you'll be prompted. **Sign in with Google** is the fastest path. Email + password also works.
+  </Step>
+  <Step title="Run the GPU benchmark">
+    The app benchmarks your GPU once to size workloads correctly. Takes ~1 minute. You won't need to repeat this unless you change hardware.
+  </Step>
+  <Step title="Pick your first model">
+    The Model Center opens. For a first chat, pick **Llama 3.1 8B Instruct** (good fit for 8 GB+). Click **Download** — progress shows in the bar.
+  </Step>
+</Steps>
+
+<Note>
+First model download is the slowest step. Smaller text models (~5 GB) download in 5–15 minutes on a typical home connection. Image and video models can be 10–20 GB.
+</Note>
+
+## 3. Your first chat
+
+<Steps>
+  <Step title="Open the Chat module">
+    From the dashboard, click **Chat**. The model you just downloaded should be selected.
+  </Step>
+  <Step title="Send a prompt">
+    Type a question and hit Enter. First response includes a model warmup — subsequent responses are faster.
+  </Step>
+  <Step title="Inspect the response">
+    The response streams token-by-token. Generation runs entirely on your GPU; nothing is sent to a third-party cloud.
+  </Step>
+</Steps>
+
+## 4. Try image generation
+
+<Steps>
+  <Step title="Switch to the Image module">
+    From the dashboard sidebar, pick **Image Generation**.
+  </Step>
+  <Step title="Pick a model">
+    For 8 GB GPUs, **Sana Sprint** is a good first choice — fast and high quality. For 12 GB+, try **FLUX Schnell**.
+  </Step>
+  <Step title="Generate">
+    Type a prompt, click **Generate**. Output appears in the gallery; right-click to save or copy. Images are stored locally only.
+  </Step>
+</Steps>
+
+## 5. Opt in to earn (optional)
+
+If you want to share idle GPU power for GUSD:
+
+<Steps>
+  <Step title="Open the earning module">
+    Sidebar → **Earning**. Read the explanation, then toggle the module on.
+  </Step>
+  <Step title="Set boundaries">
+    Choose hours when the module is active (e.g., when you're sleeping) and a GPU usage cap. Defaults are sensible — adjust later.
+  </Step>
+  <Step title="Watch GUSD accrue">
+    Workloads will start dispatching to your GPU as the queue allows. The dashboard shows live earnings per hour.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Installer won't run / Windows SmartScreen warning">
+    Click **More info** → **Run anyway**. The installer is signed by GamerHash sp. z o.o. — verify the publisher in the certificate dialog.
+  </Accordion>
+  <Accordion title="Benchmark fails">
+    Almost always a driver issue. Update to the latest **NVIDIA Studio** driver, reboot, retry. If it still fails, try the **Game Ready** driver. Report persistent failures in Discord `#support` with your GPU model.
+  </Accordion>
+  <Accordion title="Model download is stuck">
+    Pause and resume from the Model Center. If it keeps stalling, check disk space and disable any aggressive antivirus. Some AVs scan multi-GB files extremely slowly.
+  </Accordion>
+  <Accordion title="Chat is slow / first response delayed">
+    First response loads the model into VRAM (cold start). Subsequent responses are fast. If chat is consistently slow, your GPU may be hitting VRAM limits — switch to a smaller quantized variant of the same model.
+  </Accordion>
+  <Accordion title="The earning module never gets workloads">
+    Possible reasons: too few hours of uptime, GPU class limits the workload pool, network demand is low at the moment. Check the in-app dashboard and Medium community updates for current network demand.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Earn with GPU sharing" icon="coins" href="/tutorials/earn-with-gpu">
+    Deeper walk-through of the earning module.
+  </Card>
+  <Card title="Modules" icon="layer-group" href="/ai/modules">
+    Tour every module the app ships.
+  </Card>
+</CardGroup>

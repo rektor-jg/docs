@@ -1,0 +1,132 @@
+---
+title: "GamerHash AI App 설치"
+description: "단계별 가이드: 다운로드부터 첫 채팅까지 5분."
+---
+
+import { Win } from '/snippets/chains.mdx'
+
+이 가이드는 AI App 다운로드부터 첫 chat completion까지 안내합니다. 시간: **5분**과 모델 다운로드 시간(백그라운드에서 진행되며 모델 크기에 따라 다름).
+
+## 시작하기 전에
+
+<CardGroup cols={2}>
+  <Card title="하드웨어 확인" icon="microchip">
+    <Win /> 10/11, **8 GB 이상 VRAM**의 NVIDIA RTX, 최신 드라이버. 자세한 내용은 [하드웨어 요구 사항](/ko/ai/hardware-requirements)을 참고하세요.
+  </Card>
+  <Card title="디스크 공간" icon="hard-drive">
+    다운로드한 모델용 약 30 GB. 여러 모델을 캐시에 보관하면 더 많이 필요합니다.
+  </Card>
+  <Card title="GamerHash 계정" icon="user">
+    설치 중에 생성됩니다 — 이메일 또는 Google 로그인.
+  </Card>
+  <Card title="네트워크" icon="wifi">
+    광대역. 초기 모델 다운로드는 큽니다 (모델에 따라 4–20 GB).
+  </Card>
+</CardGroup>
+
+## 1. 다운로드
+
+<Steps>
+  <Step title="다운로드 페이지 열기">
+    [gamerhash.com/en/app-download](https://gamerhash.com/en/app-download)에 방문해 **Download GamerHash AI**를 클릭하세요. 설치 파일은 `.exe`이며 서명되어 있습니다.
+  </Step>
+  <Step title="설치 파일 실행">
+    다운로드한 `.exe`를 더블 클릭하세요. Windows가 관리자 권한을 요청할 수 있습니다 — 허용하세요. 설치 파일은 GamerHash가 서명한 것입니다. Windows SmartScreen이 경고하면 **More info → Run anyway**를 클릭하세요.
+  </Step>
+  <Step title="설치 경로 선택">
+    대부분의 사용자에게 기본값이면 충분합니다. 여러 드라이브가 있다면 여유 공간이 가장 많은 드라이브를 선택하세요 — 모델 파일이 여기에 저장됩니다.
+  </Step>
+</Steps>
+
+## 2. 첫 실행
+
+<Steps>
+  <Step title="로그인 또는 계정 생성">
+    첫 실행 시 프롬프트가 표시됩니다. **Google 로그인**이 가장 빠른 경로입니다. 이메일 + 비밀번호도 가능합니다.
+  </Step>
+  <Step title="GPU 벤치마크 실행">
+    앱은 워크로드 크기를 정확히 결정하기 위해 GPU를 한 번 벤치마크합니다. 약 1분이 걸립니다. 하드웨어를 변경하지 않는 한 다시 실행할 필요가 없습니다.
+  </Step>
+  <Step title="첫 모델 선택">
+    Model Center가 열립니다. 첫 채팅에는 **Llama 3.1 8B Instruct**(8 GB 이상에 적합)를 선택하세요. **Download**를 클릭하면 진행 상황이 막대에 표시됩니다.
+  </Step>
+</Steps>
+
+<Note>
+첫 모델 다운로드가 가장 느린 단계입니다. 작은 텍스트 모델(약 5 GB)은 일반 가정 회선에서 5–15분 안에 다운로드됩니다. 이미지 및 비디오 모델은 10–20 GB일 수 있습니다.
+</Note>
+
+## 3. 첫 채팅
+
+<Steps>
+  <Step title="Chat 모듈 열기">
+    대시보드에서 **Chat**을 클릭하세요. 방금 다운로드한 모델이 선택되어 있어야 합니다.
+  </Step>
+  <Step title="프롬프트 보내기">
+    질문을 입력하고 Enter를 누르세요. 첫 응답은 모델 워밍업을 포함하므로 — 후속 응답이 더 빠릅니다.
+  </Step>
+  <Step title="응답 확인">
+    응답이 토큰 단위로 스트리밍됩니다. 생성은 전적으로 본인 GPU에서 실행되며, 외부 클라우드로 아무것도 전송되지 않습니다.
+  </Step>
+</Steps>
+
+## 4. 이미지 생성 시도
+
+<Steps>
+  <Step title="Image 모듈로 전환">
+    대시보드 사이드바에서 **Image Generation**을 선택하세요.
+  </Step>
+  <Step title="모델 선택">
+    8 GB GPU에는 **Sana Sprint**가 좋은 첫 선택입니다 — 빠르고 품질이 좋습니다. 12 GB 이상에는 **FLUX Schnell**을 시도하세요.
+  </Step>
+  <Step title="생성">
+    프롬프트를 입력하고 **Generate**를 클릭하세요. 결과물이 갤러리에 나타납니다. 우클릭하여 저장하거나 복사할 수 있습니다. 이미지는 로컬에만 저장됩니다.
+  </Step>
+</Steps>
+
+## 5. 수익 활성화 (선택)
+
+GUSD를 위해 유휴 GPU를 공유하려면 다음과 같이 하세요.
+
+<Steps>
+  <Step title="수익 모듈 열기">
+    사이드바 → **Earning**. 설명을 읽은 후 모듈을 켜세요.
+  </Step>
+  <Step title="경계 설정">
+    모듈이 활성화되는 시간(예: 잘 때)과 GPU 사용량 상한을 선택하세요. 기본값은 합리적이며, 나중에 조정할 수 있습니다.
+  </Step>
+  <Step title="GUSD 적립 확인">
+    큐가 허용하는 대로 워크로드가 GPU로 디스패치되기 시작합니다. 대시보드는 시간당 실시간 수익을 표시합니다.
+  </Step>
+</Steps>
+
+## 문제 해결
+
+<AccordionGroup>
+  <Accordion title="설치 파일이 실행되지 않거나 Windows SmartScreen 경고가 표시됨">
+    **More info** → **Run anyway**를 클릭하세요. 설치 파일은 GamerHash sp. z o.o.가 서명한 것입니다 — 인증서 대화 상자에서 게시자를 확인하세요.
+  </Accordion>
+  <Accordion title="벤치마크 실패">
+    거의 항상 드라이버 문제입니다. 최신 **NVIDIA Studio** 드라이버로 업데이트하고, 재부팅하고, 재시도하세요. 그래도 실패하면 **Game Ready** 드라이버를 시도하세요. 지속적인 실패는 GPU 모델과 함께 Discord `#support`에 보고하세요.
+  </Accordion>
+  <Accordion title="모델 다운로드가 멈춤">
+    Model Center에서 일시 중지하고 다시 시작하세요. 계속 멈춘다면 디스크 공간을 확인하고 공격적인 안티바이러스를 비활성화하세요. 일부 안티바이러스는 다중 GB 파일을 매우 느리게 스캔합니다.
+  </Accordion>
+  <Accordion title="채팅이 느리거나 첫 응답이 지연됨">
+    첫 응답은 모델을 VRAM에 로드합니다 (콜드 스타트). 후속 응답은 빠릅니다. 채팅이 지속적으로 느리다면 GPU가 VRAM 한계에 도달했을 수 있습니다 — 동일한 모델의 더 작은 양자화 버전으로 전환하세요.
+  </Accordion>
+  <Accordion title="수익 모듈이 워크로드를 받지 못함">
+    가능한 이유: 가동 시간이 너무 적음, GPU 클래스가 워크로드 풀을 제한, 현재 네트워크 수요가 낮음. 현재 네트워크 수요를 위해 앱 내 대시보드와 Medium 커뮤니티 업데이트를 확인하세요.
+  </Accordion>
+</AccordionGroup>
+
+## 다음
+
+<CardGroup cols={2}>
+  <Card title="GPU 공유로 수익 얻기" icon="coins" href="/ko/tutorials/earn-with-gpu">
+    수익 모듈에 대한 더 깊은 가이드.
+  </Card>
+  <Card title="모듈" icon="layer-group" href="/ko/ai/modules">
+    앱이 제공하는 모든 모듈 둘러보기.
+  </Card>
+</CardGroup>

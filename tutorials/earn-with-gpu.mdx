@@ -1,0 +1,132 @@
+---
+title: "Earn with GPU sharing"
+description: "Step-by-step: enable the earning module, configure boundaries, and pull GUSD out."
+---
+
+This builds on [Install the AI App](/tutorials/install-ai-app). It assumes you already have the app installed, signed in, and your GPU benchmarked. Time: **10 minutes** to set up; then it runs in the background.
+
+## What this gets you
+
+- **GUSD per workload** — credited automatically as inference jobs complete.
+- **GHXP** — engagement points that multiply future earnings via the GHXP Boost.
+- **Optional GHX boost** — hold GHX in MetaMask to accelerate GHXP accrual.
+
+See [Earning model](/ai/earning) for the full mechanics.
+
+## 1. Open the earning module
+
+<Steps>
+  <Step title="Sidebar → Earning">
+    The earning section is separate from the local-AI modules. The dashboard explains what's on offer before you opt in.
+  </Step>
+  <Step title="Read the disclosure">
+    The module dispatches third-party workloads to your machine. Make sure you're comfortable with that before enabling — see [Privacy](/ai/privacy).
+  </Step>
+  <Step title="Enable the module">
+    Toggle the **Earning** switch on. Your GPU joins the dispatch pool.
+  </Step>
+</Steps>
+
+## 2. Set boundaries
+
+<Steps>
+  <Step title="Active hours">
+    Pick hours of the day when the module dispatches. Common patterns:
+
+    - **Always when idle** — earn whenever the GPU isn't busy.
+    - **Off-hours only** — overnight + workday hours when you're not gaming.
+    - **Off-peak electricity** — match your tariff's cheap window.
+  </Step>
+  <Step title="GPU usage cap">
+    Default cap leaves headroom for other applications. Lower it if you notice frame drops in games while the module runs.
+  </Step>
+  <Step title="Auto-pause on game launch (optional)">
+    If your launcher is supported, the AI App can pause earning when a game starts and resume when it exits.
+  </Step>
+</Steps>
+
+## 3. Maximise yield
+
+<Steps>
+  <Step title="Hold GHX for the boost">
+    The single biggest yield multiplier. Hold any GHX in MetaMask under the same account — see [GHXP](/ai/ghxp). Boost applies automatically.
+  </Step>
+  <Step title="Run continuously">
+    The longer the app runs without restart, the larger your hour-credited GHXP accrual. Restarting mid-hour drops that hour's pending points.
+  </Step>
+  <Step title="Don't run multiple machines under different accounts">
+    GHXP and ranks consolidate per account. Run all your GPUs under one account — you'll rank up faster.
+  </Step>
+</Steps>
+
+## 4. Track earnings
+
+<Steps>
+  <Step title="In-app dashboard">
+    Live per-hour, per-day, per-month numbers. Workload count and average pay per workload.
+  </Step>
+  <Step title="Mobile app">
+    The [Mobile app](/apps/mobile) shows the same numbers — useful when you're not at the PC.
+  </Step>
+  <Step title="Email digests">
+    Weekly summaries land in the inbox you registered with. Toggle off if you don't want them.
+  </Step>
+</Steps>
+
+## 5. Pull GUSD out
+
+Three exit routes — pick at any time:
+
+<Tabs>
+  <Tab title="Convert to GHX">
+    1. In-app **Wallet** → **Convert** → GUSD → GHX.
+    2. Pick the chain (Ethereum / BNB Chain / Solana).
+    3. Confirm. GHX lands in the wallet you've connected.
+    4. From there, **HODL** or **stake** for up to 25% APR via [staking.gamercoin.com](https://staking.gamercoin.com).
+  </Tab>
+  <Tab title="Withdraw USDC to Binance">
+    1. Connect your Binance account if you haven't (one-time, in account settings).
+    2. **Wallet** → **Withdraw USDC** → choose amount.
+    3. Internal transfer to your Binance address. No GamerHash fee.
+  </Tab>
+  <Tab title="Spend in the Store">
+    1. Browse the [Store](https://gamerhash.com/en/shop).
+    2. At checkout, pick **GUSD** as the payment method.
+    3. Enter your account PIN. Digital goods are delivered immediately.
+  </Tab>
+</Tabs>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Module is on, but I'm getting no workloads">
+    Several causes:
+
+    - **GPU class** — older / smaller GPUs only qualify for a subset of workloads. Run benchmarks; check the live workload pool size.
+    - **Network demand** — check the latest [Community Update on Medium](https://medium.com/we-are-the-gamerhash) for demand signals.
+    - **Connection issues** — restart the app; verify you're not behind a corporate VPN that blocks dispatch traffic.
+  </Accordion>
+  <Accordion title="I think my GHXP rank dropped">
+    GHXP is non-decreasing for activity, but rank is *relative*. New high-engagement contributors can shift rank ordering. Check the leaderboard; consistency wins over time.
+  </Accordion>
+  <Accordion title="Game frame rate drops while the module is on">
+    Lower the GPU usage cap or set the module to **Auto-pause on game launch**. Some games are extremely sensitive to background VRAM use.
+  </Accordion>
+  <Accordion title="GUSD balance shows but conversion is unavailable">
+    Conversion is occasionally throttled during platform maintenance. The Wallet page shows scheduled windows; usually resolves within an hour.
+  </Accordion>
+  <Accordion title="USDC withdrawal stuck">
+    Internal transfers to Binance settle within minutes. If stuck >24h, contact Discord `#support` with the transaction reference shown in the Wallet log.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="GHXP mechanics" icon="bolt-lightning" href="/ai/ghxp">
+    Why holding GHX accelerates earnings.
+  </Card>
+  <Card title="GHX staking docs" icon="lock" href="https://docs.gamercoin.com/tokenomics/staking">
+    Pair GPU yield with token APR.
+  </Card>
+</CardGroup>

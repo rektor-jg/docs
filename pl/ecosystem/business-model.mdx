@@ -1,0 +1,69 @@
+---
+title: "Model biznesowy"
+description: "Skąd biorą się przychody i jak płyną do użytkowników, sieci i GHX."
+---
+
+Platforma zarabia, gdy zadania AI uruchamiają się w sieci. Te same przychody finansują trzy rzeczy: wypłaty kontrybutorów, operacje platformy i bieżący skup-i-spalanie GHX.
+
+## Źródła przychodu
+
+<CardGroup cols={2}>
+  <Card title="Użycie deAPI" icon="code">
+    Deweloperzy płacą za zapytanie — tekst, obraz, wideo, embeddingi, transkrypcja. Obsługujemy Stripe i krypto.
+  </Card>
+  <Card title="Bezpośrednie partnerstwa AI" icon="handshake">
+    Hurtowe kontrakty na moc obliczeniową z projektami AI, agencjami i integracjami platformowymi.
+  </Card>
+  <Card title="Marża sklepu" icon="cart-shopping">
+    Sklep GamerHash zarabia marżę na dobrach cyfrowych — gry, karty podarunkowe, kupony.
+  </Card>
+  <Card title="Płatne dodatki w aplikacji" icon="bolt">
+    Opcjonalne płatne funkcje w aplikacji AI (np. prompty AI Image Booster).
+  </Card>
+</CardGroup>
+
+## Jak to wraca
+
+```
+przychody deAPI / partnerów
+   │
+   ├── Kontrybutorzy  →  wypłata w GUSD za każde wykonane zadanie
+   │                     mnożnik rangi GHXP skaluje udział
+   │
+   ├── Platforma      →  ops, infra, R&D, wsparcie
+   │
+   └── Skup GHX       →  zakupy z otwartego rynku + spalanie, dystrybucja yieldu
+```
+
+Część przychodu jest używana do **skupu GHX z otwartego rynku i palenia go**, plus na finansowanie yieldu ze stakingu i liquidity miningu (do **25% APR**) na [staking.gamercoin.com](https://staking.gamercoin.com). Wiąże to ekonomię tokena z realną aktywnością platformy, a nie tylko z harmonogramami emisji.
+
+Zobacz [dokumentację tokenomiki GHX](https://docs.gamercoin.com/tokenomics/overview), żeby uzyskać pełny obraz strony tokena: podaż, dystrybucja, spalanie, staking.
+
+## Co dostają kontrybutorzy
+
+Gdy uruchamiasz aplikację GamerHash AI z włączonym modułem zarobkowym:
+
+- **GUSD za zadanie** — pegowane 1:1 do dolara, naliczane automatycznie po zakończeniu zadań.
+- **GHXP** — punkty zaangażowania przyznawane co minutę działania aplikacji. Wyższe GHXP = większy udział w nagrodach przy dystrybucji przychodu.
+- **Boost GHX** — trzymanie GHX w MetaMask zwiększa tempo naliczania GHXP, więc posiadacze tokena zarabiają szybciej.
+
+Sam decydujesz, co zrobić z GUSD: zamienić na **GHX** (HODL lub stake'ować dla APR), wypłacić jako **USDC** na Binance albo wydać w **Sklepie GamerHash**.
+
+## Co płacą deweloperzy
+
+Cennik per zapytanie, według klasy modelu, na [deAPI](https://deapi.ai). Ten sam endpoint kompatybilny z OpenAI, który obsługuje czat `gpt-oss-20b`, obsłuży też generowanie obrazów, wideo, embeddingi i transkrypcję. Jest darmowy tier do ewaluacji; płatne tiery skalują się przez Stripe lub płatności krypto.
+
+## Dlaczego to działa
+
+Model jest nietypowy w tym, że **przychody i nagrody są denominowane w dolarach (lub GUSD), a nie w emisjach**. Nagrody za mining z ustalonej puli spadają, gdy dołącza więcej osób; tutaj im więcej mocy obliczeniowej sieć sprzedaje, tym większa pula do dystrybucji. Dopóki wolumen deAPI rośnie, zarobki kontrybutorów rosną razem z nim.
+
+## Dalej
+
+<CardGroup cols={2}>
+  <Card title="Model zarobków w szczegółach" icon="coins" href="/pl/ai/earning">
+    GUSD, GHXP, rangi i co decyduje o yieldzie z maszyny.
+  </Card>
+  <Card title="Mechanika GHXP" icon="bolt-lightning" href="/pl/ai/ghxp">
+    Jak działa mnożnik i dlaczego trzymanie GHX ma znaczenie.
+  </Card>
+</CardGroup>

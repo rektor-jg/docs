@@ -1,0 +1,132 @@
+---
+title: "deAPI — pierwsze kroki"
+description: "Rejestracja, klucz, pierwsze zapytanie — w mniej niż pięć minut."
+---
+
+Ten przewodnik prowadzi cię od zera do działającego zapytania `chat.completions` w [deAPI](https://deapi.ai). Zajmie ci to pięć minut.
+
+## 1. Załóż konto
+
+Wejdź na [deapi.ai](https://deapi.ai) i utwórz konto. Logowanie e-mailem lub kontem społecznościowym. Jest darmowy tier do testów — pierwsza pula zapytań nie wymaga karty.
+
+## 2. Pobierz klucz API
+
+W panelu otwórz **API Keys** i utwórz nowy klucz. Skopiuj go — po utworzeniu nie wyświetlisz go ponownie.
+
+```
+deapi_sk_live_xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Traktuj go jak każdy inny sekret: nigdy nie commituj do gita, nigdy nie wklejaj do kodu po stronie klienta.
+
+## 3. Wykonaj chat completion
+
+Endpoint jest kompatybilny z OpenAI. Działa od ręki w dowolnym kodzie używającym SDK OpenAI — wystarczy zmienić `base_url`.
+
+<CodeGroup>
+
+```bash cURL
+curl https://api.deapi.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $DEAPI_KEY" \
+  -d '{
+    "model": "llama-3.1-8b-instruct",
+    "messages": [
+      {"role": "user", "content": "What is the GamerHash GPU network?"}
+    ]
+  }'
+```
+
+```python Python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.deapi.ai/v1",
+    api_key="<YOUR_DEAPI_KEY>",
+)
+
+resp = client.chat.completions.create(
+    model="llama-3.1-8b-instruct",
+    messages=[{"role": "user", "content": "What is the GamerHash GPU network?"}],
+)
+print(resp.choices[0].message.content)
+```
+
+```javascript Node.js
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  baseURL: "https://api.deapi.ai/v1",
+  apiKey: process.env.DEAPI_KEY,
+});
+
+const resp = await client.chat.completions.create({
+  model: "llama-3.1-8b-instruct",
+  messages: [{ role: "user", content: "What is the GamerHash GPU network?" }],
+});
+
+console.log(resp.choices[0].message.content);
+```
+
+</CodeGroup>
+
+<Note>
+Endpoint i konkretne identyfikatory modeli mogą się zmieniać wraz z rozwojem katalogu. Aktualną listę modeli i bazowy URL znajdziesz zawsze w [panelu deAPI](https://deapi.ai).
+</Note>
+
+## 4. Wypróbuj generowanie obrazów
+
+Ta sama brama, inny kształt endpointu:
+
+```bash
+curl https://api.deapi.ai/v1/images/generations \
+  -H "Authorization: Bearer $DEAPI_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "flux-schnell",
+    "prompt": "A pixel-art arcade machine with neon green light",
+    "size": "1024x1024"
+  }'
+```
+
+Odpowiedź zawiera URL lub obraz w base64, w zależności od ustawień konta.
+
+## 5. Podłącz to do n8n
+
+deAPI dostarcza oficjalny węzeł **n8n**. W n8n:
+
+1. Dodaj węzeł **deAPI** do swojego workflow.
+2. Wklej klucz API, gdy zostaniesz o niego poproszony.
+3. Wybierz model i skonfiguruj wejścia.
+
+To najszybsza droga, jeśli prototypujesz automatyzację. Bez kodu, z pełnym dostępem do sieci.
+
+## Czego jeszcze nie ma
+
+- **API do fine-tuningu** — własne LoRA są w trakcie prac; jeszcze nieudostępnione.
+- **Function calling na poziomie OpenAI** — podstawowe użycie tools/function jest wspierane na wybranych modelach; zakres rośnie.
+- **Modele z bardzo długim kontekstem** — okna kontekstowe odpowiadają bazowemu modelowi open-source. Modele z dużym kontekstem pojawiają się wraz z rozwojem ekosystemu.
+
+Pozycje z roadmapy znajdują się w [głównej roadmapie](/pl/roadmap).
+
+## Cennik
+
+Per zapytanie, według klasy modelu. Darmowy tier do testów. Plany płatne przez Stripe (USD) lub krypto. Panel na [deapi.ai](https://deapi.ai) pokazuje aktualne ceny jednostkowe — zmieniają się wraz z katalogiem modeli.
+
+## Dobre praktyki
+
+- **Używaj streamingu w czacie** — długie odpowiedzi bez niego wydają się ślamazarne. Endpoint wspiera streaming SSE.
+- **Ustaw rozsądny `max_tokens`** — niekontrolowane generacje zjadają kredyt.
+- **Cache'uj embeddings** — model embeddingowy jest tani, ale powtarzane wywołania przy skali się sumują.
+- **Analizuj błędy** — chwilowe `503` zwykle oznaczają presję w kolejce; ponów próbę z backoffem. Trwałe błędy są widoczne w panelu.
+
+## Dalej
+
+<CardGroup cols={2}>
+  <Card title="Przegląd deAPI" icon="circle-info" href="/pl/deapi/overview">
+    Architektura, dlaczego istnieje, dla kogo jest.
+  </Card>
+  <Card title="Przypadki użycia — deweloperzy" icon="code" href="/pl/use-cases/gpu-contributors">
+    Wzorce od działających twórców.
+  </Card>
+</CardGroup>

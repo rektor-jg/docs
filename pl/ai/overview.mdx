@@ -1,0 +1,74 @@
+---
+title: "GamerHash AI — przegląd"
+description: "Flagowa aplikacja — co robi, jak zarabia i jakiego sprzętu wymaga."
+---
+
+import { Win } from '/snippets/chains.mdx'
+
+**Aplikacja GamerHash AI** to darmowa aplikacja desktopowa <Win />, która robi dwie rzeczy naraz:
+
+1. **Pozwala korzystać z prywatnych narzędzi AI lokalnie** — czat, obraz, wideo, głos, multimodalne Q&A — wszystko działa na twoim własnym GPU, bez wysyłania danych do chmury osób trzecich.
+2. **Pozwala zarabiać na bezczynnym czasie GPU** — włącz moduł, a aplikacja przekieruje zadania inferencji AI z sieci na twoją maszynę, płacąc ci w **GUSD** za każde zadanie.
+
+Ta sama aplikacja, ta sama instalacja, to samo logowanie. To ty decydujesz, czy używać jej jako prywatnej stacji roboczej AI, maszyny zarobkowej, czy obu.
+
+<Frame>
+  <img src="/images/ai-modules.svg" alt="Moduły aplikacji GamerHash AI: czat text-to-text, text-to-image, image/text-to-video, synteza głosu, multimodalne Q&A i moduł zarobkowy udostępniający GPU." />
+</Frame>
+
+## Co jest w środku
+
+<CardGroup cols={2}>
+  <Card title="Moduły" icon="layer-group" href="/pl/ai/modules">
+    Text-to-text, text-to-image, text/image-to-video, głos, multimodal — każdy moduł, jaki jest w aplikacji.
+  </Card>
+  <Card title="GHXP" icon="bolt" href="/pl/ai/ghxp">
+    Mnożnik zaangażowania. Uruchom aplikację + trzymaj GHX → większy udział w nagrodach.
+  </Card>
+  <Card title="Model zarobków" icon="coins" href="/pl/ai/earning">
+    GUSD za zadanie, ranga GHXP i droga od kredytu do realnych aktywów.
+  </Card>
+  <Card title="Wymagania sprzętowe" icon="microchip" href="/pl/ai/hardware-requirements">
+    Minimalne i rekomendowane GPU dla czatu, obrazu i wideo.
+  </Card>
+  <Card title="Prywatność" icon="shield" href="/pl/ai/privacy">
+    Co zostaje na twojej maszynie, co jest przesyłane, co jest logowane.
+  </Card>
+  <Card title="Instalacja aplikacji" icon="download" href="/pl/tutorials/install-ai-app">
+    Pięciominutowy przewodnik — od pobrania do pierwszego uruchomienia.
+  </Card>
+</CardGroup>
+
+## Dlaczego lokalne AI
+
+Chmurowe usługi AI mają trzy strukturalne koszty, które GamerHash AI eliminuje:
+
+- **Cennik za token.** Duzi dostawcy chmury liczą za każde wywołanie. Aplikacja AI jest darmowa do osobistego użytku — twoim jedynym kosztem jest prąd i GPU, które już masz.
+- **Kompromisy w prywatności.** Prompty i wyniki są przesyłane do chmury osób trzecich i mogą być logowane. Aplikacja AI generuje wszystko lokalnie; w modułach do osobistego użytku nic nie opuszcza twojej maszyny.
+- **Limity użycia.** Darmowe tiery ograniczają liczbę wiadomości i rozdzielczość. Aplikacja AI nie ma limitów na moduły lokalne — twoim jedynym ograniczeniem jest GPU.
+
+## Po co udostępniać GPU?
+
+Nowoczesne gamingowe GPU jest bezczynne przez większość czasu, gdy jest włączone. Moduł zarobkowy przekierowuje zadania inferencji AI od płacących klientów (przez [deAPI](https://deapi.ai) i bezpośrednich partnerów) na twoją maszynę, gdy jej nie używasz.
+
+Nie wybierasz, jakie zadania dostaniesz — sieć kieruje to, co pasuje do twojego VRAM i głębokości kolejki. Zarabiasz **GUSD za każde wykonane zadanie**, z **mnożnikiem opartym na GHXP** dla konsekwentnych, wysoce zaangażowanych kontrybutorów.
+
+## Co potrzebujesz
+
+- **Windows 10 lub 11**
+- **GPU NVIDIA RTX z 8 GB+ VRAM** (minimum). Większy VRAM odblokowuje większe modele i wyższą stawkę za zadanie.
+- **Aktualny driver NVIDIA** (aplikacja podpowie, jeśli twój driver jest za stary)
+- **Konto GamerHash** (zakładane przy pierwszym uruchomieniu; e-mail lub Google)
+
+Szczegółowy rozkład sprzętu — w tym które modele działają na 8 GB vs 12 GB vs 24 GB — jest w [Wymaganiach sprzętowych](/pl/ai/hardware-requirements).
+
+## Do dzieła
+
+<CardGroup cols={2}>
+  <Card title="Pobierz aplikację AI" icon="download" href="https://gamerhash.com/en/app-download">
+    Bezpośrednie pobieranie z gamerhash.com.
+  </Card>
+  <Card title="Instalacja krok po kroku" icon="play" href="/pl/tutorials/install-ai-app">
+    Przejdź przez instalację ze zrzutami i pułapkami.
+  </Card>
+</CardGroup>

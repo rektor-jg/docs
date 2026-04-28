@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#171A1F"/>
+      <stop offset="100%" stop-color="#0B1714"/>
+    </linearGradient>
+    <linearGradient id="card5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2230"/>
+      <stop offset="100%" stop-color="#0F1419"/>
+    </linearGradient>
+    <marker id="arr5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2AD46F"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="500" fill="url(#bg5)"/>
+  <text x="600" y="48" text-anchor="middle" fill="#F9F9F9" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700">deAPI — the developer layer for the GamerHash GPU network</text>
+
+  <g font-family="Inter, system-ui, sans-serif">
+    <g transform="translate(80 110)">
+      <rect width="240" height="320" rx="18" fill="url(#card5)" stroke="#2AD46F" stroke-opacity="0.4"/>
+      <text x="120" y="40" text-anchor="middle" fill="#2AD46F" font-size="12" font-weight="700" letter-spacing="1">CLIENTS</text>
+      <g transform="translate(40 70)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">Your application</text>
+      </g>
+      <g transform="translate(40 130)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">n8n workflow</text>
+      </g>
+      <g transform="translate(40 190)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">OpenAI SDK</text>
+      </g>
+      <g transform="translate(40 250)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">Telegram / Discord bot</text>
+      </g>
+    </g>
+
+    <g transform="translate(440 110)">
+      <rect width="320" height="320" rx="18" fill="url(#card5)" stroke="#2AD46F" stroke-width="2"/>
+      <text x="160" y="40" text-anchor="middle" fill="#2AD46F" font-size="12" font-weight="700" letter-spacing="1">deAPI</text>
+      <text x="160" y="92" text-anchor="middle" fill="#F9F9F9" font-size="20" font-weight="700">deapi.ai</text>
+      <line x1="40" y1="118" x2="280" y2="118" stroke="#2AD46F" stroke-opacity="0.3"/>
+      <text x="40" y="148" fill="#9DA4AE" font-size="13">→ OpenAI-compatible REST</text>
+      <text x="40" y="178" fill="#9DA4AE" font-size="13">→ Routing &amp; load balancing</text>
+      <text x="40" y="208" fill="#9DA4AE" font-size="13">→ Authentication / billing</text>
+      <text x="40" y="238" fill="#9DA4AE" font-size="13">→ Rate limiting / fairness</text>
+      <text x="40" y="268" fill="#9DA4AE" font-size="13">→ Observability</text>
+      <text x="40" y="298" fill="#9DA4AE" font-size="13">→ Stripe + crypto payments</text>
+    </g>
+
+    <g transform="translate(880 110)">
+      <rect width="240" height="320" rx="18" fill="url(#card5)" stroke="#2AD46F" stroke-opacity="0.4"/>
+      <text x="120" y="40" text-anchor="middle" fill="#2AD46F" font-size="12" font-weight="700" letter-spacing="1">GAMERHASH GPU NETWORK</text>
+      <g transform="translate(40 70)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">Gamer GPU node</text>
+      </g>
+      <g transform="translate(40 130)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">Gamer GPU node</text>
+      </g>
+      <g transform="translate(40 190)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">Gamer GPU node</text>
+      </g>
+      <g transform="translate(40 250)">
+        <rect width="160" height="46" rx="10" fill="#171A1F" stroke="#2AD46F" stroke-opacity="0.5"/>
+        <text x="80" y="29" text-anchor="middle" fill="#F9F9F9" font-size="13">… 800k+ users</text>
+      </g>
+    </g>
+  </g>
+
+  <g stroke="#2AD46F" stroke-width="2" fill="none">
+    <line x1="320" y1="270" x2="440" y2="270" marker-end="url(#arr5)"/>
+    <line x1="760" y1="270" x2="880" y2="270" marker-end="url(#arr5)"/>
+  </g>
+
+  <text x="380" y="262" text-anchor="middle" fill="#9DA4AE" font-family="Inter, system-ui, sans-serif" font-size="11">request</text>
+  <text x="820" y="262" text-anchor="middle" fill="#9DA4AE" font-family="Inter, system-ui, sans-serif" font-size="11">dispatch</text>
+
+  <text x="600" y="475" text-anchor="middle" fill="#9DA4AE" font-family="Inter, system-ui, sans-serif" font-size="13">6,000+ developers registered · text · image · video · embeddings · transcription</text>
+</svg>

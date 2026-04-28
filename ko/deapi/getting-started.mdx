@@ -1,0 +1,132 @@
+---
+title: "deAPI 시작하기"
+description: "가입, 키 발급, 첫 요청 — 5분 이내."
+---
+
+이 문서는 [deAPI](https://deapi.ai)에 대한 `chat.completions` 요청까지 0에서 작동하는 상태로 안내합니다. 5분이면 끝납니다.
+
+## 1. 가입
+
+[deapi.ai](https://deapi.ai)에 방문하여 계정을 생성하세요. 이메일 또는 소셜 로그인이 가능합니다. 평가용 무료 티어가 있으며, 첫 요청 묶음에는 카드가 필요하지 않습니다.
+
+## 2. API 키 발급
+
+대시보드에서 **API Keys**를 열고 새 키를 생성하세요. 복사하세요 — 생성 후에는 다시 볼 수 없습니다.
+
+```
+deapi_sk_live_xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+다른 시크릿과 마찬가지로 취급하세요. git에 커밋하지 말고, 클라이언트 측 코드에 붙여 넣지 마세요.
+
+## 3. Chat Completion 요청
+
+엔드포인트는 OpenAI 호환입니다. 이미 OpenAI SDK를 사용하는 코드에 그대로 적용 가능 — `base_url`만 변경하면 됩니다.
+
+<CodeGroup>
+
+```bash cURL
+curl https://api.deapi.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $DEAPI_KEY" \
+  -d '{
+    "model": "llama-3.1-8b-instruct",
+    "messages": [
+      {"role": "user", "content": "What is the GamerHash GPU network?"}
+    ]
+  }'
+```
+
+```python Python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.deapi.ai/v1",
+    api_key="<YOUR_DEAPI_KEY>",
+)
+
+resp = client.chat.completions.create(
+    model="llama-3.1-8b-instruct",
+    messages=[{"role": "user", "content": "What is the GamerHash GPU network?"}],
+)
+print(resp.choices[0].message.content)
+```
+
+```javascript Node.js
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  baseURL: "https://api.deapi.ai/v1",
+  apiKey: process.env.DEAPI_KEY,
+});
+
+const resp = await client.chat.completions.create({
+  model: "llama-3.1-8b-instruct",
+  messages: [{ role: "user", content: "What is the GamerHash GPU network?" }],
+});
+
+console.log(resp.choices[0].message.content);
+```
+
+</CodeGroup>
+
+<Note>
+엔드포인트와 정확한 모델 ID는 카탈로그가 발전함에 따라 변경될 수 있습니다. 모델과 base URL의 실시간 목록은 항상 [deAPI 대시보드](https://deapi.ai)를 참고하세요.
+</Note>
+
+## 4. 이미지 생성 시도
+
+같은 게이트웨이, 다른 엔드포인트 형식.
+
+```bash
+curl https://api.deapi.ai/v1/images/generations \
+  -H "Authorization: Bearer $DEAPI_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "flux-schnell",
+    "prompt": "A pixel-art arcade machine with neon green light",
+    "size": "1024x1024"
+  }'
+```
+
+응답에는 계정 설정에 따라 URL 또는 base64 이미지가 포함됩니다.
+
+## 5. n8n에 연결
+
+deAPI는 공식 **n8n** 노드로 제공됩니다. n8n 내부에서:
+
+1. 워크플로에 **deAPI** 노드를 추가합니다.
+2. 프롬프트가 표시되면 API 키를 붙여 넣습니다.
+3. 모델을 선택하고 입력을 구성합니다.
+
+자동화를 빠르게 프로토타이핑하는 가장 빠른 경로입니다. 코드는 없지만 네트워크에 완전히 액세스할 수 있습니다.
+
+## 아직 사용할 수 없는 것
+
+- **파인튜닝 API** — 사용자 LoRA 사용은 개발 중이며 아직 노출되지 않았습니다.
+- **OpenAI와 동등한 함수 호출** — 기본 도구/함수 사용은 일부 모델에서 지원되며, 커버리지가 확대되고 있습니다.
+- **장문 컨텍스트 프리뷰 모델** — 컨텍스트 윈도우는 기반 오픈 소스 모델과 일치합니다. 대용량 컨텍스트 모델은 오픈 생태계가 출시함에 따라 제공됩니다.
+
+로드맵 항목은 [메인 로드맵](/ko/roadmap)에 있습니다.
+
+## 가격
+
+요청당, 모델 클래스별 책정. 평가용 무료 티어. Stripe (USD) 또는 암호화폐를 통한 유료 플랜. [deapi.ai](https://deapi.ai) 대시보드에서 실시간 단위 가격을 확인할 수 있으며 — 모델 카탈로그가 발전함에 따라 변경됩니다.
+
+## 모범 사례
+
+- **채팅에는 스트리밍을 사용하세요** — 긴 completion은 스트리밍 없이는 느리게 느껴집니다. 엔드포인트는 SSE 스트리밍을 지원합니다.
+- **합리적인 `max_tokens`를 설정하세요** — 폭주하는 생성은 크레딧을 낭비합니다.
+- **임베딩을 캐싱하세요** — 임베딩 모델은 저렴하지만 반복 호출은 규모가 커지면 누적됩니다.
+- **실패를 점검하세요** — 일시적인 `503`은 보통 큐 압박을 의미하며, 백오프와 함께 재시도하세요. 지속적인 오류는 대시보드에 표시됩니다.
+
+## 다음
+
+<CardGroup cols={2}>
+  <Card title="deAPI 개요" icon="circle-info" href="/ko/deapi/overview">
+    아키텍처, 존재 이유, 대상.
+  </Card>
+  <Card title="사용 사례 — 개발자" icon="code" href="/ko/use-cases/gpu-contributors">
+    실제 빌더의 패턴.
+  </Card>
+</CardGroup>

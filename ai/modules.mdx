@@ -1,0 +1,82 @@
+---
+title: "Modules"
+description: "Every module the GamerHash AI App ships — what they do, what they cost, and what hardware they need."
+---
+
+The AI App is modular. You don't have to use all of it — open the dashboard and pick what you want. Every module runs locally on your GPU.
+
+## Text-to-Text (AI Chat)
+
+Private chat with the latest open-source language models. Pick a model from the **Model Center** and chat with no usage caps and no data sent to a third-party server.
+
+**Models available** — Llama 3 family, Qwen 3, Phi-4 (Microsoft), DeepSeek (R1, Coder), Gemma, Bielik, GPT-OSS-20B (OpenAI's open release).
+
+**VRAM** — most quantized 7B/8B models run on 8 GB. 14B–20B models recommend 16 GB+. The app shows fit estimates per model.
+
+**Use cases** — drafting, summarising, code generation, document Q&A, brainstorming. No telemetry on prompts or outputs.
+
+## Text-to-Image
+
+Generate images from prompts. Results stay locally on your PC; the app keeps a history per device.
+
+**Models available** — Stable Diffusion (multiple checkpoints), FLUX (Schnell + LoRA style packs), Sana 1.6B, Sana Sprint, HiDream, DreamShaper, Astro GHX Style LoRA.
+
+**VRAM** — 8 GB for SD 1.5 and Sana Sprint, 12 GB+ for FLUX and HiDream at higher resolutions.
+
+**Controls** — image count per prompt, quality / steps, fidelity, negative prompts, full-screen preview.
+
+**AI Image Booster** — optional paid feature (100 GHX). Improves prompt quality through a small auxiliary model.
+
+## Image / Text → Video
+
+Turn a still image or a text prompt into a short video clip, locally.
+
+**Models available** — LTX-Video (latest LTX-2.x), with regular updates as new open-source video models ship.
+
+**VRAM** — 12 GB minimum. 16 GB+ recommended for longer or higher-resolution clips.
+
+**Controls** — duration, motion bias, resolution, "video booster" prompt enhancement.
+
+## Voice — coming Q4 2026
+
+**Text-to-Speech** and **Voice Transcription** modules are on the roadmap for Q4 2026. They will run locally with the same privacy model as everything else.
+
+## Multimodal
+
+Upload images or PDFs and chat with them. Useful for document Q&A, visual analysis, and multi-page extraction. Built on multimodal LLMs supported by the Model Center.
+
+**VRAM** — 12 GB+ recommended for vision-capable models.
+
+## Earning module
+
+Opt in and your GPU joins the dispatch pool when idle. AI inference workloads from [deAPI](https://deapi.ai) consumers are routed to your machine; you're paid in **GUSD** per completed job.
+
+You can:
+- **Set hours** — only earn while you sleep, only on weekends, or always when idle.
+- **Set GPU usage cap** — leave headroom for gaming.
+- **Pause anytime** — no minimum commitment.
+
+See [Earning model](/ai/earning) for what determines per-machine yield.
+
+## Model Center
+
+The hub inside the app for browsing, downloading, and switching models. Indicates VRAM fit for your hardware. New models land here regularly — recently: GPT-OSS-20B, Llama 3.x updates, FLUX LoRA style packs.
+
+## Coming soon
+
+- **Custom model uploads** — drop your own LoRA or fine-tune into the app.
+- **Multimodal upgrades** — better image+document understanding, video Q&A.
+- **TTS / transcription** — full local voice pipeline.
+
+See the [roadmap](/roadmap) for the latest delivery log.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
+    Which modules run on your GPU.
+  </Card>
+  <Card title="Earning model" icon="coins" href="/ai/earning">
+    What you make per workload, and how to pull GUSD out.
+  </Card>
+</CardGroup>

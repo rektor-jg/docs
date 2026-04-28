@@ -1,0 +1,132 @@
+---
+title: "deAPI getting started"
+description: "Sign up, get a key, make your first request — in under five minutes."
+---
+
+This walks you from zero to a working `chat.completions` request against [deAPI](https://deapi.ai). You'll be done in five minutes.
+
+## 1. Sign up
+
+Go to [deapi.ai](https://deapi.ai) and create an account. Email or social login. There's a free tier for evaluation — no card needed for the first batch of requests.
+
+## 2. Get an API key
+
+In the dashboard, open **API Keys** and create a new key. Copy it — you can't view it again after creation.
+
+```
+deapi_sk_live_xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Treat it like any other secret: never commit to git, never paste into client-side code.
+
+## 3. Make a chat completion
+
+The endpoint is OpenAI-compatible. Drop-in for any code already using the OpenAI SDK — just change `base_url`.
+
+<CodeGroup>
+
+```bash cURL
+curl https://api.deapi.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $DEAPI_KEY" \
+  -d '{
+    "model": "llama-3.1-8b-instruct",
+    "messages": [
+      {"role": "user", "content": "What is the GamerHash GPU network?"}
+    ]
+  }'
+```
+
+```python Python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.deapi.ai/v1",
+    api_key="<YOUR_DEAPI_KEY>",
+)
+
+resp = client.chat.completions.create(
+    model="llama-3.1-8b-instruct",
+    messages=[{"role": "user", "content": "What is the GamerHash GPU network?"}],
+)
+print(resp.choices[0].message.content)
+```
+
+```javascript Node.js
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  baseURL: "https://api.deapi.ai/v1",
+  apiKey: process.env.DEAPI_KEY,
+});
+
+const resp = await client.chat.completions.create({
+  model: "llama-3.1-8b-instruct",
+  messages: [{ role: "user", content: "What is the GamerHash GPU network?" }],
+});
+
+console.log(resp.choices[0].message.content);
+```
+
+</CodeGroup>
+
+<Note>
+The endpoint and exact model IDs are subject to change as the catalogue evolves. Always reference the [deAPI dashboard](https://deapi.ai) for the live list of models and base URL.
+</Note>
+
+## 4. Try image generation
+
+Same gateway, different endpoint shape:
+
+```bash
+curl https://api.deapi.ai/v1/images/generations \
+  -H "Authorization: Bearer $DEAPI_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "flux-schnell",
+    "prompt": "A pixel-art arcade machine with neon green light",
+    "size": "1024x1024"
+  }'
+```
+
+The response includes a URL or base64 image, depending on your account preferences.
+
+## 5. Hook it up to n8n
+
+deAPI ships as an official **n8n** node. Inside n8n:
+
+1. Add the **deAPI** node to your workflow.
+2. Paste your API key when prompted.
+3. Pick the model and configure inputs.
+
+This is the fastest path if you're prototyping an automation. No code, but full network access.
+
+## What's not available yet
+
+- **Fine-tuning APIs** — bring-your-own LoRA is in development; not yet exposed.
+- **Function calling at parity with OpenAI** — basic tool/function use is supported on selected models; coverage is expanding.
+- **Long-context preview models** — context windows match the underlying open-source model. Big-context models are arriving as the open ecosystem ships them.
+
+Roadmap items live in the [main roadmap](/roadmap).
+
+## Pricing
+
+Per-request, by model class. Free tier for evaluation. Paid plans via Stripe (USD) or crypto. The dashboard at [deapi.ai](https://deapi.ai) shows live unit pricing — it changes as the model catalogue evolves.
+
+## Best practices
+
+- **Use streaming for chat** — long completions feel laggier without it. The endpoint supports SSE streaming.
+- **Set reasonable `max_tokens`** — runaway generations waste credit.
+- **Cache embeddings** — the embedding model is cheap, but repeated calls add up at scale.
+- **Inspect failures** — transient `503`s usually mean queue pressure; retry with backoff. Persistent errors are surfaced in the dashboard.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="deAPI overview" icon="circle-info" href="/deapi/overview">
+    Architecture, why it exists, who it's for.
+  </Card>
+  <Card title="Use cases — Developers" icon="code" href="/use-cases/gpu-contributors">
+    Patterns from real builders.
+  </Card>
+</CardGroup>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#171A1F"/>
+      <stop offset="100%" stop-color="#0B1714"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2230"/>
+      <stop offset="100%" stop-color="#0F1419"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="520" fill="url(#bg2)"/>
+  <text x="600" y="50" text-anchor="middle" fill="#F9F9F9" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700">GamerHash AI App modules</text>
+
+  <g transform="translate(60 100)" font-family="Inter, system-ui, sans-serif">
+    <rect width="260" height="180" rx="18" fill="url(#card2)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="22" fill="#2AD46F" fill-opacity="0.18" stroke="#2AD46F" stroke-width="1.5"/>
+    <path d="M40 50 H60 M44 44 H56 M44 56 H56" stroke="#2AD46F" stroke-width="2" stroke-linecap="round"/>
+    <text x="20" y="100" fill="#F9F9F9" font-size="18" font-weight="700">Text-to-Text</text>
+    <text x="20" y="124" fill="#9DA4AE" font-size="12">Private AI chat with</text>
+    <text x="20" y="142" fill="#9DA4AE" font-size="12">Llama, Qwen, Phi-4,</text>
+    <text x="20" y="160" fill="#9DA4AE" font-size="12">DeepSeek, Bielik, GPT-OSS</text>
+  </g>
+
+  <g transform="translate(345 100)" font-family="Inter, system-ui, sans-serif">
+    <rect width="260" height="180" rx="18" fill="url(#card2)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="22" fill="#2AD46F" fill-opacity="0.18" stroke="#2AD46F" stroke-width="1.5"/>
+    <rect x="40" y="40" width="20" height="20" rx="3" stroke="#2AD46F" stroke-width="2" fill="none"/>
+    <circle cx="46" cy="46" r="2" fill="#2AD46F"/>
+    <path d="M40 56 L48 50 L60 60" stroke="#2AD46F" stroke-width="2" fill="none"/>
+    <text x="20" y="100" fill="#F9F9F9" font-size="18" font-weight="700">Text-to-Image</text>
+    <text x="20" y="124" fill="#9DA4AE" font-size="12">Stable Diffusion, FLUX,</text>
+    <text x="20" y="142" fill="#9DA4AE" font-size="12">Sana, HiDream + LoRA</text>
+    <text x="20" y="160" fill="#9DA4AE" font-size="12">style packs</text>
+  </g>
+
+  <g transform="translate(630 100)" font-family="Inter, system-ui, sans-serif">
+    <rect width="260" height="180" rx="18" fill="url(#card2)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="22" fill="#2AD46F" fill-opacity="0.18" stroke="#2AD46F" stroke-width="1.5"/>
+    <polygon points="44,40 44,60 62,50" fill="#2AD46F"/>
+    <text x="20" y="100" fill="#F9F9F9" font-size="18" font-weight="700">Image / Text → Video</text>
+    <text x="20" y="124" fill="#9DA4AE" font-size="12">LTX-Video and the</text>
+    <text x="20" y="142" fill="#9DA4AE" font-size="12">latest open-source video</text>
+    <text x="20" y="160" fill="#9DA4AE" font-size="12">models, fully on-device</text>
+  </g>
+
+  <g transform="translate(915 100)" font-family="Inter, system-ui, sans-serif">
+    <rect width="225" height="180" rx="18" fill="url(#card2)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="22" fill="#2AD46F" fill-opacity="0.18" stroke="#2AD46F" stroke-width="1.5"/>
+    <path d="M50 36 V62 M40 44 V56 M60 44 V56" stroke="#2AD46F" stroke-width="3" stroke-linecap="round"/>
+    <text x="20" y="100" fill="#F9F9F9" font-size="18" font-weight="700">Voice</text>
+    <text x="20" y="124" fill="#9DA4AE" font-size="12">Text-to-speech and</text>
+    <text x="20" y="142" fill="#9DA4AE" font-size="12">voice transcription</text>
+    <text x="20" y="160" fill="#9DA4AE" font-size="12">(coming Q4 2026)</text>
+  </g>
+
+  <g transform="translate(60 320)" font-family="Inter, system-ui, sans-serif">
+    <rect width="545" height="160" rx="18" fill="url(#card2)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="22" fill="#2AD46F" fill-opacity="0.18" stroke="#2AD46F" stroke-width="1.5"/>
+    <rect x="42" y="42" width="16" height="16" rx="3" stroke="#2AD46F" stroke-width="2" fill="none"/>
+    <line x1="42" y1="50" x2="58" y2="50" stroke="#2AD46F" stroke-width="2"/>
+    <text x="20" y="100" fill="#F9F9F9" font-size="18" font-weight="700">Multimodal</text>
+    <text x="20" y="124" fill="#9DA4AE" font-size="12">Upload images or PDFs and chat about them. Document Q&amp;A,</text>
+    <text x="20" y="142" fill="#9DA4AE" font-size="12">visual reasoning — all running locally on your own GPU.</text>
+  </g>
+
+  <g transform="translate(630 320)" font-family="Inter, system-ui, sans-serif">
+    <rect width="510" height="160" rx="18" fill="url(#card2)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="22" fill="#2AD46F" fill-opacity="0.18" stroke="#2AD46F" stroke-width="1.5"/>
+    <path d="M40 50 L46 56 L60 42" stroke="#2AD46F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <text x="20" y="100" fill="#F9F9F9" font-size="18" font-weight="700">Earning module</text>
+    <text x="20" y="124" fill="#9DA4AE" font-size="12">Share idle GPU power for AI workloads on the GamerHash</text>
+    <text x="20" y="142" fill="#9DA4AE" font-size="12">DePIN. Get paid in GUSD; convert to GHX, USDC, or store credit.</text>
+  </g>
+</svg>

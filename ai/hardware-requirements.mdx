@@ -1,0 +1,65 @@
+---
+title: "Hardware requirements"
+description: "What GPU runs what — minimum specs, recommended specs, and module-by-module fit."
+---
+
+import { Win } from '/snippets/chains.mdx'
+
+The AI App is GPU-bound. CPU and RAM matter less; what determines whether a model runs is **VRAM** and the **GPU generation**.
+
+## Minimum
+
+- **OS** — <Win /> 10 (22H2+) or 11
+- **GPU** — NVIDIA RTX series with **8 GB VRAM** (e.g., RTX 3060, 4060, 5060)
+- **Driver** — recent NVIDIA studio or game-ready driver. The app warns if too old.
+- **Disk** — ~30 GB free for downloaded models (more if you keep many in the Model Center)
+- **Network** — broadband; model downloads are large but one-off
+
+8 GB unlocks: AI Chat (7B/8B quantized models), Stable Diffusion 1.5 / Sana Sprint, basic earning workloads.
+
+## Recommended
+
+- **GPU** — RTX 4070 / 5070 or better, **12–16 GB VRAM**
+- 12 GB unlocks: 14B chat models, FLUX image generation, LTX-Video at 480p.
+- 16 GB+ unlocks: 20B chat models (GPT-OSS-20B), high-res FLUX, longer LTX-Video clips, multimodal vision.
+
+## High-end
+
+- **GPU** — RTX 4090 / 5090 / Blackwell pro cards, **24 GB+ VRAM**
+- Full Model Center access, highest-paying earning workloads, video at higher resolution / duration.
+
+## What's not supported
+
+- AMD GPUs in the AI App today (some experimental builds exist; default install is NVIDIA-only).
+- macOS (the AI App is Windows-only; the [Mobile app](/apps/mobile) is on iOS/Android but for account management, not local AI).
+- Linux — same as macOS for the AI App. Server-side roles via deAPI are different — see [deAPI](/deapi/overview).
+- iGPUs — integrated graphics don't have enough VRAM.
+
+## Fit by module
+
+| Module | Min VRAM | Recommended |
+| --- | --- | --- |
+| Text-to-Text (chat, 7B/8B quant) | 8 GB | 12 GB+ |
+| Text-to-Text (14B–20B) | 12 GB | 16 GB+ |
+| Text-to-Image (SD, Sana Sprint) | 8 GB | 12 GB |
+| Text-to-Image (FLUX, HiDream) | 12 GB | 16 GB+ |
+| Image / Text → Video (LTX-Video) | 12 GB | 16 GB+ |
+| Multimodal (vision LLMs) | 12 GB | 16 GB+ |
+| Earning module | 8 GB | 12 GB+ for higher-pay workloads |
+
+The Model Center inside the app shows live fit estimates per model on your hardware.
+
+## Upgrading mid-stream
+
+You can switch GPUs without re-creating your account. The AI App detects the new card on next start and re-runs the benchmark. GHXP and account state carry over.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Modules" icon="layer-group" href="/ai/modules">
+    Match modules to what your GPU can run.
+  </Card>
+  <Card title="Earning model" icon="coins" href="/ai/earning">
+    What workloads pay more, and how to read the queue.
+  </Card>
+</CardGroup>

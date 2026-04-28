@@ -1,14 +1,65 @@
 ---
-title: "GamerHash Experience Points (GHXP)"
-description: "Earn GHXP through AI activity."
+title: "GHXP — engagement multiplier"
+description: "How GamerHash Experience Points work, what they unlock, and why holding GHX accelerates them."
 ---
 
-The GHXP reward system involves monitoring the application's runtime and rewarding the user accordingly. Depending on whether the application is running or not, GHXP accumulate. Once an hour, points are automatically credited to the user's account. Within the hour, points accrue and are labeled as ‘Pending’. If the user closes the application before the hour is up, ‘Pending’ points will be lost. GHXP are awarded for every minute the application runs, even when running in the background. Points accumulate and the more points are accumulated, the greater the chance of winning or receiving more shares in airdrops.
+**GHXP (GamerHash Experience Points)** is an in-app reputation system. It is **not a token** — there's no contract, no liquidity, no transferability. It's a multiplier on the rewards you earn from sharing GPU power, plus a key to community programs.
 
-Airdrops based on the number of GHXP amounts occur regularly and are awarded in the form of GHX tokens.
+<Frame>
+  <img src="/images/ghxp-flow.svg" alt="GHXP flow: run the app to accrue points each minute, hold GHX in MetaMask to activate the boost, higher GHXP increases earning rank, the result is more GHX per workload." />
+</Frame>
 
-The main goal of this module is to encourage users to connect their devices to GamerHash AI, allowing us to understand the size of the user pool we have.
+## How GHXP accrues
 
-Points can also be obtained by completing surveys. Upon returning to the application, users have the opportunity to fill out a survey for additional points (currently 2000 GHXP).
+- **Every minute** the AI App is running, you accrue GHXP.
+- Points appear as **Pending** during the active hour and are **credited to your account** at the top of each hour. Closing the app before the hour completes drops the pending points for that hour.
+- Background runs count — the app does not need to be in the foreground.
+- Surveys and one-off in-app activities (e.g., trying a new module, completing onboarding) award additional GHXP.
 
-![](https://docs.gamercoin.com/gamercoin-ghx-documentation-1/~gitbook/image?url=https%3A%2F%2F2362937230-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F4tvJXnu8OfosPPFIV3jX%252Fuploads%252FzqEAgnJNwZMIKv1kM81l%252FFrame%25202609411.png%3Falt%3Dmedia%26token%3D31b2d482-72bd-4ccd-b428-89fd60bf68ff&width=768&dpr=3&quality=100&sign=5657cb64&sv=2)
+## The GHX Boost
+
+GHX held in **MetaMask** under the same account that runs the AI App **multiplies** GHXP accrual. The more GHX you hold, the higher the multiplier — capped, but meaningful.
+
+- Boost is checked periodically and applied automatically.
+- You don't lock or stake the GHX for the boost — it just has to be in the wallet you've connected.
+- Boost stacks with the engagement-time bonus.
+
+## Why it exists
+
+GHXP isn't convertible to GHX. It's a **multiplier on your share of the reward pool**. Two contributors with identical GPUs can earn very different amounts if one has run the app for months and one started yesterday — that's by design. It rewards consistency over speculation.
+
+GHXP also unlocks:
+
+- **Higher reward rank** when revenue is distributed to contributors.
+- **Eligibility** for airdrops, contests, and community programs.
+- **Visibility** in leaderboards (opt-in, by display name).
+
+## What GHXP is *not*
+
+- Not a token. No contract address. No market price.
+- Not transferable. Tied to your GamerHash account.
+- Not directly convertible. You don't trade GHXP for GHX — you use it to earn *more* GHX per workload.
+
+## How to maximise it
+
+1. **Run the app continuously when idle.** A pause loses pending GHXP for that hour.
+2. **Hold GHX in MetaMask** for the boost.
+3. **Use new modules** as they launch — onboarding tasks usually award one-off GHXP.
+4. **Complete in-app surveys** when offered (typically 2,000 GHXP).
+
+## Watch out for
+
+- Closing the app mid-hour discards that hour's pending points. Schedule restarts at the hour boundary.
+- The boost reads on-chain GHX in **MetaMask only** for now. Other wallet integrations are tracked on the roadmap.
+- GHXP is per-account, not per-machine. Running multiple machines on the same account is fine — the points accumulate together.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Earning model" icon="coins" href="/ai/earning">
+    How GHXP rank translates into GUSD payouts.
+  </Card>
+  <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
+    What GPU gets which workloads.
+  </Card>
+</CardGroup>

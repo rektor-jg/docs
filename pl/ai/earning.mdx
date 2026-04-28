@@ -1,0 +1,74 @@
+---
+title: "Model zarobków"
+description: "Jak płaci udostępnianie GPU — GUSD za zadanie, mnożniki GHXP i co zrobić z kredytem."
+---
+
+Moduł zarobkowy zamienia aplikację AI z darmowej, lokalnej stacji roboczej AI w dodatkowe źródło dochodu. Włączasz raz; resztę robi sieć.
+
+<Frame>
+  <img src="/images/earning-flow.svg" alt="Przepływ zarobków: bezczynne GPU dostaje zadanie AI, kończy inferencję, dostaje wypłatę w GUSD, ranga GHXP mnoży nagrodę, a użytkownik może zamienić na GHX, wypłacić USDC albo wydać w sklepie." />
+</Frame>
+
+## Mechanika
+
+1. **Włączasz moduł** — aktywujesz moduł zarobkowy. Ustawiasz godziny / limit użycia GPU, jeśli chcesz.
+2. **Sieć przekierowuje zadanie** — tekst, obraz, wideo, embedding, transkrypcja. Cokolwiek mieści się w twoim VRAM i jest w kolejce.
+3. **Twoje GPU je uruchamia** — zazwyczaj sekundy do kilku minut na zadanie, zależnie od typu.
+4. **Dostajesz wypłatę w GUSD** — księgowane na portfelu w aplikacji po zakończeniu. 1 GUSD ≈ 1 USD.
+5. **Ranga GHXP mnoży nagrodę** — to samo zadanie płaci więcej kontrybutorom z wyższą rangą.
+
+## Co decyduje o yieldzie z maszyny
+
+Yield zależy od kilku zmiennych — nie wszystkich pod twoją kontrolą:
+
+- **Klasa GPU & VRAM** — 4080 odblokowuje wyżej płatne klasy zadań niż 3060.
+- **Uptime** — więcej godzin online = więcej dopasowanych zadań.
+- **Ranga GHXP** — długo działające konta z GHX zarabiają więcej za zadanie.
+- **Popyt sieci** — wypłaty skalują się z wolumenem deAPI. Wraz ze wzrostem popytu rosną wypłaty kontrybutorów.
+- **Region / latencja** — niektóre zadania mają preferencje geograficzne dla dyspozycji o niskiej latencji.
+
+Dashboard w aplikacji AI pokazuje na żywo zarobki na godzinę i historyczne sumy.
+
+## Co możesz zrobić z GUSD
+
+GUSD to wirtualna waluta wewnątrz platformy — pegowana 1:1 do USD. Trzy drogi wyjścia:
+
+<CardGroup cols={3}>
+  <Card title="Zamień na GHX" icon="arrow-right-arrow-left">
+    HODL na Ethereum, BNB Chain albo Solanie. Stake albo LP dla nawet 25% APR — zobacz [dokumentację stakingu GHX](https://docs.gamercoin.com/tokenomics/staking).
+  </Card>
+  <Card title="Wypłać USDC" icon="building-columns">
+    Na Binance przez integrację. Wewnętrzny transfer bez opłat GamerHash.
+  </Card>
+  <Card title="Wydaj w Sklepie" icon="cart-shopping">
+    600+ dóbr cyfrowych — gry, karty podarunkowe, kupony prepaid. Zobacz [Sklep](/pl/apps/store).
+  </Card>
+</CardGroup>
+
+## Czym to *nie jest*
+
+- **To nie mining.** Brak PoW, brak hash rate'ów, brak strojenia algorytmu. Platforma serwuje zadania inferencji AI.
+- **To nie trading krypto.** GUSD to stabilny kredyt równoważny USD; konwersja na GHX jest opcjonalna.
+- **To nie gwarantowane.** Yield zależy od popytu. Nie ma stałych APR po stronie zarobkowej — APR istnieje tylko po stronie [stakingu](https://docs.gamercoin.com/tokenomics/staking).
+
+## Bonus na start
+
+Przez pierwsze **30 dni** od rejestracji nowi kontrybutorzy zatrzymują **100% zaksięgowanych zarobków**. Po 30 dniach obowiązuje standardowy udział oparty na randze — aktualne stawki w dashboardzie aplikacji.
+
+## Wskazówki optymalizacyjne
+
+- **Uruchamiaj aplikację bez przerwy** — większość wypłat pochodzi z bycia online, gdy przychodzi zadanie.
+- **Trzymaj trochę GHX** dla GHXP Boost (zobacz [GHXP](/pl/ai/ghxp)).
+- **Nie konkuruj z sesjami gamingowymi** — ustaw limit użycia GPU, żeby aplikacja nie walczyła z grą o VRAM.
+- **Aktualizuj driver i aplikację** — usprawnienia wydajności wychodzą bez przerwy; przestarzałe stacki tracą zadania.
+
+## Dalej
+
+<CardGroup cols={2}>
+  <Card title="Wymagania sprzętowe" icon="microchip" href="/pl/ai/hardware-requirements">
+    Do których zadań kwalifikuje się twoje GPU.
+  </Card>
+  <Card title="Prywatność" icon="shield" href="/pl/ai/privacy">
+    Co jest przesyłane, co jest logowane, co zostaje lokalnie.
+  </Card>
+</CardGroup>

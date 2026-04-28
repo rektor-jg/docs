@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#171A1F"/>
+      <stop offset="100%" stop-color="#0B1714"/>
+    </linearGradient>
+    <linearGradient id="card3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2230"/>
+      <stop offset="100%" stop-color="#0F1419"/>
+    </linearGradient>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2AD46F"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="480" fill="url(#bg3)"/>
+  <text x="600" y="48" text-anchor="middle" fill="#F9F9F9" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700">GHXP — the engagement multiplier</text>
+
+  <g font-family="Inter, system-ui, sans-serif">
+    <g transform="translate(80 110)">
+      <rect width="220" height="220" rx="18" fill="url(#card3)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+      <text x="110" y="38" text-anchor="middle" fill="#2AD46F" font-size="12" font-weight="700" letter-spacing="1">STEP 1</text>
+      <text x="110" y="76" text-anchor="middle" fill="#F9F9F9" font-size="17" font-weight="700">Run the AI App</text>
+      <text x="110" y="116" text-anchor="middle" fill="#9DA4AE" font-size="12">Each minute the app</text>
+      <text x="110" y="134" text-anchor="middle" fill="#9DA4AE" font-size="12">is online accrues GHXP</text>
+      <text x="110" y="160" text-anchor="middle" fill="#9DA4AE" font-size="12">— credited hourly to</text>
+      <text x="110" y="178" text-anchor="middle" fill="#9DA4AE" font-size="12">your account.</text>
+    </g>
+
+    <g transform="translate(360 110)">
+      <rect width="220" height="220" rx="18" fill="url(#card3)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+      <text x="110" y="38" text-anchor="middle" fill="#2AD46F" font-size="12" font-weight="700" letter-spacing="1">STEP 2</text>
+      <text x="110" y="76" text-anchor="middle" fill="#F9F9F9" font-size="17" font-weight="700">Hold GHX in MetaMask</text>
+      <text x="110" y="116" text-anchor="middle" fill="#9DA4AE" font-size="12">GHX in your wallet</text>
+      <text x="110" y="134" text-anchor="middle" fill="#9DA4AE" font-size="12">activates the GHXP</text>
+      <text x="110" y="160" text-anchor="middle" fill="#9DA4AE" font-size="12">Boost — the more GHX,</text>
+      <text x="110" y="178" text-anchor="middle" fill="#9DA4AE" font-size="12">the higher the multiplier.</text>
+    </g>
+
+    <g transform="translate(640 110)">
+      <rect width="220" height="220" rx="18" fill="url(#card3)" stroke="#2AD46F" stroke-opacity="0.45" stroke-width="1.5"/>
+      <text x="110" y="38" text-anchor="middle" fill="#2AD46F" font-size="12" font-weight="700" letter-spacing="1">STEP 3</text>
+      <text x="110" y="76" text-anchor="middle" fill="#F9F9F9" font-size="17" font-weight="700">Earning ranks scale</text>
+      <text x="110" y="116" text-anchor="middle" fill="#9DA4AE" font-size="12">Higher GHXP = higher</text>
+      <text x="110" y="134" text-anchor="middle" fill="#9DA4AE" font-size="12">share of the GPU-sharing</text>
+      <text x="110" y="160" text-anchor="middle" fill="#9DA4AE" font-size="12">reward pool. GHXP is not</text>
+      <text x="110" y="178" text-anchor="middle" fill="#9DA4AE" font-size="12">convertible — it's a multiplier.</text>
+    </g>
+
+    <g transform="translate(920 110)">
+      <rect width="220" height="220" rx="18" fill="url(#card3)" stroke="#2AD46F" stroke-width="2"/>
+      <text x="110" y="38" text-anchor="middle" fill="#2AD46F" font-size="12" font-weight="700" letter-spacing="1">RESULT</text>
+      <text x="110" y="76" text-anchor="middle" fill="#F9F9F9" font-size="17" font-weight="700">More GHX per workload</text>
+      <text x="110" y="116" text-anchor="middle" fill="#9DA4AE" font-size="12">Same GPU, higher rank,</text>
+      <text x="110" y="134" text-anchor="middle" fill="#9DA4AE" font-size="12">more value back. Plus access</text>
+      <text x="110" y="160" text-anchor="middle" fill="#9DA4AE" font-size="12">to airdrops, perks, and</text>
+      <text x="110" y="178" text-anchor="middle" fill="#9DA4AE" font-size="12">community programs.</text>
+    </g>
+  </g>
+
+  <g stroke="#2AD46F" stroke-width="2" fill="none">
+    <line x1="300" y1="220" x2="360" y2="220" marker-end="url(#arrow3)"/>
+    <line x1="580" y1="220" x2="640" y2="220" marker-end="url(#arrow3)"/>
+    <line x1="860" y1="220" x2="920" y2="220" marker-end="url(#arrow3)"/>
+  </g>
+
+  <g transform="translate(80 372)" font-family="Inter, system-ui, sans-serif">
+    <rect width="1060" height="68" rx="14" fill="url(#card3)" stroke="#2AD46F" stroke-opacity="0.6" stroke-width="1.5"/>
+    <text x="530" y="32" text-anchor="middle" fill="#9DA4AE" font-size="13">GHXP rewards consistent activity. The longer you stay engaged, the larger your share of the pool —</text>
+    <text x="530" y="52" text-anchor="middle" fill="#9DA4AE" font-size="13">a gentle, time-weighted incentive instead of a sprint for short-term yield.</text>
+  </g>
+</svg>
