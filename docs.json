@@ -247,7 +247,7 @@
       }
     ],
     "primary": {
-      "type": "link",
+      "type": "button",
       "label": "Download App",
       "href": "https://gamerhash.com/en/app-download"
     }
