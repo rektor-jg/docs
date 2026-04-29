@@ -1,74 +1,67 @@
 ---
 title: "Modules"
-description: "Every module the GamerHash AI App ships — what they do, what they cost, and what hardware they need."
+description: "Every module the GamerHash AI App ships and what each one does."
 ---
 
 The AI App is modular. You don't have to use all of it — open the dashboard and pick what you want. Every module runs locally on your GPU.
 
-## Text-to-Text (AI Chat)
-
-Private chat with the latest open-source language models. Pick a model from the **Model Center** and chat with no usage caps and no data sent to a third-party server.
-
-**Models available** — Llama 3 family, Qwen 3, Phi-4 (Microsoft), DeepSeek (R1, Coder), Gemma, Bielik, GPT-OSS-20B (OpenAI's open release).
-
-**VRAM** — most quantized 7B/8B models run on 8 GB. 14B–20B models recommend 16 GB+. The app shows fit estimates per model.
-
-**Use cases** — drafting, summarising, code generation, document Q&A, brainstorming. No telemetry on prompts or outputs.
-
-## Text-to-Image
-
-Generate images from prompts. Results stay locally on your PC; the app keeps a history per device.
-
-**Models available** — Stable Diffusion (multiple checkpoints), FLUX (Schnell + LoRA style packs), Sana 1.6B, Sana Sprint, HiDream, DreamShaper, Astro GHX Style LoRA.
-
-**VRAM** — 8 GB for SD 1.5 and Sana Sprint, 12 GB+ for FLUX and HiDream at higher resolutions.
-
-**Controls** — image count per prompt, quality / steps, fidelity, negative prompts, full-screen preview.
-
-**AI Image Booster** — optional paid feature (100 GHX). Improves prompt quality through a small auxiliary model.
-
-## Image / Text → Video
-
-Turn a still image or a text prompt into a short video clip, locally.
-
-**Models available** — LTX-Video (latest LTX-2.x), with regular updates as new open-source video models ship.
-
-**VRAM** — 12 GB minimum. 16 GB+ recommended for longer or higher-resolution clips.
-
-**Controls** — duration, motion bias, resolution, "video booster" prompt enhancement.
-
-## Voice — coming Q4 2026
-
-**Text-to-Speech** and **Voice Transcription** modules are on the roadmap for Q4 2026. They will run locally with the same privacy model as everything else.
-
-## Multimodal
-
-Upload images or PDFs and chat with them. Useful for document Q&A, visual analysis, and multi-page extraction. Built on multimodal LLMs supported by the Model Center.
-
-**VRAM** — 12 GB+ recommended for vision-capable models.
-
 ## Earning module
 
-Opt in and your GPU joins the dispatch pool when idle. AI inference workloads from [deAPI](https://deapi.ai) consumers are routed to your machine; you're paid in **GUSD** per completed job.
+Opt in and your GPU joins the dispatch pool when idle. AI inference workloads are routed to your machine; you're paid in **GUSD** per completed job.
 
-You can:
-- **Set hours** — only earn while you sleep, only on weekends, or always when idle.
-- **Set GPU usage cap** — leave headroom for gaming.
-- **Pause anytime** — no minimum commitment.
+- **Earn while idle.** Workloads use the full GPU and VRAM; launching a game pushes the module out automatically. Just leave it on whenever you're not gaming.
+- **Pause anytime.** No minimum commitment — toggle off in the sidebar.
 
 See [Earning model](/ai/earning) for what determines per-machine yield.
 
+## Home module
+
+The dashboard that runs in the background and ties your account to network rewards.
+
+- **GHXP accrual** — every minute the app is running, you accrue GHXP. Pending points credit at the top of each hour. Hold GHX in MetaMask or your in-app wallet to multiply the rate.
+- **Seasons** — every two months, lock your accumulated GHXP to claim a proportional share of the season's GHX pool.
+- **Account status** — current GHXP, level, season standing, and connected wallets, all on one screen.
+
+See [GHXP — engagement multiplier](/ai/ghxp) for the full mechanics.
+
+## Image
+
+| Module | What it does | Models |
+| --- | --- | --- |
+| **Text-to-Image** | Generate images from prompts. Results stay locally; the app keeps a history per device. | Flux.1 dev, FLUX.1 Schnell 12B, FLUX.2 Klein 4B, Z-Image-Turbo, Sana Sprint 0.6B / 1.6B |
+| **Image Edit** | Edit an existing image with a text instruction — change a subject, swap a background, restyle, inpaint. | Qwen-Image-Edit Plus |
+| **Image Upscale** | Increase resolution of an existing image without re-prompting. | RealESRGAN x2 / x4 |
+| **Background Removal** | Cut subjects out — clean alpha output for compositing or transparent assets. | Ben2 |
+
+**AI Image Booster** — optional GHX-gated feature on Text-to-Image that improves prompt quality through a small auxiliary model.
+
+## Video
+
+| Module | What it does | Models |
+| --- | --- | --- |
+| **Image / Text / Audio → Video** | Turn a still image, a text prompt, or an audio track into a short video clip. | LTX-2.3 22B Distilled, LTX-2 19B Distilled, LTX-Video 0.9.8 13B |
+| **Video Upscale** | Increase resolution of an existing video clip. | FlashVSR Tiny, RealESRGAN Video x2 / x4 |
+| **Video Replace / Animate** | Animate or replace a subject in an existing video — swap a character, drive motion from a reference, restyle the action. | Wan2.2-Animate 14B |
+
+## Voice & Audio
+
+| Module | What it does | Models |
+| --- | --- | --- |
+| **Text-to-Speech** | Generate speech from text — design a custom voice, clone an existing one, or use a default. | Qwen3 TTS (VoiceDesign / VoiceClone / CustomVoice), Chatterbox, Kokoro |
+| **Voice & Audio Transcription** | Transcribe speech to text from audio or video — files or live streams. | Whisper Large V3 |
+| **Text-to-Music** | Generate music tracks from a text prompt — game soundtracks, ambient backgrounds, prototyping. | ACE-Step 1.5 (Base / Turbo + XL variants) |
+
+## Text & Documents
+
+| Module | What it does | Models |
+| --- | --- | --- |
+| **AI Chat** | Private chat with the latest open-source language models. No usage caps; nothing sent to a third-party server. | Pick from the Model Center |
+| **OCR / Document Extraction** | Extract text from images and scanned documents — receipts, screenshots, photos of pages. | Nanonets OCR S |
+| **Embeddings** | Generate vector embeddings from text — for retrieval, RAG pipelines, or local semantic search. | BGE M3 |
+
 ## Model Center
 
-The hub inside the app for browsing, downloading, and switching models. Indicates VRAM fit for your hardware. New models land here regularly — recently: GPT-OSS-20B, Llama 3.x updates, FLUX LoRA style packs.
-
-## Coming soon
-
-- **Custom model uploads** — drop your own LoRA or fine-tune into the app.
-- **Multimodal upgrades** — better image+document understanding, video Q&A.
-- **TTS / transcription** — full local voice pipeline.
-
-See the [roadmap](/roadmap) for the latest delivery log.
+The hub inside the app for browsing, downloading, and switching models. Indicates VRAM fit for your hardware. New models land here regularly as the open-source ecosystem ships them.
 
 ## Next
 

@@ -1,57 +1,80 @@
 ---
 title: "Hardware requirements"
-description: "What GPU runs what — minimum specs, recommended specs, and module-by-module fit."
+description: "Two badges, two bars — AI READY for running models locally, AI OPTIMAL for earning by sharing GPU power."
 ---
 
 import { Win } from '/snippets/chains.mdx'
 
-The AI App is GPU-bound. CPU and RAM matter less; what determines whether a model runs is **VRAM** and the **GPU generation**.
+The AI App has two distinct use cases, and they have different hardware bars:
 
-## Minimum
+- **AI READY** — run AI models locally (chat, image, video, voice) on your own GPU.
+- **AI OPTIMAL** — also accept network earning workloads to your machine and get paid in GUSD.
+
+<Frame>
+  <img src="/images/hardware-tiers.png" alt="VRAM tier ladder: 8 GB and 12 GB qualify for AI READY (local models only); 16 GB and 24 GB+ also qualify for AI OPTIMAL (earn from network workloads). Each tier shows what models unlock — entry chat models and image generation at 8 GB, 14B chat and FLUX at 12 GB, 20B chat and video replace at 16 GB, full Model Center at 24 GB+." />
+</Frame>
+
+Check your exact rig against both badges in the official [GamerHash profit calculator](https://gamerhash.com/en/calculator) before you buy.
+
+## AI READY — run models locally
+
+Lower bar. If you can run modern AAA games at 1080p, you can run local AI.
 
 - **OS** — <Win /> 10 (22H2+) or 11
-- **GPU** — NVIDIA RTX series with **8 GB VRAM** (e.g., RTX 3060, 4060, 5060)
-- **Driver** — recent NVIDIA studio or game-ready driver. The app warns if too old.
-- **Disk** — ~30 GB free for downloaded models (more if you keep many in the Model Center)
-- **Network** — broadband; model downloads are large but one-off
+- **GPU** — NVIDIA RTX with **8 GB+ VRAM** (RTX 3060, 4060, 5060 and up)
+- **RAM** — 16 GB
+- **CPU** — modern x86-64 (Intel 8th gen / AMD Ryzen 2000 or newer)
+- **Driver** — recent NVIDIA studio or game-ready driver
+- **Disk** — ~30 GB free for downloaded models
 
-8 GB unlocks: AI Chat (7B/8B quantized models), Stable Diffusion 1.5 / Sana Sprint, basic earning workloads.
+The more VRAM you have, the bigger the local model you can load:
 
-## Recommended
+| VRAM | Modules unlocked |
+| --- | --- |
+| **8 GB** | AI Chat (7B/8B quantized), Sana Sprint, FLUX.1 Schnell, voice (TTS + Whisper transcription), OCR, image upscale, background removal, embeddings |
+| **12 GB** | 14B chat models, FLUX dev / FLUX.2 / Z-Image-Turbo at higher resolutions, image edit, LTX-Video 480p, video upscale, music generation |
+| **16 GB+** | 20B-class chat models, high-res FLUX, longer LTX-Video clips, video replace / animate |
+| **24 GB+** | Full Model Center access — every model the app ships |
 
-- **GPU** — RTX 4070 / 5070 or better, **12–16 GB VRAM**
-- 12 GB unlocks: 14B chat models, FLUX image generation, LTX-Video at 480p.
-- 16 GB+ unlocks: 20B chat models (GPT-OSS-20B), high-res FLUX, longer LTX-Video clips, multimodal vision.
+The Model Center inside the app shows live fit per model on your specific hardware.
 
-## High-end
+## AI OPTIMAL — earn from GPU sharing
 
-- **GPU** — RTX 4090 / 5090 / Blackwell pro cards, **24 GB+ VRAM**
-- Full Model Center access, highest-paying earning workloads, video at higher resolution / duration.
+Higher bar. Earning starts at **16 GB VRAM** — anything below that is AI READY only.
+
+Everything in **AI READY**, plus:
+
+- **GPU** — NVIDIA RTX with **16 GB+ VRAM** (RTX 4060 Ti 16 GB, RTX 4070 Ti Super, RTX 4080 / 5080, RTX 4090 / 5090, Blackwell pro)
+- **RAM** — **32 GB minimum**, more is better. Concurrent workloads benefit from larger system memory.
+- **Network** — stable broadband (50 Mbps down comfortable). Earning workloads stream small payloads — consistency matters more than peak speed.
+- **Uptime** — leave the machine on. Most pay comes from being online when a workload arrives.
+
+The more VRAM, the higher-paying workload tiers you qualify for:
+
+| VRAM | Earning workload pool |
+| --- | --- |
+| **16 GB** | Entry tier — video and 20B-class chat workloads |
+| **24 GB+** | Full earning pool, top-paying tiers |
+
+The [profit calculator](https://gamerhash.com/en/calculator) gives you a per-GPU yield estimate based on current network demand.
 
 ## What's not supported
 
-- AMD GPUs in the AI App today (some experimental builds exist; default install is NVIDIA-only).
-- macOS (the AI App is Windows-only; the [Mobile app](/apps/mobile) is on iOS/Android but for account management, not local AI).
-- Linux — same as macOS for the AI App. Server-side roles via deAPI are different — see [deAPI](/deapi/overview).
-- iGPUs — integrated graphics don't have enough VRAM.
+- **AMD GPUs** — NVIDIA only in the AI App today.
+- **macOS / Linux** — AI App is Windows-only. The [Mobile app](/apps/mobile) on iOS/Android handles account management, not local AI.
+- **iGPUs** — integrated graphics don't have enough VRAM.
+- **Multi-GPU per machine** — the AI App uses a single GPU per process. Multi-machine is fine; GHXP and earnings consolidate per account.
 
-## Fit by module
+## Upgrading the GPU
 
-| Module | Min VRAM | Recommended |
-| --- | --- | --- |
-| Text-to-Text (chat, 7B/8B quant) | 8 GB | 12 GB+ |
-| Text-to-Text (14B–20B) | 12 GB | 16 GB+ |
-| Text-to-Image (SD, Sana Sprint) | 8 GB | 12 GB |
-| Text-to-Image (FLUX, HiDream) | 12 GB | 16 GB+ |
-| Image / Text → Video (LTX-Video) | 12 GB | 16 GB+ |
-| Multimodal (vision LLMs) | 12 GB | 16 GB+ |
-| Earning module | 8 GB | 12 GB+ for higher-pay workloads |
+Swap GPUs without recreating your account. On next start, the AI App detects the new card and re-runs its benchmark — typically a couple of minutes. GHXP, account level, and earning history all carry over. Workloads matched to the new card take effect from the next dispatch.
 
-The Model Center inside the app shows live fit estimates per model on your hardware.
+## Tips before you buy
 
-## Upgrading mid-stream
-
-You can switch GPUs without re-creating your account. The AI App detects the new card on next start and re-runs the benchmark. GHXP and account state carry over.
+- **Run your exact rig through the [profit calculator](https://gamerhash.com/en/calculator)** before spending. Both badges (AI READY / AI OPTIMAL) are checked there.
+- **For AI OPTIMAL, prioritize VRAM over clocks.** 16 GB is the entry threshold — a 16 GB 4060 Ti qualifies for the earning pool, an 8 GB 4070 doesn't.
+- **Used 30-series cards** can be cheap entry to AI READY (3060/3070 at 8–12 GB). For AI OPTIMAL on used hardware, only the **RTX 3090 (24 GB)** clears the bar — and check warranty, sustained load is harder on cards than gaming.
+- **Check live network demand** at [network stats](/ai/stats). A bigger GPU only pays more if there are workloads in the queue for it.
 
 ## Next
 
@@ -61,5 +84,11 @@ You can switch GPUs without re-creating your account. The AI App detects the new
   </Card>
   <Card title="Earning model" icon="coins" href="/ai/earning">
     What workloads pay more, and how to read the queue.
+  </Card>
+  <Card title="Live network stats" icon="chart-line" href="/ai/stats">
+    Current GPU count, VRAM, and capacity across the network.
+  </Card>
+  <Card title="Install the app" icon="download" href="/tutorials/install-ai-app">
+    Step-by-step from download to first run.
   </Card>
 </CardGroup>

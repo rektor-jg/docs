@@ -1,26 +1,26 @@
 ---
-title: "Instalacja aplikacji GamerHash AI"
+title: "Zainstaluj GamerHash AI App"
 description: "Krok po kroku: od pobrania do pierwszego czatu w pięć minut."
 ---
 
 import { Win } from '/snippets/chains.mdx'
 
-Ten przewodnik prowadzi od pobrania aplikacji AI do pierwszego ukończonego czatu. Czas: **5 minut** plus pobranie modelu (które dzieje się w tle i zależy od jego rozmiaru).
+Ten przewodnik przeprowadzi cię od pobrania aplikacji AI do pierwszego czatu. Czas: **5 minut** plus pobranie modelu (leci w tle i zależy od jego rozmiaru).
 
 ## Zanim zaczniesz
 
 <CardGroup cols={2}>
   <Card title="Sprawdzenie sprzętu" icon="microchip">
-    <Win /> 10/11, NVIDIA RTX z **8 GB+ VRAM**, aktualny sterownik. Pełne zestawienie w [Wymagania sprzętowe](/pl/ai/hardware-requirements).
+    <Win /> 10/11, NVIDIA RTX z **8 GB+ VRAM**, aktualny sterownik. Pełne zestawienie w [Wymaganiach sprzętowych](/pl/ai/hardware-requirements).
   </Card>
   <Card title="Miejsce na dysku" icon="hard-drive">
-    ~30 GB wolnego miejsca na pobierane modele. Więcej, jeśli trzymasz wiele modeli w cache.
+    ~30 GB wolnego miejsca na pobierane modele. Więcej, jeśli trzymasz wiele modeli w cache'u.
   </Card>
   <Card title="Konto GamerHash" icon="user">
-    Tworzone podczas instalacji — logowanie e-mailem lub przez Google.
+    Zakładane podczas instalacji — logowanie e-mailem albo przez Google.
   </Card>
   <Card title="Sieć" icon="wifi">
-    Łącze szerokopasmowe. Pierwsze pobierania modeli są duże (4–20 GB w zależności od modelu).
+    Łącze szerokopasmowe. Pierwsze pobrania modeli są spore (4–20 GB w zależności od modelu).
   </Card>
 </CardGroup>
 
@@ -28,13 +28,13 @@ Ten przewodnik prowadzi od pobrania aplikacji AI do pierwszego ukończonego czat
 
 <Steps>
   <Step title="Otwórz stronę pobierania">
-    Przejdź na [gamerhash.com/en/app-download](https://gamerhash.com/en/app-download) i kliknij **Download GamerHash AI**. Instalator to plik `.exe` z podpisem cyfrowym.
+    Wejdź na [gamerhash.com/en/app-download](https://gamerhash.com/en/app-download) i kliknij **Download GamerHash AI**. Instalator to plik `.exe` z podpisem cyfrowym.
   </Step>
   <Step title="Uruchom instalator">
-    Kliknij dwukrotnie pobrany plik `.exe`. Windows może poprosić o uprawnienia administratora — zaakceptuj. Instalator jest podpisany przez GamerHash; jeśli Windows SmartScreen wyświetli ostrzeżenie, kliknij **Więcej informacji → Uruchom mimo to**.
+    Kliknij dwukrotnie pobrany `.exe`. Windows może poprosić o uprawnienia administratora — zaakceptuj. Instalator jest podpisany przez GamerHash; jeśli Windows SmartScreen wyświetli ostrzeżenie, kliknij **Więcej informacji → Uruchom mimo to**.
   </Step>
   <Step title="Wybierz ścieżkę instalacji">
-    Domyślna ścieżka pasuje większości użytkowników. Jeśli masz kilka dysków, wybierz ten z największą ilością wolnego miejsca — pliki modeli trafią właśnie tam.
+    Domyślna pasuje większości osób. Jeśli masz kilka dysków, wybierz ten z największą ilością wolnego miejsca — to tam wylądują pliki modeli.
   </Step>
 </Steps>
 
@@ -45,28 +45,28 @@ Ten przewodnik prowadzi od pobrania aplikacji AI do pierwszego ukończonego czat
     Przy pierwszym uruchomieniu pojawi się prośba o logowanie. **Logowanie przez Google** jest najszybsze. Działa też e-mail + hasło.
   </Step>
   <Step title="Uruchom benchmark GPU">
-    Aplikacja jednorazowo testuje Twój GPU, aby odpowiednio dobrać obciążenia. Trwa to ~1 minutę. Powtórzenie nie jest potrzebne, dopóki nie zmienisz sprzętu.
+    Aplikacja raz przetestuje twój GPU, żeby dobrze dopasować zadania. Trwa ~1 minutę. Nie trzeba go powtarzać, chyba że zmienisz sprzęt.
   </Step>
   <Step title="Wybierz pierwszy model">
-    Otworzy się Model Center. Na pierwszy czat wybierz **Llama 3.1 8B Instruct** (dobrze pasuje do 8 GB+). Kliknij **Pobierz** — postęp pokazany jest na pasku.
+    Otworzy się Model Center. Na pierwszy czat wybierz dowolny model oznaczony jako pasujący do twojego GPU (każdy ma plakietkę dopasowania VRAM-u). Kliknij **Pobierz** — postęp leci na pasku.
   </Step>
 </Steps>
 
 <Note>
-Pobranie pierwszego modelu to najdłuższy etap. Mniejsze modele tekstowe (~5 GB) ściągają się 5–15 minut na typowym łączu domowym. Modele do obrazów i wideo mogą mieć 10–20 GB.
+Pobranie pierwszego modelu to najdłuższy krok. Mniejsze modele tekstowe (~5 GB) ściągają się w 5–15 minut na typowym łączu domowym. Modele do obrazów i wideo potrafią mieć 10–20 GB.
 </Note>
 
 ## 3. Pierwszy czat
 
 <Steps>
   <Step title="Otwórz moduł Chat">
-    Z pulpitu kliknij **Chat**. Model, który właśnie pobrałeś, powinien być wybrany.
+    Z dashboardu kliknij **Chat**. Model, który właśnie pobrałeś, powinien być już wybrany.
   </Step>
   <Step title="Wyślij prompt">
-    Wpisz pytanie i naciśnij Enter. Pierwsza odpowiedź zawiera rozgrzewkę modelu — kolejne są szybsze.
+    Wpisz pytanie i naciśnij Enter. Pierwsza odpowiedź obejmuje rozgrzewkę modelu — kolejne lecą szybciej.
   </Step>
   <Step title="Sprawdź odpowiedź">
-    Odpowiedź jest streamowana token po tokenie. Generowanie odbywa się w całości na Twoim GPU; nic nie trafia do zewnętrznej chmury.
+    Odpowiedź leci streamem, token po tokenie. Generowanie odbywa się w całości na twoim GPU — nic nie leci do zewnętrznej chmury.
   </Step>
 </Steps>
 
@@ -74,29 +74,29 @@ Pobranie pierwszego modelu to najdłuższy etap. Mniejsze modele tekstowe (~5 GB
 
 <Steps>
   <Step title="Przełącz się na moduł Image">
-    Z bocznego paska pulpitu wybierz **Image Generation**.
+    Z bocznego paska dashboardu wybierz **Image Generation**.
   </Step>
   <Step title="Wybierz model">
-    Dla GPU 8 GB dobrym pierwszym wyborem jest **Sana Sprint** — szybki i wysokiej jakości. Dla 12 GB+ spróbuj **FLUX Schnell**.
+    Dla GPU 8 GB dobrym pierwszym wyborem jest **Sana Sprint** — szybki i w niezłej jakości. Dla 12 GB+ spróbuj **FLUX.1 Schnell**.
   </Step>
   <Step title="Generuj">
-    Wpisz prompt, kliknij **Generate**. Wynik pojawi się w galerii; kliknij prawym przyciskiem, aby zapisać lub skopiować. Obrazy są przechowywane wyłącznie lokalnie.
+    Wpisz prompt, kliknij **Generate**. Wynik pojawi się w galerii; kliknij prawym przyciskiem, żeby zapisać albo skopiować. Obrazy zostają wyłącznie u ciebie, lokalnie.
   </Step>
 </Steps>
 
 ## 5. Włącz zarabianie (opcjonalnie)
 
-Jeśli chcesz dzielić się mocą bezczynnego GPU za GUSD:
+Jeśli chcesz udostępniać moc bezczynnego GPU za GUSD:
 
 <Steps>
-  <Step title="Otwórz moduł zarobkowy">
-    Pasek boczny → **Earning**. Przeczytaj opis, a następnie włącz moduł.
+  <Step title="Otwórz moduł Earn">
+    Pasek boczny → **Earning**. Przeczytaj opis, a potem włącz moduł.
   </Step>
-  <Step title="Ustaw granice">
-    Wybierz godziny aktywności modułu (np. gdy śpisz) oraz limit użycia GPU. Domyślne ustawienia są rozsądne — możesz je później dostroić.
+  <Step title="Zostaw moduł włączony, kiedy nie grasz">
+    Zadania zarobkowe biorą całe GPU i VRAM, więc nie da się grać i zarabiać jednocześnie. Odpalenie gry samo wypycha moduł; zamknij grę, a zarabianie samo wraca.
   </Step>
   <Step title="Obserwuj naliczanie GUSD">
-    Obciążenia zaczną trafiać na Twój GPU, gdy pozwoli na to kolejka. Pulpit pokazuje zarobki na żywo na godzinę.
+    Zadania zaczną trafiać na twój GPU, kiedy tylko pozwoli na to kolejka. Dashboard pokazuje zarobki godzinowe na żywo.
   </Step>
 </Steps>
 
@@ -107,24 +107,24 @@ Jeśli chcesz dzielić się mocą bezczynnego GPU za GUSD:
     Kliknij **Więcej informacji** → **Uruchom mimo to**. Instalator jest podpisany przez GamerHash sp. z o.o. — zweryfikuj wydawcę w oknie certyfikatu.
   </Accordion>
   <Accordion title="Benchmark kończy się błędem">
-    Niemal zawsze problem ze sterownikiem. Zaktualizuj sterownik **NVIDIA Studio** do najnowszej wersji, uruchom ponownie komputer i spróbuj jeszcze raz. Jeśli nadal nie działa, wypróbuj sterownik **Game Ready**. Powtarzające się błędy zgłoś na Discordzie w kanale `#support`, podając model GPU.
+    Niemal zawsze chodzi o sterownik. Zaktualizuj sterownik **NVIDIA Studio** do najnowszej wersji, zrestartuj komputer i spróbuj jeszcze raz. Jeśli nadal nie działa, wypróbuj **Game Ready**. Powtarzające się błędy zgłoś na Discordzie w kanale `#support`, podając model GPU.
   </Accordion>
   <Accordion title="Pobieranie modelu się zawiesza">
-    Wstrzymaj i wznów z poziomu Model Center. Jeśli nadal się zacina, sprawdź miejsce na dysku i wyłącz agresywny antywirus. Niektóre programy AV bardzo wolno skanują pliki o rozmiarach kilku GB.
+    Wstrzymaj i wznów z poziomu Model Center. Jeśli nadal się zacina, sprawdź miejsce na dysku i wyłącz agresywny antywirus. Niektóre AV bardzo wolno skanują pliki rzędu kilku GB.
   </Accordion>
   <Accordion title="Czat działa wolno / pierwsza odpowiedź się opóźnia">
-    Pierwsza odpowiedź wczytuje model do VRAM (cold start). Kolejne są szybkie. Jeśli czat jest stale wolny, GPU może osiągać limity VRAM — przełącz się na mniejszy, skwantyzowany wariant tego samego modelu.
+    Pierwsza odpowiedź wczytuje model do VRAM-u (cold start). Kolejne idą szybko. Jeśli czat jest stale wolny, GPU może uderzać w limit VRAM-u — przełącz się na mniejszy, skwantyzowany wariant tego samego modelu.
   </Accordion>
-  <Accordion title="Moduł zarobkowy nie dostaje obciążeń">
-    Możliwe przyczyny: zbyt mało godzin uptime'u, klasa GPU ogranicza pulę dostępnych obciążeń, niskie zapotrzebowanie sieci w danym momencie. Sprawdź pulpit w aplikacji oraz comiesięczne aktualizacje na Medium pod kątem aktualnego popytu w sieci.
+  <Accordion title="Moduł Earn nie dostaje zadań">
+    Możliwe przyczyny: za mało godzin uptime'u, klasa GPU ogranicza pulę zadań, w danym momencie niskie zapotrzebowanie w sieci. Sprawdź dashboard w aplikacji i comiesięczne aktualizacje społeczności na Medium pod kątem aktualnego popytu w sieci.
   </Accordion>
 </AccordionGroup>
 
 ## Dalej
 
 <CardGroup cols={2}>
-  <Card title="Zarabiaj na udostępnianiu GPU" icon="coins" href="/pl/tutorials/earn-with-gpu">
-    Bardziej szczegółowy przewodnik po module zarobkowym.
+  <Card title="Zarabiaj udostępniając GPU" icon="coins" href="/pl/tutorials/earn-with-gpu">
+    Bardziej szczegółowy przewodnik po module Earn.
   </Card>
   <Card title="Moduły" icon="layer-group" href="/pl/ai/modules">
     Przegląd wszystkich modułów aplikacji.

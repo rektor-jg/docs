@@ -1,5 +1,5 @@
 ---
-title: "GamerHash AI overview"
+title: "Overview"
 description: "The flagship app — what it does, how it earns, and what hardware you need."
 ---
 
@@ -7,26 +7,26 @@ import { Win } from '/snippets/chains.mdx'
 
 The **GamerHash AI App** is a free <Win /> desktop application that does two things at once:
 
-1. **Lets you use private AI tools locally** — chat, image, video, voice, multimodal Q&A — all running on your own GPU, without sending data to a third-party cloud.
-2. **Lets you earn from idle GPU time** — opt in and the app dispatches AI inference jobs from the network onto your machine, paying you in **GUSD** per workload.
+1. **Lets you use private AI tools locally** — chat, image, video, voice — all running on your own GPU, without sending data to a third-party cloud.
+2. **Lets you earn from idle GPU time** — opt in and the app dispatches AI inference jobs from the network onto your machine. You're paid in **GUSD** per workload, and you accrue **GHXP** every minute the app runs (even when there's no work in the queue) — those points scale your share of network rewards.
 
 Same app, same install, same login. You decide whether to use it as a private AI workstation, an earning machine, or both.
 
 <Frame>
-  <img src="/images/ai-modules.svg" alt="GamerHash AI App modules: text-to-text chat, text-to-image, image/text-to-video, voice synthesis, multimodal Q&A, and the GPU-sharing earning module." />
+  <img src="/images/ai-modules.png" alt="GamerHash AI App modules: text-to-text chat, text-to-image, image/text-to-video, voice synthesis, and the GPU-sharing earning module." />
 </Frame>
 
 ## What's inside
 
 <CardGroup cols={2}>
   <Card title="Modules" icon="layer-group" href="/ai/modules">
-    Text-to-text, text-to-image, text/image-to-video, voice, multimodal — every module the app ships.
+    Text-to-text, text-to-image, text/image-to-video, voice — every module the app ships.
   </Card>
-  <Card title="GHXP" icon="bolt" href="/ai/ghxp">
-    The engagement multiplier. Run the app + hold GHX → higher reward share.
+  <Card title="GHXP — engagement multiplier" icon="bolt" href="/ai/ghxp">
+    Run the app + hold GHX → higher reward share. Feeds into seasonal GHX payouts.
   </Card>
   <Card title="Earning model" icon="coins" href="/ai/earning">
-    GUSD per workload, GHXP rank, and the path from credit to spendable assets.
+    GUSD per workload, GHXP level, and the path from credit to spendable assets.
   </Card>
   <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
     Minimum and recommended GPUs for chat, image, and video.
@@ -41,22 +41,22 @@ Same app, same install, same login. You decide whether to use it as a private AI
 
 ## Why local AI
 
-Cloud AI services have three structural costs that GamerHash AI removes:
+Cloud AI services come with three structural costs that GamerHash AI removes:
 
-- **Per-token pricing.** Big cloud providers charge per call. The AI App is free for personal use — your only cost is electricity and your existing GPU.
-- **Privacy compromises.** Prompts and outputs are transmitted to third-party clouds and may be logged. The AI App generates entirely locally; nothing leaves your machine for personal-use modules.
-- **Usage limits.** Free tiers cap message counts and resolution. The AI App has no usage caps for local-only modules — your GPU is the only limiter.
+- **Per-token pricing.** Cloud providers charge per call, per token, per second. The AI App is free for personal use — your only cost is electricity and the GPU you already own.
+- **Privacy compromises.** Prompts and outputs are transmitted to third-party clouds and may be logged. The AI App generates entirely locally — nothing leaves your machine when you're using personal-use modules.
+- **Usage limits.** Free tiers cap message counts, resolution, and rate. The AI App has no usage caps for local-only modules — your GPU is the only limiter.
 
 ## Why share GPU?
 
-A modern gaming GPU is idle most of the time it's powered on. The earning module dispatches AI inference jobs from paying customers (via [deAPI](https://deapi.ai) and direct partners) onto your machine while you're not using it.
+A modern gaming GPU is idle most of the time it's powered on. The earning module dispatches AI inference jobs from network buyers — developers, applications, and direct AI partners — onto your machine while you're not using it.
 
-You don't pick the workloads — the network routes whatever fits your VRAM and the queue depth. You earn **GUSD per workload completed**, with a **GHXP-based multiplier** for consistent, high-engagement contributors.
+You don't pick the workloads — the network routes whatever fits your VRAM and the queue depth. You earn **GUSD per workload completed**, with a **GHXP-based multiplier** for consistent, high-engagement contributors. Active contributors also share the seasonal **GHX reward pool** — see [GHXP seasons](/ai/ghxp#seasons).
 
 ## What you need
 
 - **Windows 10 or 11**
-- **NVIDIA RTX GPU with 8 GB+ VRAM** (minimum). Higher VRAM unlocks bigger models and higher per-workload pay.
+- **NVIDIA RTX GPU with 8 GB+ VRAM** to run the app locally. Earning from network workloads requires **16 GB+ VRAM** — anything below is local-use only for now.
 - **Recent NVIDIA driver** (the app prompts if your driver is too old)
 - **A GamerHash account** (created on first run; email or Google sign-in)
 
@@ -70,5 +70,22 @@ Detailed hardware breakdown — including which models run on 8 GB vs 12 GB vs 2
   </Card>
   <Card title="Step-by-step install" icon="play" href="/tutorials/install-ai-app">
     Walk through the install with screenshots and gotchas.
+  </Card>
+  <Card title="Live network stats" icon="chart-line" href="/ai/stats">
+    See current network capacity — devices, GPUs, VRAM, throughput.
+  </Card>
+  <Card title="Earn-with-GPU tutorial" icon="microchip" href="/tutorials/earn-with-gpu">
+    From install to first GUSD payout — what to expect on day one.
+  </Card>
+</CardGroup>
+
+## Further reading
+
+<CardGroup cols={2}>
+  <Card title="From Mining to AI: GamerHash Evolution" icon="arrow-trend-up" href="https://medium.com/we-are-the-gamerhash/from-mining-to-ai-the-gamerhash-evolution-75bf96424530">
+    Why the same idle-GPU thesis works better for AI inference than for PoW hashes — written by the team.
+  </Card>
+  <Card title="All updates on Medium" icon="rss" href="https://medium.com/we-are-the-gamerhash">
+    Monthly community recaps, deep dives, and partnership announcements.
   </Card>
 </CardGroup>

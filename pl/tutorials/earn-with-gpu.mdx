@@ -1,75 +1,63 @@
 ---
-title: "Zarabiaj na udostępnianiu GPU"
-description: "Krok po kroku: włącz moduł zarobkowy, ustaw granice i wypłać GUSD."
+title: "Zarabiaj udostępniając GPU"
+description: "Krok po kroku: włącz moduł Earn, ustaw granice i wypłać GUSD."
 ---
 
-Ten poradnik bazuje na [Instalacji aplikacji AI](/pl/tutorials/install-ai-app). Zakłada, że masz już zainstalowaną aplikację, jesteś zalogowany i Twoje GPU zostało zbenchmarkowane. Czas: **10 minut** na konfigurację; potem działa w tle.
+Ten tutorial bazuje na [Instalacji aplikacji AI](/pl/tutorials/install-ai-app). Zakłada, że masz już zainstalowaną aplikację, jesteś zalogowany i twoje GPU zostało zbenchmarkowane. Czas: **10 minut** na konfigurację; potem działa w tle.
 
 ## Co dostajesz
 
-- **GUSD za każde obciążenie** — naliczane automatycznie po ukończeniu zadania inferencyjnego.
-- **GHXP** — punkty zaangażowania, które zwiększają mnożnik przyszłych zarobków przez GHXP Boost.
-- **Opcjonalny boost GHX** — trzymaj GHX w MetaMask, aby przyspieszyć naliczanie GHXP.
+- **GUSD za zadanie** — naliczane automatycznie po skończeniu zadań inferencji.
+- **GHXP** — punkty zaangażowania, które zwielokrotniają przyszłe zarobki przez GHXP Boost.
+- **Opcjonalny boost GHX** — trzymaj GHX w MetaMask albo w portfelu GHX wbudowanym w aplikację, żeby przyspieszyć naliczanie GHXP.
 
-Pełne mechaniki w [Modelu zarobkowym](/pl/ai/earning).
+Pełną mechanikę znajdziesz w [Modelu zarabiania](/pl/ai/earning).
 
-## 1. Otwórz moduł zarobkowy
+## 1. Otwórz moduł Earn
 
 <Steps>
   <Step title="Pasek boczny → Earning">
-    Sekcja zarobkowa jest oddzielna od modułów lokalnego AI. Pulpit wyjaśnia, co oferuje moduł, zanim go włączysz.
+    Sekcja zarobkowa jest oddzielna od modułów lokalnego AI. Dashboard wyjaśnia, co oferuje moduł, zanim go włączysz.
   </Step>
   <Step title="Zapoznaj się z informacją">
-    Moduł kieruje na Twoją maszynę obciążenia od zewnętrznych podmiotów. Upewnij się, że Ci to odpowiada przed włączeniem — zobacz [Prywatność](/pl/ai/privacy).
+    Moduł kieruje na twoją maszynę zadania od osób trzecich. Zanim włączysz, upewnij się, że ci to odpowiada — zobacz [Prywatność](/pl/ai/privacy).
   </Step>
   <Step title="Włącz moduł">
-    Przełącz przełącznik **Earning** w pozycję włączoną. Twój GPU dołącza do puli dyspozycji.
+    Przełącz **Earning** w pozycję włączoną. Twoje GPU dołącza do dispatch poola.
   </Step>
 </Steps>
 
-## 2. Ustaw granice
+## 2. Jak to współgra z graniem
 
-<Steps>
-  <Step title="Aktywne godziny">
-    Wybierz godziny doby, w których moduł ma przyjmować zadania. Najczęstsze schematy:
+Zadania zarobkowe biorą całe GPU i VRAM — nie pograsz i nie zarobisz w tym samym czasie. Odpalenie gry wypycha moduł Earn; GPU odzyskujesz natychmiast. Gdy gra się zamknie, zarabianie wraca samo, gdy tylko kolejka ma coś dla twojej karty.
 
-    - **Zawsze gdy bezczynny** — zarabiaj, kiedy GPU nie jest zajęty.
-    - **Tylko poza godzinami pracy** — w nocy + w godzinach pracy, gdy nie grasz.
-    - **W tańszej taryfie energii** — dopasuj do okna niskich stawek u dostawcy.
-  </Step>
-  <Step title="Limit użycia GPU">
-    Domyślny limit zostawia zapas dla innych aplikacji. Obniż go, jeśli zauważysz spadki klatek w grach podczas działania modułu.
-  </Step>
-  <Step title="Auto-pauza przy uruchomieniu gry (opcjonalnie)">
-    Jeśli Twój launcher jest wspierany, aplikacja AI może wstrzymać zarabianie po starcie gry i wznowić je po jej zakończeniu.
-  </Step>
-</Steps>
+Zostaw moduł włączony, kiedy nie grasz i nie robisz nic innego, co mocno obciąża GPU.
 
-## 3. Maksymalizuj zysk
+## 3. Maksymalizuj yield
 
 <Steps>
   <Step title="Trzymaj GHX dla boosta">
-    Największy pojedynczy mnożnik zysku. Trzymaj dowolną ilość GHX w MetaMask na tym samym koncie — zobacz [GHXP](/pl/ai/ghxp). Boost stosuje się automatycznie.
+    Największy pojedynczy mnożnik yieldu. Trzymaj jakąkolwiek ilość GHX w MetaMask albo w portfelu GHX wbudowanym w aplikację, na tym samym koncie — zobacz [GHXP](/pl/ai/ghxp). Boost stosuje się automatycznie.
   </Step>
-  <Step title="Działaj ciągle">
-    Im dłużej aplikacja działa bez restartu, tym większe naliczanie GHXP w godzinowych porcjach. Restart w połowie godziny kasuje punkty oczekujące za tę godzinę.
+  <Step title="Niech aplikacja działa bez przerwy">
+    Im dłużej aplikacja działa bez restartu, tym większe godzinowe naliczanie GHXP. Restart w środku godziny kasuje oczekujące punkty z tej godziny.
+  </Step>
+  <Step title="Blokuj GHXP w każdym sezonie">
+    Nagrody GHX dystrybuowane są co dwa miesiące. Zablokuj zgromadzone GHXP przed zamknięciem sezonu — twój udział w puli = twoje zablokowane GHXP ÷ łączne zablokowane przez wszystkich uczestników. Pominiesz lock — tracisz ten sezon.
   </Step>
   <Step title="Nie odpalaj wielu maszyn na różnych kontach">
-    GHXP i rangi sumują się per konto. Uruchamiaj wszystkie swoje GPU na jednym koncie — szybciej awansujesz.
+    GHXP i poziomy konsolidują się per konto. Odpalaj wszystkie swoje GPU na jednym koncie — szybciej awansujesz.
   </Step>
 </Steps>
 
 ## 4. Śledź zarobki
 
 <Steps>
-  <Step title="Pulpit w aplikacji">
-    Liczby na żywo: za godzinę, za dzień, za miesiąc. Liczba obciążeń i średnia zapłata za zadanie.
+  <Step title="Dashboard w aplikacji">
+    Liczby na żywo: za godzinę, za dzień, za miesiąc. Liczba zadań i średnia zapłata za zadanie.
   </Step>
   <Step title="Aplikacja mobilna">
-    [Aplikacja mobilna](/pl/apps/mobile) pokazuje te same liczby — przydatne, gdy nie jesteś przy komputerze.
-  </Step>
-  <Step title="Cotygodniowe podsumowania e-mail">
-    Tygodniowe zestawienia trafiają na e-mail rejestracyjny. Możesz je wyłączyć, jeśli ich nie chcesz.
+    [Aplikacja mobilna](/pl/apps/mobile) pokazuje te same liczby — przydatne, gdy nie jesteś przy pececie.
   </Step>
 </Steps>
 
@@ -82,41 +70,41 @@ Trzy ścieżki wyjścia — wybierz dowolnie:
     1. W aplikacji **Wallet** → **Convert** → GUSD → GHX.
     2. Wybierz sieć (Ethereum / BNB Chain / Solana).
     3. Potwierdź. GHX trafia do podpiętego portfela.
-    4. Stamtąd **HODL** lub **stake** do 25% APR przez [staking.gamercoin.com](https://staking.gamercoin.com).
+    4. Stamtąd **HODL** albo **stakuj** na nawet 25% APR przez [staking.gamercoin.com](https://staking.gamercoin.com).
   </Tab>
-  <Tab title="Wypłata USDC na Binance">
-    1. Połącz konto Binance, jeśli jeszcze tego nie zrobiłeś (jednorazowo, w ustawieniach konta).
-    2. **Wallet** → **Withdraw USDC** → wybierz kwotę.
-    3. Transfer wewnętrzny na Twój adres Binance. Bez prowizji GamerHash.
+  <Tab title="Wypłata USDC na BNB Chain">
+    1. Przygotuj adres portfela BNB Chain — adres depozytowy Binance, MetaMask na BSC albo dowolny inny portfel BNB Chain.
+    2. **Wallet** → **Withdraw USDC** → wybierz kwotę i wklej adres docelowy.
+    3. USDC trafia na BNB Chain pod podany adres. Bez prowizji GamerHash.
   </Tab>
   <Tab title="Wydaj w Sklepie">
-    1. Przeglądaj [Sklep](https://gamerhash.com/en/shop).
+    1. Wejdź do [Sklepu](https://gamerhash.com/en/shop).
     2. Przy płatności wybierz **GUSD** jako metodę płatności.
-    3. Wprowadź PIN konta. Towary cyfrowe dostarczane są natychmiast.
+    3. Wpisz PIN konta. Towary cyfrowe dostarczane są natychmiast.
   </Tab>
 </Tabs>
 
 ## Rozwiązywanie problemów
 
 <AccordionGroup>
-  <Accordion title="Moduł włączony, ale nie dostaję obciążeń">
+  <Accordion title="Moduł włączony, ale nie dostaję zadań">
     Kilka możliwych przyczyn:
 
-    - **Klasa GPU** — starsze / mniejsze GPU kwalifikują się tylko do podzbioru obciążeń. Wykonaj benchmarki; sprawdź aktualną wielkość puli zadań.
-    - **Zapotrzebowanie sieci** — sprawdź najnowszy [Community Update na Medium](https://medium.com/we-are-the-gamerhash) pod kątem sygnałów popytu.
-    - **Problemy z połączeniem** — uruchom ponownie aplikację; upewnij się, że nie jesteś za firmowym VPN-em blokującym ruch dyspozycyjny.
+    - **Klasa GPU** — starsze / mniejsze GPU kwalifikują się tylko do podzbioru zadań. Sprawdź benchmarki; sprawdź aktualny rozmiar puli zadań.
+    - **Popyt w sieci** — sprawdź najnowszy [Community Update na Medium](https://medium.com/we-are-the-gamerhash) pod kątem sygnałów popytu.
+    - **Problemy z połączeniem** — zrestartuj aplikację; upewnij się, że nie jesteś za firmowym VPN-em blokującym ruch dispatchu.
   </Accordion>
-  <Accordion title="Wydaje mi się, że spadła moja ranga GHXP">
-    GHXP nie maleje za aktywność, ale ranga jest *względna*. Nowi, mocno zaangażowani kontrybutorzy mogą zmieniać kolejność. Sprawdź tablicę wyników; w długim terminie wygrywa konsekwencja.
+  <Accordion title="Spadły mi zarobki z GHXP, mimo że trzymam aplikację włączoną">
+    Samo GHXP nie maleje, kiedy jesteś aktywny — ale twój udział w sezonowej puli GHX jest względny. Twój kawałek = twoje zablokowane GHXP ÷ łączne zablokowane przez wszystkich uczestników, więc gdy inni blokują więcej, indywidualne kawałki kurczą się. Stałe uczestnictwo procentuje przez wiele sezonów; trzymanie GHX (w MetaMask albo w portfelu w aplikacji) utrzymuje boost aktywny przez cały czas naliczania.
   </Accordion>
-  <Accordion title="Spadki FPS w grze przy włączonym module">
-    Obniż limit użycia GPU lub ustaw moduł na **Auto-pauzę przy uruchomieniu gry**. Niektóre gry są wyjątkowo wrażliwe na użycie VRAM w tle.
+  <Accordion title="Gra nie chce się odpalić, gdy moduł działa">
+    Zadania zarobkowe trzymają całe GPU i VRAM. Odpalenie gry wypycha moduł — GPU powinno wrócić w ciągu kilku sekund. Jeśli gra nadal nie chce wystartować, zamknij aplikację AI, odpal grę, a po jej zakończeniu pozwól, żeby zarabianie wróciło samo.
   </Accordion>
   <Accordion title="Saldo GUSD widoczne, ale konwersja niedostępna">
-    Konwersja bywa okresowo wstrzymywana podczas konserwacji platformy. Strona Wallet pokazuje zaplanowane okna; zazwyczaj rozwiązuje się w ciągu godziny.
+    Konwersja bywa okresowo wstrzymywana podczas prac serwisowych platformy. Strona Wallet pokazuje zaplanowane okna; zwykle wraca w ciągu godziny.
   </Accordion>
   <Accordion title="Wypłata USDC utknęła">
-    Transfery wewnętrzne do Binance rozliczają się w ciągu kilku minut. Jeśli utknęły powyżej 24 h, skontaktuj się przez Discord `#support`, podając identyfikator transakcji widoczny w logu Wallet.
+    Transfery na BNB Chain zwykle rozliczają się w kilka minut. Jeśli utknęły dłużej niż 24 h, napisz na Discordzie w `#support`, podając hash transakcji z loga Wallet i adres docelowy, którego użyłeś.
   </Accordion>
 </AccordionGroup>
 
@@ -127,6 +115,6 @@ Trzy ścieżki wyjścia — wybierz dowolnie:
     Dlaczego trzymanie GHX przyspiesza zarobki.
   </Card>
   <Card title="Dokumentacja stakingu GHX" icon="lock" href="https://docs.gamercoin.com/tokenomics/staking">
-    Połącz przychód z GPU z APR tokena.
+    Połącz yield z GPU z APR tokena.
   </Card>
 </CardGroup>

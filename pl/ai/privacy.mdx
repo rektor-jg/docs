@@ -3,33 +3,33 @@ title: "Prywatność"
 description: "Co zostaje na twojej maszynie, co jest przesyłane i co jest logowane."
 ---
 
-Aplikacja AI dzieli się na dwa tryby operacyjne o różnych właściwościach prywatności. Oba opisane są poniżej.
+Aplikacja AI dzieli się na dwa tryby operacyjne o różnych właściwościach prywatności. Oba opisujemy poniżej.
 
-## Moduły do osobistego użytku (czat, obraz, wideo, multimodal)
+## Moduły do użytku osobistego
 
-Gdy używasz aplikacji AI jako prywatnej stacji roboczej:
+Kiedy używasz aplikacji AI jako prywatnej stacji:
 
-- **Prompty i wyniki** zostają na twojej maszynie. Nie są przesyłane na serwery GamerHash i nie są przechowywane w żadnej bazie GamerHash.
-- **Wygenerowane obrazy i logi czatu** są zapisywane lokalnie na twoim PC, w katalogu danych aplikacji. Możesz je eksportować, usuwać albo przenosić.
-- **Brak telemetrii treści.** Aplikacja zbiera metryki techniczne (ładowanie modeli, błędy, temperatury GPU dla stabilności), ale nie treść twoich interakcji.
-- **Brak limitów użycia** w modułach lokalnych. Twoje GPU jest jedynym ograniczeniem.
+- **Prompty i wyniki** zostają na twojej maszynie. Nie wysyłamy ich na serwery GamerHash i nie trzymamy w żadnej bazie.
+- **Wygenerowane obrazy i logi czatu** zapisują się lokalnie na twoim pececie, w katalogu danych aplikacji. Możesz je eksportować, usuwać albo przenosić.
+- **Brak telemetrii treści.** Aplikacja zbiera metryki techniczne (czasy ładowania modeli, błędy, kondycja sprzętu), ale nie treść twoich interakcji.
+- **Brak limitów użycia.** Twoje GPU jest jedynym ograniczeniem.
 
-To najmocniejsza gwarancja prywatności wśród aplikacji AI na rynku — bo model działa na twoim własnym sprzęcie. Nie ma rundtripa do chmury, kropka.
+Model działa na twoim sprzęcie — przy inferencji nie ma rundtripa do chmury.
 
-## Moduł zarobkowy (udostępnianie GPU)
+## Moduł Earn (udostępnianie GPU)
 
-Gdy włączasz tryb zarobkowy:
+Kiedy włączasz tryb zarobkowy:
 
-- **Zadania nie są twoje** — to zapytania inferencyjne od konsumentów deAPI. Twoje GPU je uruchamia; wejście i wyjście wraca do zamawiającego.
-- **Nie widzisz promptów ani wyników** zadań konsumenckich. Przechodzą przez twoje GPU, ale nie są wyświetlane ani logowane po twojej stronie.
-- **Platforma śledzi metadane zadania** — czas wykonania, użyty model, sukces/porażka — żeby rozliczyć płatność. Nie zachowuje promptów konsumenckich na twoim węźle.
-- **Udostępniasz czas GPU, a nie dane.** Nie trenujesz modelu; uruchamiasz inferencję.
+- **Zadania nie są twoje** — to zapytania inferencyjne, które platforma kieruje w imieniu konsumentów zewnętrznych. Twoje GPU je uruchamia, a wejście i wyjście wraca do zamawiającego.
+- **Nie widzisz promptów ani wyników** dispatchowanych zadań. Przechodzą przez twoje GPU, ale nie wyświetlają się ani nie są logowane po twojej stronie.
+- **Platforma śledzi metadane zadania** — czas wykonania, użyty model, sukces/porażka — żeby rozliczyć płatność. *Nie* utrwala promptów konsumenta na twoim node'ie.
+- **Udostępniasz czas GPU, nie dane.** Nie trenujesz modelu, uruchamiasz inferencję.
 
-Jeśli nie chcesz hostować zadań osób trzecich, po prostu zostaw moduł zarobkowy wyłączony. Moduły do osobistego użytku tego nie wymagają.
+Jeśli nie chcesz hostować zadań osób trzecich, po prostu zostaw moduł Earn wyłączony. Moduły do użytku osobistego tego nie wymagają.
 
 ## Dane konta
 
-Platforma przechowuje standardowe dane konta: e-mail lub login z firm trzecich, kraj (dla zgodności), dane do routingu płatności, saldo GHXP, saldo GUSD, podpięte adresy portfeli GHX. Jest to konieczne do działania usługi i objęte [Regulaminem GamerHash](https://gamerhash.com/en/rules).
+Platforma przechowuje standardowe dane konta: e-mail albo login z usług trzecich, kraj (dla zgodności), saldo GHXP, saldo GUSD i podpięte adresy portfeli GHX. Jest to niezbędne do działania usługi i objęte [Regulaminem GamerHash](https://gamerhash.com/en/rules).
 
 ## Czego nie robimy
 
@@ -39,24 +39,24 @@ Platforma przechowuje standardowe dane konta: e-mail lub login z firm trzecich, 
 
 ## Aktywność sieciowa i serwerowa
 
-Aplikacja AI łączy się z serwerem w celach:
+Aplikacja AI łączy się z serwerem w sprawach:
 
 - **Uwierzytelnienia** — sesja logowania, stan konta.
 - **Pobierania modeli** — pobieranie wag z Model Center.
-- **Dyspozycji zarobkowej** — odbieranie przydziałów zadań, zwracanie wyników, rozliczanie GUSD.
+- **Dispatchu zarobkowego** — odbieranie przydziałów zadań, zwracanie wyników, rozliczanie GUSD.
 - **Aktualizacji** — nowe wersje aplikacji, łatki bezpieczeństwa.
 
-Możesz to sprawdzić dowolnym monitorem sieci; nic nie jest ukryte.
+Możesz to sprawdzić dowolnym monitorem sieci — nic nie jest ukryte.
 
 ## Zgodność
 
-GHX działa w ramach prawnych ustanowionych przez zarejestrowany whitepaper MFSA. Obowiązki AML/CFT są ograniczone, bo firma nie jest klasyfikowana jako "subject person" według PMLFTR — zobacz [sekcję prawną](/pl/legal/aml-cft) dla formalnego oświadczenia. GamerHash i tak stosuje KYC tam, gdzie jest to wymagane (np. w rundach private sale, dużych off-rampach fiat).
+GHX działa w ramach prawnych ustanowionych przez zarejestrowany whitepaper MFSA. Zobacz [AML/CFT](/pl/legal/aml-cft) — formalne oświadczenie o obowiązkach AML, oraz [Informacje prawne](/pl/legal/legal-information) — informacje o podmiocie stojącym za platformą. KYC stosujemy tam, gdzie jest wymagane (np. w rundach private sale).
 
 ## Dalej
 
 <CardGroup cols={2}>
-  <Card title="Model zarobków" icon="coins" href="/pl/ai/earning">
-    Co dokładnie kontrybuujesz, gdy włączasz moduł.
+  <Card title="Model zarabiania" icon="coins" href="/pl/ai/earning">
+    Co dokładnie wnosisz, kiedy włączasz moduł.
   </Card>
   <Card title="Disclaimer prawny" icon="triangle-exclamation" href="/pl/legal/disclaimer">
     Oficjalna nota o odpowiedzialności i jurysdykcji.

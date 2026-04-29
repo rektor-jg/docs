@@ -5,23 +5,23 @@ description: "What stays on your machine, what's transmitted, and what's logged.
 
 The AI App is split into two operational modes with different privacy properties. Both are documented below.
 
-## Personal-use modules (chat, image, video, multimodal)
+## Personal-use modules
 
 When you use the AI App as a private workstation:
 
 - **Prompts and outputs** stay on your machine. They are not transmitted to GamerHash servers and not stored in any GamerHash database.
 - **Generated images and chat logs** are stored locally on your PC, in the app's data directory. You can export, delete, or move them.
-- **No telemetry on content.** The app records technical metrics (model loads, errors, GPU temperatures for stability) but not the content of your interactions.
-- **No usage caps** on local-only modules. Your GPU is the only limiter.
+- **No content telemetry.** The app records technical metrics (model load times, errors, hardware health) but not the content of your interactions.
+- **No usage caps.** Your GPU is the only limiter.
 
-This is the strongest privacy guarantee of any AI app on the market — because the model runs on your own hardware. There is no cloud round-trip, period.
+The model runs on your own hardware — there is no cloud round-trip for inference.
 
 ## Earning module (GPU sharing)
 
 When you opt in to earn:
 
-- **The workloads are not yours** — they're inference requests from third-party deAPI consumers. Your GPU runs them; the input and output return to the requester.
-- **You don't see prompts or outputs** of consumer workloads. They pass through your GPU but aren't displayed or logged on your side.
+- **The workloads are not yours** — they're inference requests dispatched by the platform on behalf of third-party consumers. Your GPU runs them; the input and output return to the requester.
+- **You don't see prompts or outputs** of dispatched workloads. They pass through your GPU but aren't displayed or logged on your side.
 - **The platform tracks workload metadata** — completion time, model used, success/failure — to settle payment. It does *not* persist consumer prompts on your node.
 - **You're contributing GPU time, not data.** You're not training a model; you're running inference.
 
@@ -29,13 +29,13 @@ If you don't want to host third-party workloads, simply leave the earning module
 
 ## Account data
 
-The platform stores standard account data: email or third-party login, country (for compliance), payment routing details, GHXP balance, GUSD balance, GHX wallet addresses you've connected. This is necessary to operate the service and is covered by the [GamerHash Terms](https://gamerhash.com/en/rules).
+The platform stores standard account data: email or third-party login, country (for compliance), GHXP balance, GUSD balance, and GHX wallet addresses you've connected. This is necessary to operate the service and is covered by the [GamerHash Terms](https://gamerhash.com/en/rules).
 
 ## What we don't do
 
-- We don't sell account data to advertisers.
-- We don't train models on your local prompts or outputs.
-- We don't share GHX wallet activity with third parties beyond what's already public on-chain.
+- Sell account data to advertisers.
+- Train models on your local prompts or outputs.
+- Share GHX wallet activity with third parties beyond what's already public on-chain.
 
 ## Network and server activity
 
@@ -50,7 +50,7 @@ You can inspect this with any network monitor; nothing is hidden.
 
 ## Compliance
 
-GHX operates under the legal frame established by the registered MFSA whitepaper. AML/CFT obligations are limited because the company is not classified as a "subject person" under PMLFTR — see [legal section](/legal/aml-cft) for the formal statement. GamerHash still applies KYC where required (e.g., during private sale rounds, large fiat off-ramps).
+GHX operates under the legal frame established by the registered MFSA whitepaper. See [AML/CFT](/legal/aml-cft) for the formal statement on AML obligations, and [Legal information](/legal/legal-information) for the entity behind the platform. KYC is applied where required (e.g., during private sale rounds).
 
 ## Next
 

@@ -3,72 +3,95 @@ title: "Earning model"
 description: "How GPU sharing pays — GUSD per workload, GHXP multipliers, and what to do with the credit."
 ---
 
-The earning module turns the AI App from a free local-AI workstation into a side income. You opt in once; the network does the rest.
+The earning module turns the AI App from a free local-AI workstation into a side income. Once you're at the [AI OPTIMAL](/ai/hardware-requirements#ai-optimal--earn-from-gpu-sharing) hardware bar and opted in, two streams pay you:
+
+- **GUSD per workload** — credited continuously as inference jobs complete on your GPU.
+- **GHX from the seasonal pool** — every two months, your locked GHXP determines your share of the season's GHX pool. See [GHXP seasons](/ai/ghxp#seasons).
+
+You opt in once; the network does the rest.
 
 <Frame>
-  <img src="/images/earning-flow.svg" alt="Earning flow: idle GPU receives an AI workload, completes inference, gets credited in GUSD, GHXP rank multiplies the reward, then the user can convert to GHX, withdraw USDC, or spend in the store." />
+  <img src="/images/earning-flow.png" alt="Earning flow: idle GPU receives an AI workload, completes inference, gets credited in GUSD, GHXP level multiplies the reward, then the user can convert to GHX, withdraw USDC, or spend in the store." />
 </Frame>
 
-## The mechanics
+## Setup
 
-1. **You opt in** — toggle the earning module on. Set hours / GPU usage cap if you want.
-2. **The network dispatches a workload** — text, image, video, embedding, transcription. Whatever fits your VRAM and is in the queue.
-3. **Your GPU runs it** — typically seconds to a few minutes per workload, depending on type.
-4. **You're paid in GUSD** — credited to your in-app wallet on completion. 1 GUSD ≈ 1 USD.
-5. **GHXP rank multiplies the reward** — same workload pays more for higher-ranked contributors.
+Five steps from cold install to first paycheck:
+
+1. **Download the AI App** — free Windows installer from [gamerhash.com](https://gamerhash.com/en/app-download).
+2. **Log in** — email or Google sign-in. The account is created on first run if you don't have one yet.
+3. **Install the EARN module** — turn it on inside the app; required components download automatically.
+4. **Download a model pack** — **Basic** to get started, or **Full** to qualify for the highest-paying workload classes.
+5. **Wait for assignment** — the network dispatches jobs to your machine automatically whenever there's a fit for your VRAM and you're online. You're paid in **GUSD** as each one completes.
+
+No queue tuning, no manual job acceptance, no per-task setup. Leave the machine on — most pay comes from being online when a workload arrives.
 
 ## What determines per-machine yield
 
 Yield depends on a handful of variables — not all under your control:
 
-- **GPU class & VRAM** — a 4080 unlocks higher-paying workload classes than a 3060.
+- **GPU class & VRAM** — earning starts at **16 GB VRAM**; bigger memory unlocks higher-paying workload classes. See [hardware requirements](/ai/hardware-requirements).
 - **Uptime** — more hours online = more workloads matched.
-- **GHXP rank** — long-running, GHX-holding accounts earn more per workload.
-- **Network demand** — pay scales with deAPI volume. As demand grows, contributor pay grows.
-- **Region / latency** — some workloads have geographic preferences for low-latency dispatch.
+- **GHXP level** — long-running, GHX-holding accounts earn more per workload.
+- **Locked GHXP at season close** — your slice of the seasonal GHX pool depends on how much GHXP you've committed.
+- **Network demand** — pay scales with how much compute the network sells. As demand grows, contributor pay grows.
 
 The dashboard inside the AI App shows live per-hour earnings and historical totals.
 
 ## What you can do with GUSD
 
-GUSD is virtual currency inside the platform — pegged 1:1 to USD. Three exit routes:
+GUSD is the platform's internal earning currency. Three exit routes:
 
 <CardGroup cols={3}>
   <Card title="Convert to GHX" icon="arrow-right-arrow-left">
     HODL on Ethereum, BNB Chain, or Solana. Stake or LP for up to 25% APR — see [GHX staking docs](https://docs.gamercoin.com/tokenomics/staking).
   </Card>
   <Card title="Withdraw USDC" icon="building-columns">
-    Out to Binance via integration. Internal transfer is free of GamerHash fees.
+    Out to any BNB Chain wallet — your Binance deposit address, MetaMask on BSC, or any BEP-20 wallet. No GamerHash fee.
   </Card>
   <Card title="Spend in Store" icon="cart-shopping">
-    600+ digital goods — games, gift cards, prepaid vouchers. See [Store](/apps/store).
+    600+ digital goods — games, gift cards, prepaid vouchers. Browse the [Store](https://gamerhash.com/en/shop).
   </Card>
 </CardGroup>
 
 ## What this is *not*
 
 - **Not mining.** No PoW, no hash rates, no algorithm tuning. The platform serves AI inference jobs.
-- **Not crypto trading.** GUSD is a stable USD-equivalent credit; the GHX conversion is optional.
-- **Not guaranteed.** Yield depends on demand. There are no fixed APRs on the earning side — APR exists only on the [staking](https://docs.gamercoin.com/tokenomics/staking) side.
+- **Not crypto trading.** GUSD is an internal earning credit; converting to GHX is optional, not required to be paid.
+- **Not guaranteed.** Yield depends on network demand. There are no fixed APRs on the earning side — APR exists only on the [staking](https://docs.gamercoin.com/tokenomics/staking) side.
 
-## Newcomer head start
-
-For the first **30 days** after registration, new contributors keep **100% of credited earnings**. After 30 days the standard rank-based contribution applies — see the in-app dashboard for current rates.
-
-## Optimisation tips
+## Optimization tips
 
 - **Run the app continuously** — most pay comes from being online when a workload arrives.
-- **Hold some GHX** for the GHXP Boost (see [GHXP](/ai/ghxp)).
-- **Don't compete with gaming sessions** — set a GPU usage cap so the app doesn't fight your game for VRAM.
+- **Hold some GHX in MetaMask or your in-app wallet** for the GHXP Boost (see [GHXP](/ai/ghxp)) — and keep MetaMask connected, otherwise the boost turns off.
+- **Lock your GHXP each season** — accumulated GHXP only earns you a slice of the GHX pool if you actually lock it.
+- **Just leave it running when you're not gaming** — launching a game pushes the module out automatically, no scheduling required.
 - **Update the driver and the app** — performance improvements ship constantly; out-of-date stacks miss workloads.
+
+## Further reading
+
+<CardGroup cols={2}>
+  <Card title="Why $GHX isn't just another token" icon="coins" href="https://medium.com/we-are-the-gamerhash/why-ghx-isnt-just-another-token-1ce77aa720e4">
+    The token-side view of why holding GHX matters — utility, supply, GHXP boost.
+  </Card>
+  <Card title="From Mining to AI: GamerHash Evolution" icon="arrow-trend-up" href="https://medium.com/we-are-the-gamerhash/from-mining-to-ai-the-gamerhash-evolution-75bf96424530">
+    Why the same idle-GPU thesis pays better as AI inference than as PoW hashes.
+  </Card>
+</CardGroup>
 
 ## Next
 
 <CardGroup cols={2}>
   <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
-    Which workloads your GPU qualifies for.
+    AI READY vs AI OPTIMAL — what your GPU qualifies for.
+  </Card>
+  <Card title="GHXP & seasons" icon="bolt" href="/ai/ghxp">
+    How GHXP accrues, locks each season, and translates into GHX payouts.
   </Card>
   <Card title="Privacy" icon="shield" href="/ai/privacy">
     What's transmitted, what's logged, what stays local.
+  </Card>
+  <Card title="Profit calculator" icon="calculator" href="https://gamerhash.com/en/calculator">
+    Per-GPU yield estimate based on current network demand.
   </Card>
 </CardGroup>

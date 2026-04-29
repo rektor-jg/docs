@@ -1,0 +1,40 @@
+---
+title: "Network stats"
+description: "Live state of the GamerHash AI distributed compute network — devices, GPUs, VRAM, CPU cores, RAM, and storage."
+---
+
+The GamerHash AI network is built from contributors' machines, and you can watch its capacity in real time. The public dashboard at [gamerhash.com/en/stats](https://gamerhash.com/en/stats) shows what's connected to the network right now.
+
+## What's tracked
+
+| Metric | What it measures |
+| --- | --- |
+| **Devices** | Total machines connected to the network and running the AI App |
+| **GPUs** | Aggregate count of GPUs contributed across all devices |
+| **GPU VRAM** | Total video memory available for AI inference workloads |
+| **CPUs** | Aggregate CPU count across the network |
+| **CPU cores** | Total cores available for CPU-side workloads |
+| **RAM** | Total system memory across all connected machines |
+| **Storage** | Total disk capacity contributed by the network |
+
+Each metric is shown for two windows:
+
+- **Last 24h** — what was active in the past day
+- **Overall** — cumulative state of the network
+
+## Why this matters
+
+For **contributors**, the dashboard gives a feel for how big the network is and how busy it tends to be — a larger network means more workloads in the queue to route. For **AI builders and partners**, it's an at-a-glance view of available compute capacity before integrating with the platform.
+
+The numbers are pulled live, so don't expect them to match a snapshot you saw an hour ago. Treat them as a directional read, not a service-level commitment — the queue and machine mix move minute to minute.
+
+## Open the dashboard
+
+<CardGroup cols={2}>
+  <Card title="Live network stats" icon="chart-line" href="https://gamerhash.com/en/stats">
+    Real-time numbers from the public dashboard — devices, GPUs, VRAM, CPU, RAM, storage.
+  </Card>
+  <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
+    What it takes to add your GPU to the network.
+  </Card>
+</CardGroup>

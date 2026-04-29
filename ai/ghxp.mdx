@@ -3,10 +3,10 @@ title: "GHXP — engagement multiplier"
 description: "How GamerHash Experience Points work, what they unlock, and why holding GHX accelerates them."
 ---
 
-**GHXP (GamerHash Experience Points)** is an in-app reputation system. It is **not a token** — there's no contract, no liquidity, no transferability. It's a multiplier on the rewards you earn from sharing GPU power, plus a key to community programs.
+**GHXP (GamerHash Experience Points)** is an in-app reputation and reward-share system. It is **not a token** — no contract address, no liquidity, no transferability. Think of it as the engagement score that scales how much you take home from each workload, plus your ticket to seasonal GHX rewards and community programs.
 
 <Frame>
-  <img src="/images/ghxp-flow.svg" alt="GHXP flow: run the app to accrue points each minute, hold GHX in MetaMask to activate the boost, higher GHXP increases earning rank, the result is more GHX per workload." />
+  <img src="/images/ghxp-flow.png" alt="GHXP flow: run the app to accrue points each minute, hold GHX in MetaMask or your in-app wallet to activate the boost, higher GHXP increases earning level, the result is more GHX per workload." />
 </Frame>
 
 ## How GHXP accrues
@@ -14,14 +14,14 @@ description: "How GamerHash Experience Points work, what they unlock, and why ho
 - **Every minute** the AI App is running, you accrue GHXP.
 - Points appear as **Pending** during the active hour and are **credited to your account** at the top of each hour. Closing the app before the hour completes drops the pending points for that hour.
 - Background runs count — the app does not need to be in the foreground.
-- Surveys and one-off in-app activities (e.g., trying a new module, completing onboarding) award additional GHXP.
 
 ## The GHX Boost
 
-GHX held in **MetaMask** under the same account that runs the AI App **multiplies** GHXP accrual. The more GHX you hold, the higher the multiplier — capped, but meaningful.
+GHX held in **MetaMask** or in your **in-app GHX wallet** (under the same GamerHash account that runs the AI App) **multiplies** GHXP accrual. The more GHX you hold across either, the higher the multiplier — capped, so whales don't dominate.
 
 - Boost is checked periodically and applied automatically.
-- You don't lock or stake the GHX for the boost — it just has to be in the wallet you've connected.
+- You don't lock or stake the GHX for the boost — it just has to sit in the connected MetaMask or your in-app wallet.
+- Holdings across both wallets count together toward the multiplier.
 - Boost stacks with the engagement-time bonus.
 
 ## Why it exists
@@ -30,9 +30,22 @@ GHXP isn't convertible to GHX. It's a **multiplier on your share of the reward p
 
 GHXP also unlocks:
 
-- **Higher reward rank** when revenue is distributed to contributors.
+- **Higher account level** in the AI App — scales your share when revenue is distributed to contributors.
 - **Eligibility** for airdrops, contests, and community programs.
-- **Visibility** in leaderboards (opt-in, by display name).
+
+## Seasons
+
+GHX rewards are distributed in **seasons that run every two months**. Each season the network sets aside a GHX pool, and contributors who lock their GHXP split it proportionally.
+
+How it works:
+
+1. **Lock your GHXP** — commit the GHXP you've accumulated to the current season. The amount you lock is your stake in that season's pool.
+2. **Your share is proportional** — your slice = your locked GHXP ÷ total GHXP locked across all participants.
+3. **Payout closes the season** — when the season ends, GHX is distributed automatically based on your share.
+
+> **Example.** You lock 10,000 GHXP in a season where the total across all participants is 1,000,000 GHXP — that's a 1% share, and you receive 1% of the season's GHX pool when it closes.
+
+Specific dates, pool sizes, and eligibility rules for each season are announced through the [community channels](https://gamerhash.com/en/l/Myw09) and on [Medium](https://medium.com/we-are-the-gamerhash).
 
 ## What GHXP is *not*
 
@@ -40,24 +53,34 @@ GHXP also unlocks:
 - Not transferable. Tied to your GamerHash account.
 - Not directly convertible. You don't trade GHXP for GHX — you use it to earn *more* GHX per workload.
 
-## How to maximise it
+## How to maximize GHXP
 
-1. **Run the app continuously when idle.** A pause loses pending GHXP for that hour.
-2. **Hold GHX in MetaMask** for the boost.
-3. **Use new modules** as they launch — onboarding tasks usually award one-off GHXP.
-4. **Complete in-app surveys** when offered (typically 2,000 GHXP).
+1. **Keep the app running when the machine is idle.** A pause mid-hour drops pending GHXP for that hour.
+2. **Hold GHX** — in MetaMask, in your in-app GHX wallet, or both. Holdings across both count toward the multiplier (up to the cap).
+3. **Stack across machines** — GHXP is per-account, not per-machine, so multiple rigs on the same login pool their points together.
+4. **Keep MetaMask connected** — if MetaMask stops being detected, the GHXP Boost turns off entirely until you reconnect.
 
 ## Watch out for
 
-- Closing the app mid-hour discards that hour's pending points. Schedule restarts at the hour boundary.
-- The boost reads on-chain GHX in **MetaMask only** for now. Other wallet integrations are tracked on the roadmap.
-- GHXP is per-account, not per-machine. Running multiple machines on the same account is fine — the points accumulate together.
+- **Closing the app mid-hour discards that hour's pending points.** Schedule restarts at the hour boundary, not in the middle.
+- **MetaMask connection drops are silent and they kill the boost.** If MetaMask gets disconnected mid-session, you lose the GHXP Boost — reconnect promptly to restore it.
+
+## Further reading
+
+<CardGroup cols={2}>
+  <Card title="Why $GHX isn't just another token" icon="coins" href="https://medium.com/we-are-the-gamerhash/why-ghx-isnt-just-another-token-1ce77aa720e4">
+    The token-side view of why holding GHX matters — utility, supply, and where GHXP fits in.
+  </Card>
+  <Card title="All updates on Medium" icon="rss" href="https://medium.com/we-are-the-gamerhash">
+    Season announcements, monthly recaps, and new module launches.
+  </Card>
+</CardGroup>
 
 ## Next
 
 <CardGroup cols={2}>
   <Card title="Earning model" icon="coins" href="/ai/earning">
-    How GHXP rank translates into GUSD payouts.
+    How GHXP level translates into GUSD payouts.
   </Card>
   <Card title="Hardware requirements" icon="microchip" href="/ai/hardware-requirements">
     What GPU gets which workloads.

@@ -1,74 +1,67 @@
 ---
 title: "Moduły"
-description: "Wszystkie moduły aplikacji GamerHash AI — co robią, ile kosztują i jakiego sprzętu wymagają."
+description: "Wszystkie moduły dostępne w GamerHash AI App i co robi każdy z nich."
 ---
 
 Aplikacja AI jest modułowa. Nie musisz korzystać z całej — otwórz dashboard i wybierz, co chcesz. Każdy moduł działa lokalnie na twoim GPU.
 
-## Text-to-Text (AI Chat)
+## Moduł Earn
 
-Prywatny czat z najnowszymi modelami językowymi open-source. Wybierz model z **Model Center** i czatuj bez limitów użycia i bez wysyłania danych na zewnętrzny serwer.
+Włącz, a twoje GPU dołącza do dispatch poola, kiedy jest bezczynne. Sieć kieruje na twoją maszynę zadania inferencji AI; za każde wykonane zadanie dostajesz wypłatę w **GUSD**.
 
-**Dostępne modele** — rodzina Llama 3, Qwen 3, Phi-4 (Microsoft), DeepSeek (R1, Coder), Gemma, Bielik, GPT-OSS-20B (open-source release od OpenAI).
+- **Zarabiaj, kiedy GPU jest wolne.** Zadania biorą całe GPU i VRAM; odpalenie gry samo wypycha moduł. Zostaw go włączonego, kiedy nie grasz.
+- **Pauza w każdej chwili.** Bez minimalnych zobowiązań — przełącznik w pasku bocznym.
 
-**VRAM** — większość skwantyzowanych modeli 7B/8B działa na 8 GB. Modele 14B–20B rekomendują 16 GB+. Aplikacja pokazuje szacunki dopasowania per model.
+Zobacz [Model zarabiania](/pl/ai/earning), żeby poznać czynniki decydujące o yieldzie z maszyny.
 
-**Zastosowania** — szkice, streszczenia, generowanie kodu, Q&A na dokumentach, burza mózgów. Brak telemetrii na promptach i wynikach.
+## Moduł Home
 
-## Text-to-Image
+Dashboard działający w tle, który łączy twoje konto z nagrodami w sieci.
 
-Generuj obrazy z promptów. Wyniki zostają lokalnie na twoim PC; aplikacja trzyma historię per urządzenie.
+- **Naliczanie GHXP** — każda minuta działania aplikacji to dodatkowe GHXP. Punkty oczekujące księgują się o pełnej godzinie. Trzymaj GHX w MetaMask lub w portfelu wbudowanym w aplikację, żeby zwielokrotnić tempo.
+- **Sezony** — co dwa miesiące zablokuj zgromadzone GHXP, żeby odebrać proporcjonalny udział w sezonowej puli GHX.
+- **Status konta** — bieżące GHXP, poziom, miejsce w sezonie i podpięte portfele — wszystko na jednym ekranie.
 
-**Dostępne modele** — Stable Diffusion (kilka checkpointów), FLUX (Schnell + style packi LoRA), Sana 1.6B, Sana Sprint, HiDream, DreamShaper, Astro GHX Style LoRA.
+Zobacz [GHXP — mnożnik zaangażowania](/pl/ai/ghxp), żeby poznać pełną mechanikę.
 
-**VRAM** — 8 GB dla SD 1.5 i Sana Sprint, 12 GB+ dla FLUX i HiDream przy wyższych rozdzielczościach.
+## Obraz
 
-**Sterowanie** — liczba obrazów na prompt, jakość / kroki, fidelity, negative prompty, podgląd na cały ekran.
+| Moduł | Co robi | Modele |
+| --- | --- | --- |
+| **Text-to-Image** | Generujesz obrazy z promptów. Wyniki zostają lokalnie, a aplikacja trzyma historię per urządzenie. | Flux.1 dev, FLUX.1 Schnell 12B, FLUX.2 Klein 4B, Z-Image-Turbo, Sana Sprint 0.6B / 1.6B |
+| **Image Edit** | Edytujesz istniejący obraz instrukcją tekstową — zmień obiekt, podmień tło, zmień styl, inpainting. | Qwen-Image-Edit Plus |
+| **Image Upscale** | Zwiększasz rozdzielczość istniejącego obrazu bez ponownego promptowania. | RealESRGAN x2 / x4 |
+| **Background Removal** | Wycinasz obiekty — czysty alpha do compositingu albo transparentnych assetów. | Ben2 |
 
-**AI Image Booster** — opcjonalna płatna funkcja (100 GHX). Poprawia jakość promptów przez mały model pomocniczy.
+**AI Image Booster** — opcjonalna funkcja bramkowana GHX w Text-to-Image, która poprawia jakość promptów przez mały model pomocniczy.
 
-## Image / Text → Video
+## Wideo
 
-Zamień nieruchomy obraz lub prompt tekstowy w krótki klip wideo, lokalnie.
+| Moduł | Co robi | Modele |
+| --- | --- | --- |
+| **Image / Text / Audio → Video** | Zamieniasz nieruchomy obraz, prompt tekstowy lub ścieżkę audio w krótki klip wideo. | LTX-2.3 22B Distilled, LTX-2 19B Distilled, LTX-Video 0.9.8 13B |
+| **Video Upscale** | Zwiększasz rozdzielczość istniejącego klipu wideo. | FlashVSR Tiny, RealESRGAN Video x2 / x4 |
+| **Video Replace / Animate** | Animujesz lub podmieniasz obiekt w istniejącym wideo — wymień postać, steruj ruchem z referencji, zmień styl akcji. | Wan2.2-Animate 14B |
 
-**Dostępne modele** — LTX-Video (najnowszy LTX-2.x), z regularnymi aktualizacjami w miarę pojawiania się nowych modeli wideo open-source.
+## Głos i audio
 
-**VRAM** — minimum 12 GB. 16 GB+ rekomendowane dla dłuższych albo wyższej rozdzielczości klipów.
+| Moduł | Co robi | Modele |
+| --- | --- | --- |
+| **Text-to-Speech** | Generujesz mowę z tekstu — zaprojektuj własny głos, sklonuj istniejący albo użyj domyślnego. | Qwen3 TTS (VoiceDesign / VoiceClone / CustomVoice), Chatterbox, Kokoro |
+| **Transkrypcja głosu i audio** | Transkrybujesz mowę do tekstu z audio albo wideo — pliki lub strumienie na żywo. | Whisper Large V3 |
+| **Text-to-Music** | Generujesz utwory muzyczne z promptu tekstowego — soundtracki do gier, ambient, prototypowanie. | ACE-Step 1.5 (Base / Turbo + warianty XL) |
 
-**Sterowanie** — czas trwania, motion bias, rozdzielczość, "video booster" do wzbogacania promptów.
+## Tekst i dokumenty
 
-## Voice — wkrótce w Q4 2026
-
-Moduły **Text-to-Speech** i **transkrypcji głosu** są na roadmapie na Q4 2026. Będą działać lokalnie z tym samym modelem prywatności co reszta.
-
-## Multimodal
-
-Wgrywaj obrazy lub PDFy i czatuj z nimi. Przydatne do Q&A na dokumentach, analizy wizualnej i wieloplecaowej ekstrakcji. Oparte o multimodalne LLM-y wspierane przez Model Center.
-
-**VRAM** — 12 GB+ rekomendowane dla modeli z obsługą obrazu.
-
-## Moduł zarobkowy
-
-Włącz, a twoje GPU dołącza do puli dyspozytorskiej, gdy jest bezczynne. Zadania inferencji AI od konsumentów [deAPI](https://deapi.ai) trafiają na twoją maszynę; otrzymujesz wypłatę w **GUSD** za każde wykonane zadanie.
-
-Możesz:
-- **Ustawić godziny** — zarabiać tylko gdy śpisz, tylko w weekendy albo zawsze gdy GPU jest bezczynne.
-- **Ustawić limit użycia GPU** — zostawić zapas na granie.
-- **Zatrzymać w każdej chwili** — bez zobowiązań.
-
-Zobacz [Model zarobków](/pl/ai/earning), żeby poznać czynniki decydujące o yieldzie z maszyny.
+| Moduł | Co robi | Modele |
+| --- | --- | --- |
+| **AI Chat** | Prywatny czat z najnowszymi modelami językowymi open-source. Bez limitów użycia, nic nie leci do zewnętrznego serwera. | Wybierz z Model Center |
+| **OCR / ekstrakcja dokumentów** | Wyciągasz tekst z obrazów i zeskanowanych dokumentów — paragony, screenshoty, zdjęcia stron. | Nanonets OCR S |
+| **Embeddingi** | Generujesz wektorowe embeddingi z tekstu — do retrievalu, pipeline'ów RAG albo lokalnego semantycznego wyszukiwania. | BGE M3 |
 
 ## Model Center
 
-Hub w aplikacji do przeglądania, pobierania i przełączania modeli. Pokazuje dopasowanie do VRAM twojego sprzętu. Nowe modele lądują tu regularnie — ostatnio: GPT-OSS-20B, aktualizacje Llama 3.x, style packi LoRA dla FLUX.
-
-## Wkrótce
-
-- **Własne uploady modeli** — wrzucasz swoje LoRA albo fine-tune do aplikacji.
-- **Ulepszenia multimodalne** — lepsze rozumienie obrazu+dokumentu, Q&A na wideo.
-- **TTS / transkrypcja** — pełen lokalny pipeline głosowy.
-
-Zobacz [roadmap](/pl/roadmap), żeby poznać najnowszy dziennik dostaw.
+Hub w aplikacji do przeglądania, pobierania i przełączania modeli. Pokazuje dopasowanie do VRAM-u twojego sprzętu. Nowe modele lądują tu regularnie, w miarę jak wypuszcza je open-source.
 
 ## Dalej
 
@@ -76,7 +69,7 @@ Zobacz [roadmap](/pl/roadmap), żeby poznać najnowszy dziennik dostaw.
   <Card title="Wymagania sprzętowe" icon="microchip" href="/pl/ai/hardware-requirements">
     Które moduły uruchomi twoje GPU.
   </Card>
-  <Card title="Model zarobków" icon="coins" href="/pl/ai/earning">
+  <Card title="Model zarabiania" icon="coins" href="/pl/ai/earning">
     Ile zarabiasz za zadanie i jak wypłacać GUSD.
   </Card>
 </CardGroup>

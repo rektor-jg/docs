@@ -1,15 +1,15 @@
 ---
 title: "Business model"
-description: "Where the revenue comes from, and how it flows to users, the network, and GHX."
+description: "Where the revenue comes from, and how it flows back to contributors and the platform."
 ---
 
-The platform earns when AI workloads run on the network. The same revenue funds three things: contributor payouts, platform operations, and ongoing GHX buy-and-burn.
+The platform earns when AI workloads run on the network. The same revenue funds two things: **contributor payouts** and **platform operations** — nothing else.
 
 ## Revenue sources
 
-<CardGroup cols={2}>
-  <Card title="deAPI usage" icon="code">
-    Developers pay per request — text, image, video, embeddings, transcription. Stripe and crypto both supported.
+<CardGroup cols={3}>
+  <Card title="Pay-per-request compute" icon="code">
+    Developers and applications rent AI compute on demand — text, image, video, embeddings, transcription.
   </Card>
   <Card title="Direct AI partnerships" icon="handshake">
     Bulk compute deals with AI projects, agencies, and platform integrations.
@@ -17,51 +17,63 @@ The platform earns when AI workloads run on the network. The same revenue funds 
   <Card title="Store margin" icon="cart-shopping">
     GamerHash Store earns a margin on digital goods — games, gift cards, vouchers.
   </Card>
-  <Card title="In-app upgrades" icon="bolt">
-    Optional paid features in the AI App (e.g., AI Image Booster prompts).
-  </Card>
 </CardGroup>
+
+GHX-gated features in the AI App (like AI Image Booster prompts) aren't a revenue source — they're holder benefits, unlocked by holding GHX, not by paying.
 
 ## How it flows back
 
-```
-deAPI / partner revenue
-   │
-   ├── Contributors  →  paid in GUSD per workload completed
-   │                    GHXP rank multiplier scales the share
-   │
-   ├── Platform     →  ops, infra, R&D, support
-   │
-   └── GHX buyback  →  open-market buys + burn, distributed yield
-```
+<Frame>
+  <img src="/images/revenue-flow.png" alt="Revenue flow: three revenue sources (pay-per-request compute, direct AI partnerships, store margin) feed an aggregated platform revenue pool, which splits into contributor payouts (the majority share, paid in GUSD per workload, scaled by GHXP level) and platform operations (infra, R&D, support)." />
+</Frame>
 
-A portion of revenue is used to **buy GHX from the open market and burn it**, plus to fund staking and liquidity-mining yield (up to **25% APR**) on [staking.gamercoin.com](https://staking.gamercoin.com). This ties the token's economics to real platform activity rather than emission schedules alone.
+The split favors contributors — they own the GPUs doing the work. The platform takes the slice needed to keep the lights on (infra, R&D, support), and that's it. After payout, GamerHash supports two integrated paths inside the platform:
 
-See the [GHX tokenomics docs](https://docs.gamercoin.com/tokenomics/overview) for the full token-side picture: supply, distribution, burn, staking.
+- **Swap GUSD → GHX** — raises your AI App level, which accelerates GHXP accrual on top of regular earnings.
+- **Withdraw GUSD → USDC** — straight to an external wallet (e.g., Binance), no intermediate steps.
+
+For the token-side picture — supply, distribution, and staking — see the [GHX tokenomics docs](https://docs.gamercoin.com/tokenomics/overview).
 
 ## What contributors get
 
 When you run the GamerHash AI App with the earning module enabled:
 
-- **GUSD per workload** — pegged 1:1 to the US dollar, credited automatically as jobs complete.
+- **GUSD per workload** — credited automatically as jobs complete.
 - **GHXP** — engagement points awarded every minute the app runs. Higher GHXP = higher reward share when revenue is distributed.
-- **GHX boost** — holding GHX in MetaMask multiplies your GHXP accrual rate, so token holders earn faster.
+- **GHX boost** — holding GHX (in MetaMask or your in-app GHX wallet) multiplies your GHXP accrual rate, so token holders earn faster.
 
-You decide what to do with GUSD: convert to **GHX** (HODL or stake for APR), withdraw as **USDC** to Binance, or spend in the **GamerHash Store**.
+The earned GUSD is yours. Three things you can do with it:
 
-## What developers pay
+- **Convert to GHX** — hold, or stake for up to **25% APR** at [staking.gamercoin.com](https://staking.gamercoin.com).
+- **Withdraw as USDC** — straight to Binance, no intermediate steps.
+- **Spend in the GamerHash Store** — games, gift cards, prepaid digital goods.
 
-Pricing is per-request, by model class, on [deAPI](https://deapi.ai). The same OpenAI-compatible endpoint that powers `gpt-oss-20b` chat will also serve image generation, video, embeddings, and transcription. There's a free tier for evaluation; paid tiers scale via Stripe or crypto payments.
+## What buyers pay
+
+Pricing is per-request, by model class. One credential covers chat completions, image generation, video, embeddings, and transcription — same access pattern, every model class. Bulk and partner pricing is negotiated case-by-case.
 
 ## Why this works
 
-The model is unusual in that **revenue and rewards are denominated in dollars (or GUSD), not emissions**. Mining rewards from a fixed pool fall when more people join; here, the more compute the network sells, the larger the pool that's distributed. As long as deAPI volume grows, contributor earnings grow with it.
+The model is unusual in that **rewards are paid in GUSD, the platform's internal earning currency, not in token emissions**. Mining rewards from a fixed pool shrink as more people join; here, the more compute the network sells, the larger the pool that gets distributed. As long as compute demand grows, contributor earnings grow with it — there's no built-in dilution curve.
+
+It also means contributors don't need to speculate on token price to get paid. Whether to hold the earned GUSD, swap to GHX (raises AI App level), stake, or withdraw as USDC is a separate decision from whether the work is earning at all.
+
+## Further reading
+
+<CardGroup cols={2}>
+  <Card title="Why $GHX isn't just another token" icon="coins" href="https://medium.com/we-are-the-gamerhash/why-ghx-isnt-just-another-token-1ce77aa720e4">
+    How GHX ties into the AI revenue flywheel — utility, supply, and where the token sits in the stack.
+  </Card>
+  <Card title="From Mining to AI: GamerHash Evolution" icon="arrow-trend-up" href="https://medium.com/we-are-the-gamerhash/from-mining-to-ai-the-gamerhash-evolution-75bf96424530">
+    Why the same idle-GPU thesis pays better as AI inference than as PoW hashes.
+  </Card>
+</CardGroup>
 
 ## Next
 
 <CardGroup cols={2}>
   <Card title="Earning model in detail" icon="coins" href="/ai/earning">
-    GUSD, GHXP, ranks, and what determines per-machine yield.
+    GUSD, GHXP, levels, and what determines per-machine yield.
   </Card>
   <Card title="GHXP mechanics" icon="bolt-lightning" href="/ai/ghxp">
     How the multiplier works and why holding GHX matters.

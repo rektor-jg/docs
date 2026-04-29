@@ -1,57 +1,80 @@
 ---
 title: "Wymagania sprzętowe"
-description: "Jakie GPU obsługuje co — minimalne specyfikacje, rekomendowane i dopasowanie moduł po module."
+description: "Dwie plakietki, dwie poprzeczki — AI READY do uruchamiania modeli lokalnie, AI OPTIMAL do zarabiania na udostępnianiu mocy GPU."
 ---
 
 import { Win } from '/snippets/chains.mdx'
 
-Aplikacja AI jest zależna od GPU. CPU i RAM mają mniejsze znaczenie; o tym, czy model się uruchomi, decyduje **VRAM** i **generacja GPU**.
+Aplikacja AI ma dwa różne przypadki użycia, każdy z własnym progiem sprzętowym:
 
-## Minimum
+- **AI READY** — uruchamiaj modele AI lokalnie (czat, obrazy, wideo, głos) na własnym GPU.
+- **AI OPTIMAL** — dodatkowo przyjmuj zadania zarobkowe z sieci i otrzymuj wypłaty w GUSD.
 
-- **OS** — <Win /> 10 (22H2+) albo 11
-- **GPU** — NVIDIA RTX z **8 GB VRAM** (np. RTX 3060, 4060, 5060)
-- **Driver** — aktualny driver NVIDIA studio albo game-ready. Aplikacja ostrzeże, jeśli za stary.
-- **Dysk** — ~30 GB wolnego miejsca na pobrane modele (więcej, jeśli trzymasz wiele w Model Center)
-- **Sieć** — szerokopasmowa; pobieranie modeli jest duże, ale jednorazowe
+<Frame>
+  <img src="/images/hardware-tiers.png" alt="Drabina poziomów VRAM: 8 GB i 12 GB kwalifikują się do AI READY (tylko modele lokalne); 16 GB i 24 GB+ także do AI OPTIMAL (zarabianie na zadaniach z sieci). Każdy poziom pokazuje, co odblokowuje — wejściowe modele czatowe i generowanie obrazów na 8 GB, czat 14B i FLUX na 12 GB, czat 20B i video replace na 16 GB, pełny Model Center na 24 GB+." />
+</Frame>
 
-8 GB odblokowuje: AI Chat (modele 7B/8B w kwantyzacji), Stable Diffusion 1.5 / Sana Sprint, podstawowe zadania zarobkowe.
+Sprawdź swoją konkretną konfigurację pod kątem obu plakietek w oficjalnym [kalkulatorze zysku GamerHash](https://gamerhash.com/en/calculator), zanim coś kupisz.
 
-## Rekomendowane
+## AI READY — uruchamiaj modele lokalnie
 
-- **GPU** — RTX 4070 / 5070 lub lepsze, **12–16 GB VRAM**
-- 12 GB odblokowuje: modele czatowe 14B, generowanie obrazów FLUX, LTX-Video w 480p.
-- 16 GB+ odblokowuje: modele czatowe 20B (GPT-OSS-20B), FLUX w wysokiej rozdzielczości, dłuższe klipy LTX-Video, multimodalne wizja.
+Niższa poprzeczka. Jeśli odpalasz współczesne gry AAA w 1080p, odpalisz też lokalne AI.
 
-## High-end
+- **OS** — <Win /> 10 (22H2+) lub 11
+- **GPU** — NVIDIA RTX z **8 GB+ VRAM** (RTX 3060, 4060, 5060 i wyżej)
+- **RAM** — 16 GB
+- **CPU** — nowoczesny x86-64 (Intel 8. generacji / AMD Ryzen 2000 lub nowszy)
+- **Sterownik** — aktualny sterownik NVIDIA Studio lub Game Ready
+- **Dysk** — ~30 GB wolnego miejsca na pobrane modele
 
-- **GPU** — RTX 4090 / 5090 / Blackwell pro, **24 GB+ VRAM**
-- Pełen dostęp do Model Center, najlepiej płatne zadania zarobkowe, wideo w wyższej rozdzielczości / dłuższe.
+Im więcej VRAM, tym większy model lokalny załadujesz:
+
+| VRAM | Odblokowane moduły |
+| --- | --- |
+| **8 GB** | AI Chat (7B/8B w kwantyzacji), Sana Sprint, FLUX.1 Schnell, głos (TTS + transkrypcja Whisper), OCR, upscaling obrazów, usuwanie tła, embeddingi |
+| **12 GB** | Czat 14B, FLUX dev / FLUX.2 / Z-Image-Turbo w wyższych rozdzielczościach, edycja obrazu, LTX-Video 480p, upscaling wideo, generowanie muzyki |
+| **16 GB+** | Czat klasy 20B, FLUX w wysokiej rozdzielczości, dłuższe klipy LTX-Video, video replace / animate |
+| **24 GB+** | Pełny dostęp do Model Center — każdy model dostępny w aplikacji |
+
+Model Center w aplikacji pokazuje na żywo dopasowanie konkretnego modelu do twojego sprzętu.
+
+## AI OPTIMAL — zarabianie na udostępnianiu GPU
+
+Wyższa poprzeczka. Zarabianie zaczyna się od **16 GB VRAM** — wszystko poniżej kwalifikuje tylko do AI READY.
+
+Wszystko z **AI READY**, plus:
+
+- **GPU** — NVIDIA RTX z **16 GB+ VRAM** (RTX 4060 Ti 16 GB, RTX 4070 Ti Super, RTX 4080 / 5080, RTX 4090 / 5090, Blackwell pro)
+- **RAM** — **minimum 32 GB**, więcej tym lepiej. Równoległe zadania korzystają z większej pamięci systemowej.
+- **Sieć** — stabilne łącze szerokopasmowe (50 Mbps download komfortowo). Zadania zarobkowe streamują małe ładunki — liczy się stabilność, nie szczytowa prędkość.
+- **Uptime** — zostaw maszynę włączoną. Większość wypłat bierze się z tego, że jesteś online, kiedy zadanie przyjdzie.
+
+Im więcej VRAM-u, tym wyżej płatne poziomy zadań ci się odblokowują:
+
+| VRAM | Pula zadań zarobkowych |
+| --- | --- |
+| **16 GB** | Poziom wejściowy — wideo i czat klasy 20B |
+| **24 GB+** | Pełna pula zarobkowa, najlepiej płatne poziomy |
+
+[Kalkulator zysku](https://gamerhash.com/en/calculator) podaje szacunkowy yield per GPU na podstawie aktualnego popytu w sieci.
 
 ## Co nie jest wspierane
 
-- GPU AMD w aplikacji AI dziś (istnieją eksperymentalne buildy; domyślna instalacja jest tylko-NVIDIA).
-- macOS (aplikacja AI jest tylko na Windows; [aplikacja mobilna](/pl/apps/mobile) jest na iOS/Android, ale do zarządzania kontem, nie lokalnego AI).
-- Linux — tak samo jak macOS dla aplikacji AI. Role po stronie serwera przez deAPI to inna sprawa — zobacz [deAPI](/pl/deapi/overview).
-- iGPU — zintegrowana grafika nie ma wystarczającego VRAM.
+- **GPU AMD** — w aplikacji AI obsługujemy dziś tylko NVIDIA.
+- **macOS / Linux** — aplikacja AI działa tylko na Windowsie. [Aplikacja mobilna](/pl/apps/mobile) na iOS/Android obsługuje zarządzanie kontem, nie lokalne AI.
+- **iGPU** — zintegrowane układy graficzne nie mają wystarczającego VRAM-u.
+- **Multi-GPU w jednej maszynie** — aplikacja AI używa jednego GPU na proces. Wiele maszyn jest OK; GHXP i zarobki konsolidują się per konto.
 
-## Dopasowanie per moduł
+## Wymiana GPU
 
-| Moduł | Min VRAM | Rekomendowane |
-| --- | --- | --- |
-| Text-to-Text (czat, 7B/8B kwantyzacja) | 8 GB | 12 GB+ |
-| Text-to-Text (14B–20B) | 12 GB | 16 GB+ |
-| Text-to-Image (SD, Sana Sprint) | 8 GB | 12 GB |
-| Text-to-Image (FLUX, HiDream) | 12 GB | 16 GB+ |
-| Image / Text → Video (LTX-Video) | 12 GB | 16 GB+ |
-| Multimodal (LLM-y wizyjne) | 12 GB | 16 GB+ |
-| Moduł zarobkowy | 8 GB | 12 GB+ dla lepiej płatnych zadań |
+Wymieniasz GPU bez zakładania konta od nowa. Przy kolejnym starcie aplikacja AI wykryje nową kartę i puści benchmark — zwykle parę minut. GHXP, poziom konta i historia zarobków przechodzą bez zmian. Zadania dopasowane do nowej karty wchodzą w grę od następnego dispatchu.
 
-Model Center w aplikacji pokazuje na żywo szacunki dopasowania per model do twojego sprzętu.
+## Wskazówki przed zakupem
 
-## Wymiana sprzętu w trakcie
-
-Możesz zmienić GPU bez zakładania konta od nowa. Aplikacja AI wykryje nową kartę przy kolejnym starcie i przeprowadzi benchmark od nowa. GHXP i stan konta przechodzą.
+- **Przepuść swoją konfigurację przez [kalkulator zysku](https://gamerhash.com/en/calculator)** zanim wydasz pieniądze. Sprawdzisz tam obie plakietki (AI READY / AI OPTIMAL).
+- **Dla AI OPTIMAL stawiaj na VRAM, nie na zegary.** 16 GB to próg wejścia — 4060 Ti 16 GB kwalifikuje się do puli zarobkowej, 4070 8 GB nie.
+- **Używane karty z serii 30** to tani sposób wejścia w AI READY (3060/3070 z 8–12 GB). Dla AI OPTIMAL na używanym sprzęcie tylko **RTX 3090 (24 GB)** przekracza poprzeczkę — i sprawdź gwarancję, bo ciągłe obciążenie zużywa karty bardziej niż gaming.
+- **Sprawdź bieżący popyt w sieci** w [statystykach sieci](/pl/ai/stats). Większy GPU zarabia więcej tylko wtedy, kiedy są na niego zadania w kolejce.
 
 ## Dalej
 
@@ -59,7 +82,13 @@ Możesz zmienić GPU bez zakładania konta od nowa. Aplikacja AI wykryje nową k
   <Card title="Moduły" icon="layer-group" href="/pl/ai/modules">
     Dopasuj moduły do tego, co uruchomi twoje GPU.
   </Card>
-  <Card title="Model zarobków" icon="coins" href="/pl/ai/earning">
+  <Card title="Model zarabiania" icon="coins" href="/pl/ai/earning">
     Które zadania płacą więcej i jak czytać kolejkę.
+  </Card>
+  <Card title="Statystyki sieci na żywo" icon="chart-line" href="/pl/ai/stats">
+    Aktualna liczba GPU, VRAM i pojemność w sieci.
+  </Card>
+  <Card title="Zainstaluj aplikację" icon="download" href="/pl/tutorials/install-ai-app">
+    Krok po kroku od pobrania do pierwszego uruchomienia.
   </Card>
 </CardGroup>

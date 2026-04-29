@@ -1,58 +1,58 @@
 ---
 title: "Kontrybutorzy GPU"
-description: "Jak myśleć o udostępnianiu GPU jako głównym zastosowaniu — poza rekreacyjnym graniem."
+description: "Jak myśleć o udostępnianiu GPU jako głównym zastosowaniu — poza okazjonalnym graniem."
 ---
 
-Gracze kontrybuują przy okazji. **Kontrybutorzy GPU prowadzą sprzęt specjalnie po to, by uczestniczyć w sieci**: dedykowane stacje robocze, multi-GPU rigi albo przekonwertowane setupy po koparkach. Inne cele, inna optymalizacja.
+Gracze kontrybuują przy okazji. **Kontrybutorzy GPU stawiają sprzęt specjalnie po to, żeby brać udział w sieci**: dedykowane stacje robocze, multi-GPU rigi albo przerobione setupy po koparkach. Inne cele, inna optymalizacja.
 
 ## Dla kogo to jest
 
-- Byli minerzy PoW posiadający sprzęt RTX, którzy chcą przeznaczyć go pod zysk z AI.
-- Power userzy z kartami 24+ GB VRAM, prosumer-stacjami roboczymi lub rigami ML, które stoją bezczynnie poza godzinami pracy.
-- Mali operatorzy z 2–10 GPU, szukający stabilnego dochodu pobocznego.
+- Byli minerzy PoW, którzy mają sprzęt RTX i chcą przeznaczyć go pod yield z AI.
+- Power userzy z kartami 24+ GB VRAM, prosumerskimi stacjami roboczymi albo rigami ML, które stoją bezczynnie poza godzinami pracy.
+- Mali operatorzy z 2–10 GPU, którzy szukają stabilnego dodatkowego dochodu.
 
-## Dlaczego udostępnianie GPU bije kopanie PoW
+## Dlaczego udostępnianie GPU bije mining PoW
 
-- **Wynagrodzenie skaluje się z popytem**, a nie z trudnością hashowania. Wraz ze wzrostem użycia deAPI rośnie zarobek kontrybutorów. W PoW zarobek spada, gdy dochodzą kolejni minerzy.
-- **Bez tuningu algorytmów**, bez gonienia za forkami protokołu, bez gier w arbitraż energii. Dispatch załatwia AI App.
-- **GUSD jest stabilne wobec dolara**. Nie musisz ustawiać wyjść jak w przypadku zmiennej waluty nagrody.
-- **GHXP nagradza konsekwencję**, nie surowy hashrate. Konta działające długo i trzymające GHX procentują rosnącym udziałem.
+- **Wynagrodzenie skaluje się z popytem**, a nie z trudnością hashowania. Wraz ze wzrostem użycia API i platformy rosną zarobki kontrybutorów. W PoW zarobki spadają, gdy dochodzą kolejni minerzy.
+- **Bez strojenia algorytmów**, bez gonienia za forkami protokołu, bez gier w arbitraż energii. Dispatchem zajmuje się aplikacja AI.
+- **GUSD jest naliczane za każde wykonane zadanie** — przewidywalnie, wewnętrznie, bez ekspozycji na zmienność kursu w czasie, kiedy czekasz z wymianą.
+- **GHXP nagradza konsekwencję**, nie surowy hashrate. Konta działające długo i trzymające GHX kumulują swój udział.
 
 ## Playbook optymalizacji
 
-**Maksymalizuj uptime.** Większość zarobku pochodzi z bycia online, gdy przychodzi obciążenie. Skonfiguruj autostart, wyłącz uśpienie, monitoruj stabilność.
+**Maksymalizuj uptime.** Większość zarobku bierze się z bycia online, gdy przychodzi zadanie. Skonfiguruj autostart, wyłącz uśpienie, monitoruj stabilność.
 
-**Wybieraj odpowiednie karty.** 24+ GB VRAM odblokowuje najlepiej płatne tiery (duże LLM-y, generowanie wideo). RTX 4090 / 5090 / karty pro Blackwell to słodki punkt nowych inwestycji.
+**Wybieraj odpowiednie karty.** 24 GB+ VRAM odblokowuje najlepiej płatne poziomy (duże LLM-y, generowanie wideo). RTX 4090 / 5090 / karty pro Blackwell to sweet spot pod nowe inwestycje.
 
-**Trzymaj GHX dla boostu.** Boost GHXP to najtańszy mnożnik zysku w systemie — jest darmowy, kumuluje się i nie blokujesz GHX. Trzymaj je w MetaMasku, uruchom aplikację, otrzymuj więcej GHX za obciążenie.
+**Trzymaj GHX dla boosta.** GHXP Boost to najtańszy mnożnik yieldu w systemie — jest darmowy, stackuje się, nie blokujesz GHX-a. Trzymaj je w MetaMask albo w portfelu GHX wbudowanym w aplikację, odpalaj aplikację, dostawaj więcej GHX za zadanie.
 
-**Stakuj swój GHX.** Nie pozwalaj, by GHX trzymane pod boost leżały bezczynnie. Włóż je na [staking.gamercoin.com](https://staking.gamercoin.com) — do **25% APR** na Ethereum, BNB Chain lub Solanie. Stakowane GHX nadal liczy się do boostu (zweryfikuj w panelu).
+**Stakuj swój GHX.** Nie pozwól, żeby GHX trzymany pod boost leżał bezczynnie. Wrzuć go na [staking.gamercoin.com](https://staking.gamercoin.com) — do **25% APR** na Ethereum, BNB Chain albo Solanie. Stakowany GHX nadal liczy się do boosta (zweryfikuj w dashboardzie).
 
-**Uruchom kilka maszyn na jednym koncie.** GHXP i zarobki konsolidują się per konto, a nie per maszyna. Szybsza progresja w rangach GHXP.
+**Odpalaj wiele maszyn na jednym koncie.** GHXP i zarobki konsolidują się per konto, nie per maszyna. Szybciej awansujesz w GHXP.
 
 ## Rozmowa o liczbach
 
-Po stronie zarabiania nie ma stałego APR. Zysk per maszyna zależy od popytu, klasy GPU i rangi. Uczciwe ujęcie:
+Po stronie zarobkowej nie ma stałego APR. Yield per maszyna zależy od popytu, klasy GPU i poziomu GHXP. Uczciwe ujęcie:
 
-- Współczesny RTX 4070 z 12 GB zarobi skromnie przy umiarkowanym popycie sieci.
-- 4090 z wysokim uptime'em i rangą zarobi znacząco więcej.
-- Wszystko to skaluje się z wolumenem deAPI platformy — i to jest zmienna, na którą stawiasz.
+- Nowoczesny RTX 4070 z 12 GB zarobi skromnie przy umiarkowanym popycie w sieci.
+- 4090 z wysokim uptime'em i poziomem zarobi znacząco więcej.
+- Wszystko skaluje się z wolumenem API i partnerstw platformy — to zmienna, na którą stawiasz.
 
-Platforma publikuje miesięczne aktualizacje społecznościowe na [Medium](https://medium.com/we-are-the-gamerhash) z sygnałami o wolumenie obciążeń. To dobre miejsce, by wyczuć rynek przed skalowaniem.
+Platforma co miesiąc publikuje aktualizacje społeczności na [Medium](https://medium.com/we-are-the-gamerhash) z sygnałami o wolumenie zadań. To dobre miejsce, żeby wyczuć sytuację przed skalowaniem.
 
 ## Na co uważać
 
 - **Koszt prądu.** Logika podobna jak w PoW — przy szczytowych stawkach to się liczy. Jeśli masz taryfę strefową, planuj zarabianie poza godzinami szczytu.
-- **Stabilność sterowników.** Długo działająca inferencja obnaża błędy sterowników. Trzymaj się NVIDIA Studio Drivers; zgłaszaj crashe na kanał supportu.
-- **Ciepło / żywotność sprzętu.** Inferencja AI mocno obciąża GPU. Dobry przepływ powietrza ma znaczenie. Undervolting jest wspierany i rekomendowany przy pracy 24/7.
+- **Stabilność sterowników.** Długo działająca inferencja obnaża błędy sterowników. Trzymaj się sterowników NVIDIA Studio; zgłaszaj crashe na kanał supportu.
+- **Ciepło / żywotność sprzętu.** Inferencja AI mocno obciąża GPU. Dobry przepływ powietrza ma znaczenie. Undervolting jest wspierany i polecany do pracy 24/7.
 
 ## Powiązane
 
 <CardGroup cols={2}>
   <Card title="Model zarabiania" icon="coins" href="/pl/ai/earning">
-    Mechanika GUSD, GHXP, rang i wypłat.
+    Mechanika GUSD, GHXP, poziomów i wypłat.
   </Card>
   <Card title="Dokumentacja stakingu GHX" icon="lock" href="https://docs.gamercoin.com/tokenomics/staking">
-    Połącz kontrybucję z zyskiem z tokena.
+    Połącz kontrybucję z yieldem z tokena.
   </Card>
 </CardGroup>

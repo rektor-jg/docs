@@ -1,32 +1,32 @@
 ---
-title: "GamerHash AI — przegląd"
+title: "Przegląd"
 description: "Flagowa aplikacja — co robi, jak zarabia i jakiego sprzętu wymaga."
 ---
 
 import { Win } from '/snippets/chains.mdx'
 
-**Aplikacja GamerHash AI** to darmowa aplikacja desktopowa <Win />, która robi dwie rzeczy naraz:
+**GamerHash AI App** to darmowa aplikacja desktopowa <Win />, która robi dwie rzeczy naraz:
 
-1. **Pozwala korzystać z prywatnych narzędzi AI lokalnie** — czat, obraz, wideo, głos, multimodalne Q&A — wszystko działa na twoim własnym GPU, bez wysyłania danych do chmury osób trzecich.
-2. **Pozwala zarabiać na bezczynnym czasie GPU** — włącz moduł, a aplikacja przekieruje zadania inferencji AI z sieci na twoją maszynę, płacąc ci w **GUSD** za każde zadanie.
+1. **Pozwala korzystać z prywatnych narzędzi AI lokalnie** — czat, obrazy, wideo, głos — wszystko działa na twoim GPU, bez wysyłania danych do chmury osób trzecich.
+2. **Pozwala zarabiać na bezczynnym czasie GPU** — włącz tę opcję, a aplikacja będzie kierować zadania inferencji AI z sieci na twoją maszynę. Za każde zadanie dostajesz wypłatę w **GUSD**, a **GHXP** naliczają się co minutę działania aplikacji (nawet gdy w kolejce nie ma pracy) — te punkty skalują twój udział w nagrodach sieci.
 
-Ta sama aplikacja, ta sama instalacja, to samo logowanie. To ty decydujesz, czy używać jej jako prywatnej stacji roboczej AI, maszyny zarobkowej, czy obu.
+Ta sama aplikacja, ta sama instalacja, to samo logowanie. Ty decydujesz, czy używać jej jako prywatnej stacji AI, maszyny zarobkowej, czy obu naraz.
 
 <Frame>
-  <img src="/images/ai-modules.svg" alt="Moduły aplikacji GamerHash AI: czat text-to-text, text-to-image, image/text-to-video, synteza głosu, multimodalne Q&A i moduł zarobkowy udostępniający GPU." />
+  <img src="/images/ai-modules.png" alt="Moduły GamerHash AI App: czat text-to-text, text-to-image, image/text-to-video, synteza głosu i moduł Earn udostępniający GPU." />
 </Frame>
 
 ## Co jest w środku
 
 <CardGroup cols={2}>
   <Card title="Moduły" icon="layer-group" href="/pl/ai/modules">
-    Text-to-text, text-to-image, text/image-to-video, głos, multimodal — każdy moduł, jaki jest w aplikacji.
+    Text-to-text, text-to-image, text/image-to-video, głos — każdy moduł dostępny w aplikacji.
   </Card>
-  <Card title="GHXP" icon="bolt" href="/pl/ai/ghxp">
-    Mnożnik zaangażowania. Uruchom aplikację + trzymaj GHX → większy udział w nagrodach.
+  <Card title="GHXP — mnożnik zaangażowania" icon="bolt" href="/pl/ai/ghxp">
+    Uruchom aplikację + trzymaj GHX → większy udział w nagrodach. Wpływa na sezonowe wypłaty GHX.
   </Card>
-  <Card title="Model zarobków" icon="coins" href="/pl/ai/earning">
-    GUSD za zadanie, ranga GHXP i droga od kredytu do realnych aktywów.
+  <Card title="Model zarabiania" icon="coins" href="/pl/ai/earning">
+    GUSD za zadanie, poziom GHXP i droga od salda do realnych aktywów.
   </Card>
   <Card title="Wymagania sprzętowe" icon="microchip" href="/pl/ai/hardware-requirements">
     Minimalne i rekomendowane GPU dla czatu, obrazu i wideo.
@@ -34,41 +34,58 @@ Ta sama aplikacja, ta sama instalacja, to samo logowanie. To ty decydujesz, czy 
   <Card title="Prywatność" icon="shield" href="/pl/ai/privacy">
     Co zostaje na twojej maszynie, co jest przesyłane, co jest logowane.
   </Card>
-  <Card title="Instalacja aplikacji" icon="download" href="/pl/tutorials/install-ai-app">
-    Pięciominutowy przewodnik — od pobrania do pierwszego uruchomienia.
+  <Card title="Zainstaluj aplikację" icon="download" href="/pl/tutorials/install-ai-app">
+    5-minutowy przewodnik — od pobrania do pierwszego uruchomienia.
   </Card>
 </CardGroup>
 
 ## Dlaczego lokalne AI
 
-Chmurowe usługi AI mają trzy strukturalne koszty, które GamerHash AI eliminuje:
+Chmurowe usługi AI mają trzy strukturalne koszty, których GamerHash AI nie ma:
 
-- **Cennik za token.** Duzi dostawcy chmury liczą za każde wywołanie. Aplikacja AI jest darmowa do osobistego użytku — twoim jedynym kosztem jest prąd i GPU, które już masz.
-- **Kompromisy w prywatności.** Prompty i wyniki są przesyłane do chmury osób trzecich i mogą być logowane. Aplikacja AI generuje wszystko lokalnie; w modułach do osobistego użytku nic nie opuszcza twojej maszyny.
-- **Limity użycia.** Darmowe tiery ograniczają liczbę wiadomości i rozdzielczość. Aplikacja AI nie ma limitów na moduły lokalne — twoim jedynym ograniczeniem jest GPU.
+- **Cennik za token.** Dostawcy chmury liczą za wywołanie, za token, za sekundę. Aplikacja AI jest darmowa do użytku osobistego — twoim jedynym kosztem jest prąd i GPU, które już masz.
+- **Kompromisy w prywatności.** Prompty i wyniki lecą do chmury osób trzecich i mogą być logowane. Aplikacja AI generuje wszystko w pełni lokalnie — nic nie opuszcza twojej maszyny, kiedy korzystasz z modułów do użytku osobistego.
+- **Limity użycia.** Darmowe tiery ograniczają liczbę wiadomości, rozdzielczość i tempo. Aplikacja AI nie ma limitów dla modułów działających lokalnie — limitem jest tylko twoje GPU.
 
 ## Po co udostępniać GPU?
 
-Nowoczesne gamingowe GPU jest bezczynne przez większość czasu, gdy jest włączone. Moduł zarobkowy przekierowuje zadania inferencji AI od płacących klientów (przez [deAPI](https://deapi.ai) i bezpośrednich partnerów) na twoją maszynę, gdy jej nie używasz.
+Nowoczesne gamingowe GPU stoi bezczynne przez większość czasu, kiedy komputer jest włączony. Moduł Earn kieruje na twoją maszynę zadania inferencji AI od kupujących z sieci — deweloperów, aplikacji i bezpośrednich partnerów AI — wtedy, gdy z niej nie korzystasz.
 
-Nie wybierasz, jakie zadania dostaniesz — sieć kieruje to, co pasuje do twojego VRAM i głębokości kolejki. Zarabiasz **GUSD za każde wykonane zadanie**, z **mnożnikiem opartym na GHXP** dla konsekwentnych, wysoce zaangażowanych kontrybutorów.
+Zadań nie wybierasz — sieć przydziela to, co pasuje do twojego VRAM-u i głębokości kolejki. Zarabiasz **GUSD za każde wykonane zadanie**, z **mnożnikiem opartym na GHXP** dla regularnych, mocno zaangażowanych kontrybutorów. Aktywni kontrybutorzy dzielą też sezonową **pulę nagród GHX** — zobacz [sezony GHXP](/pl/ai/ghxp#seasons).
 
-## Co potrzebujesz
+## Czego potrzebujesz
 
 - **Windows 10 lub 11**
-- **GPU NVIDIA RTX z 8 GB+ VRAM** (minimum). Większy VRAM odblokowuje większe modele i wyższą stawkę za zadanie.
-- **Aktualny driver NVIDIA** (aplikacja podpowie, jeśli twój driver jest za stary)
-- **Konto GamerHash** (zakładane przy pierwszym uruchomieniu; e-mail lub Google)
+- **GPU NVIDIA RTX z 8 GB+ VRAM** do uruchomienia aplikacji lokalnie. Zarabianie na zadaniach z sieci wymaga **16 GB+ VRAM** — wszystko poniżej to na razie tylko użytek lokalny.
+- **Aktualny sterownik NVIDIA** (aplikacja podpowie, jeśli twój sterownik jest zbyt stary)
+- **Konto GamerHash** (zakładasz przy pierwszym uruchomieniu — e-mail albo logowanie Google)
 
-Szczegółowy rozkład sprzętu — w tym które modele działają na 8 GB vs 12 GB vs 24 GB — jest w [Wymaganiach sprzętowych](/pl/ai/hardware-requirements).
+Szczegółowy rozkład sprzętu — w tym które modele działają na 8 GB vs 12 GB vs 24 GB — znajdziesz w [Wymaganiach sprzętowych](/pl/ai/hardware-requirements).
 
 ## Do dzieła
 
 <CardGroup cols={2}>
   <Card title="Pobierz aplikację AI" icon="download" href="https://gamerhash.com/en/app-download">
-    Bezpośrednie pobieranie z gamerhash.com.
+    Bezpośrednie pobranie z gamerhash.com.
   </Card>
   <Card title="Instalacja krok po kroku" icon="play" href="/pl/tutorials/install-ai-app">
-    Przejdź przez instalację ze zrzutami i pułapkami.
+    Przejdź przez instalację ze zrzutami ekranu i typowymi pułapkami.
+  </Card>
+  <Card title="Statystyki sieci na żywo" icon="chart-line" href="/pl/ai/stats">
+    Zobacz aktualną pojemność sieci — urządzenia, GPU, VRAM, przepustowość.
+  </Card>
+  <Card title="Tutorial zarabiania na GPU" icon="microchip" href="/pl/tutorials/earn-with-gpu">
+    Od instalacji do pierwszej wypłaty GUSD — czego się spodziewać pierwszego dnia.
+  </Card>
+</CardGroup>
+
+## Dalsza lektura
+
+<CardGroup cols={2}>
+  <Card title="Od miningu do AI: ewolucja GamerHash" icon="arrow-trend-up" href="https://medium.com/we-are-the-gamerhash/from-mining-to-ai-the-gamerhash-evolution-75bf96424530">
+    Dlaczego ta sama teza o bezczynnych GPU lepiej się sprawdza dla inferencji AI niż dla hashy PoW — od zespołu.
+  </Card>
+  <Card title="Wszystkie aktualizacje na Medium" icon="rss" href="https://medium.com/we-are-the-gamerhash">
+    Comiesięczne podsumowania dla społeczności, pogłębione analizy i ogłoszenia o partnerstwach.
   </Card>
 </CardGroup>

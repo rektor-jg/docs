@@ -9,7 +9,7 @@ This builds on [Install the AI App](/tutorials/install-ai-app). It assumes you a
 
 - **GUSD per workload** — credited automatically as inference jobs complete.
 - **GHXP** — engagement points that multiply future earnings via the GHXP Boost.
-- **Optional GHX boost** — hold GHX in MetaMask to accelerate GHXP accrual.
+- **Optional GHX boost** — hold GHX in MetaMask or in your in-app GHX wallet to accelerate GHXP accrual.
 
 See [Earning model](/ai/earning) for the full mechanics.
 
@@ -27,35 +27,26 @@ See [Earning model](/ai/earning) for the full mechanics.
   </Step>
 </Steps>
 
-## 2. Set boundaries
+## 2. How it interacts with gaming
 
-<Steps>
-  <Step title="Active hours">
-    Pick hours of the day when the module dispatches. Common patterns:
+Earning workloads use your full GPU and VRAM — you can't earn and game at the same time. Launching a game forces the earning module out; you reclaim the GPU instantly. When the game closes, earning resumes on its own as soon as the queue has work for your card.
 
-    - **Always when idle** — earn whenever the GPU isn't busy.
-    - **Off-hours only** — overnight + workday hours when you're not gaming.
-    - **Off-peak electricity** — match your tariff's cheap window.
-  </Step>
-  <Step title="GPU usage cap">
-    Default cap leaves headroom for other applications. Lower it if you notice frame drops in games while the module runs.
-  </Step>
-  <Step title="Auto-pause on game launch (optional)">
-    If your launcher is supported, the AI App can pause earning when a game starts and resume when it exits.
-  </Step>
-</Steps>
+Just leave the module on whenever you're not gaming or doing other GPU-heavy work.
 
-## 3. Maximise yield
+## 3. Maximize yield
 
 <Steps>
   <Step title="Hold GHX for the boost">
-    The single biggest yield multiplier. Hold any GHX in MetaMask under the same account — see [GHXP](/ai/ghxp). Boost applies automatically.
+    The single biggest yield multiplier. Hold any GHX in MetaMask or in your in-app GHX wallet under the same account — see [GHXP](/ai/ghxp). Boost applies automatically.
   </Step>
   <Step title="Run continuously">
     The longer the app runs without restart, the larger your hour-credited GHXP accrual. Restarting mid-hour drops that hour's pending points.
   </Step>
+  <Step title="Lock your GHXP each season">
+    GHX rewards are distributed every two months. Lock your accumulated GHXP before the season closes — your share of the pool = your locked GHXP ÷ total locked across all participants. Skip the lock and you forfeit that season.
+  </Step>
   <Step title="Don't run multiple machines under different accounts">
-    GHXP and ranks consolidate per account. Run all your GPUs under one account — you'll rank up faster.
+    GHXP and levels consolidate per account. Run all your GPUs under one account — you'll level up faster.
   </Step>
 </Steps>
 
@@ -67,9 +58,6 @@ See [Earning model](/ai/earning) for the full mechanics.
   </Step>
   <Step title="Mobile app">
     The [Mobile app](/apps/mobile) shows the same numbers — useful when you're not at the PC.
-  </Step>
-  <Step title="Email digests">
-    Weekly summaries land in the inbox you registered with. Toggle off if you don't want them.
   </Step>
 </Steps>
 
@@ -84,10 +72,10 @@ Three exit routes — pick at any time:
     3. Confirm. GHX lands in the wallet you've connected.
     4. From there, **HODL** or **stake** for up to 25% APR via [staking.gamercoin.com](https://staking.gamercoin.com).
   </Tab>
-  <Tab title="Withdraw USDC to Binance">
-    1. Connect your Binance account if you haven't (one-time, in account settings).
-    2. **Wallet** → **Withdraw USDC** → choose amount.
-    3. Internal transfer to your Binance address. No GamerHash fee.
+  <Tab title="Withdraw USDC on BNB Chain">
+    1. Have a BNB Chain wallet address ready — your Binance deposit address, MetaMask on BSC, or any other BNB Chain wallet.
+    2. **Wallet** → **Withdraw USDC** → choose amount and paste the destination address.
+    3. USDC lands on BNB Chain at the address you provided. No GamerHash fee.
   </Tab>
   <Tab title="Spend in the Store">
     1. Browse the [Store](https://gamerhash.com/en/shop).
@@ -106,17 +94,17 @@ Three exit routes — pick at any time:
     - **Network demand** — check the latest [Community Update on Medium](https://medium.com/we-are-the-gamerhash) for demand signals.
     - **Connection issues** — restart the app; verify you're not behind a corporate VPN that blocks dispatch traffic.
   </Accordion>
-  <Accordion title="I think my GHXP rank dropped">
-    GHXP is non-decreasing for activity, but rank is *relative*. New high-engagement contributors can shift rank ordering. Check the leaderboard; consistency wins over time.
+  <Accordion title="My GHXP-based earnings dropped even though I'm running the app">
+    GHXP itself doesn't decrease while you're active — but your share of each season's GHX pool is relative. Your slice = your locked GHXP ÷ total locked across all participants, so as more people lock larger amounts, individual slices shrink. Consistency over many seasons compounds; holding GHX (in MetaMask or your in-app wallet) keeps the boost stacked through accrual.
   </Accordion>
-  <Accordion title="Game frame rate drops while the module is on">
-    Lower the GPU usage cap or set the module to **Auto-pause on game launch**. Some games are extremely sensitive to background VRAM use.
+  <Accordion title="A game won't start while the module is running">
+    Earn workloads hold the full GPU and VRAM. Launching a game forces the module out — you should reclaim the GPU within seconds. If the game still refuses to start, close the AI App, launch the game, and let earning resume after you exit.
   </Accordion>
   <Accordion title="GUSD balance shows but conversion is unavailable">
     Conversion is occasionally throttled during platform maintenance. The Wallet page shows scheduled windows; usually resolves within an hour.
   </Accordion>
   <Accordion title="USDC withdrawal stuck">
-    Internal transfers to Binance settle within minutes. If stuck >24h, contact Discord `#support` with the transaction reference shown in the Wallet log.
+    BNB Chain transfers usually settle within minutes. If stuck >24h, contact Discord `#support` with the transaction reference shown in the Wallet log and the destination address you used.
   </Accordion>
 </AccordionGroup>
 

@@ -1,0 +1,53 @@
+---
+title: "Deweloperzy AI"
+description: "Jak deweloperzy i zespoły produktowe AI korzystają z sieci GPU GamerHash przez deAPI."
+---
+
+Kontrybutorzy GPU dostarczają sprzęt, gracze zarabiają przy okazji. **Deweloperzy AI są po drugiej stronie sieci** — to oni konsumują moc obliczeniową. Produkt, którego używają, to **[deAPI](https://deapi.ai)**: REST endpoint zgodny z OpenAI, który udostępnia sieć GPU GamerHash dowolnej aplikacji, workflow albo botowi.
+
+<Frame>
+  <img src="/images/ai-builders-flow.svg" alt="Przepływ requestu deAPI: klient (twoja aplikacja, n8n, SDK OpenAI) wysyła request do bramki deAPI, która uwierzytelnia i nalicza opłaty, potem dispatcher dopasowuje request do node'a GPU kontrybutora po modelu i VRAM, inferencja uruchamia się lokalnie na tej maszynie, a wynik wraca tą samą ścieżką. Każdy opłacony request dzieli się pomiędzy infrastrukturę platformy i wypłatę kontrybutora w GUSD." />
+</Frame>
+
+## Dla kogo to jest
+
+- **Deweloperzy aplikacji** podpinający czat, generowanie obrazów albo wideo do swoich produktów.
+- **Operatorzy n8n / automatyzacji**, którzy potrzebują taniej, prywatnej inferencji wewnątrz workflowów.
+- **Indie deweloperzy i agencje** budujący MVP, które potrzebują backendu bez rachunku za chmurę.
+- **Zespoły Web3** łączące logikę on-chain z mocą obliczeniową AI off-chain.
+
+## Co dostajesz
+
+- **REST zgodny z OpenAI** — drop-in dla kodu, który już używa SDK OpenAI. Zmień `base_url` i klucz API; te same chat completions, ten sam streaming, ten sam kształt odpowiedzi.
+- **Obsługa multimodalna** — text-to-image, image edit, image / text / audio → video, głos (TTS + transkrypcja), text-to-music, OCR, embeddingi. Jedno API key, każda klasa modelu.
+- **Oficjalny node [n8n](https://n8n.io)** — wywołaj sieć z dowolnego workflow n8n bez pisania kodu API.
+- **Routing i failover po stronie sieci** — deAPI dispatchuje na to GPU, które jest wolne, retryuje przy chwilowych błędach, balansuje po dopasowaniu modelu.
+- **Transparentność kosztów** — cennik per model, dashboard użycia na żywo, budżety.
+
+## Dlaczego deAPI vs. scentralizowane chmury
+
+- **Koszt** — zadania uruchamiają się na konsumenckich GPU, które inaczej by stały bezczynnie. Unit economics jest inna niż w cenniku hyperscalerów.
+- **Modele open-source** — wybierasz spośród Flux, LTX-Video, Qwen, Whisper, ACE-Step i więcej. Bez zamknięcia w proprietary, bez silosów rate limitów per model.
+- **Prywatność** — treść jest dispatchowana i odrzucana; sieć nie zachowuje promptów ani wyników po rozliczeniu.
+- **Realne pieniądze dla realnych użytkowników** — twoje wydatki finansują ludzi prowadzących GPU, a nie marżę hyperscalera.
+
+## Kompromisy, o których warto wiedzieć
+
+- **Latencja** — konsumenckie GPU nie są skupione w jednym data center. Latencja pierwszego tokena jest wyższa niż w scentralizowanej chmurze, zwłaszcza dla zadań typu cold start.
+- **Dostępność modeli** — katalog jest kurowany i stabilnie rośnie, ale nie jest nieskończony. Niszowe albo proprietary modele mogą nie być dostępne.
+- **Pojemność** — w szczycie popytu czasy w kolejce mogą się wydłużać. Obowiązują standardowe rate limity.
+
+## Jak to płynie
+
+Request deAPI trafia do bramki, jest uwierzytelniany i naliczany, a potem dispatchowany do sieci maszyn kontrybutorów uruchamiających aplikację AI. Każdy dolar, który przepływa, dzieli się pomiędzy infrastrukturę platformy i **bezpośrednią wypłatę kontrybutorów** w GUSD — ta sama pętla, która płaci graczom i dedykowanym kontrybutorom GPU.
+
+## Zacznij tutaj
+
+<CardGroup cols={2}>
+  <Card title="Strona deAPI" icon="rocket" href="https://deapi.ai">
+    Zarejestruj się, wygeneruj klucze, zobacz użycie na żywo.
+  </Card>
+  <Card title="Kontrybutorzy GPU" icon="microchip" href="/pl/use-cases/gpu-contributors">
+    Druga strona sieci — kto uruchamia zadania, które wywołujesz.
+  </Card>
+</CardGroup>

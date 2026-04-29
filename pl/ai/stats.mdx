@@ -1,0 +1,40 @@
+---
+title: "Statystyki sieci"
+description: "Stan rozproszonej sieci obliczeniowej GamerHash AI na żywo — urządzenia, GPU, VRAM, rdzenie CPU, RAM i storage."
+---
+
+Sieć GamerHash AI zbudowana jest z maszyn kontrybutorów, a jej pojemność widać w czasie rzeczywistym. Publiczny dashboard na [gamerhash.com/en/stats](https://gamerhash.com/en/stats) pokazuje, co jest podłączone do sieci w tej chwili.
+
+## Co jest śledzone
+
+| Metryka | Co mierzy |
+| --- | --- |
+| **Urządzenia** | Łączna liczba maszyn podłączonych do sieci i uruchamiających aplikację AI |
+| **GPU** | Łączna liczba GPU udostępnionych przez wszystkie urządzenia |
+| **GPU VRAM** | Łączna pamięć wideo dostępna dla zadań inferencji AI |
+| **CPU** | Łączna liczba CPU w sieci |
+| **Rdzenie CPU** | Łączne rdzenie dostępne dla zadań po stronie CPU |
+| **RAM** | Łączna pamięć systemowa we wszystkich podłączonych maszynach |
+| **Storage** | Łączna pojemność dyskowa udostępniona w sieci |
+
+Każda metryka jest pokazana w dwóch oknach:
+
+- **Ostatnie 24h** — co było aktywne w ciągu ostatniej doby
+- **Łącznie** — kumulatywny stan sieci
+
+## Dlaczego to ważne
+
+Dla **kontrybutorów** dashboard daje pojęcie, jak duża jest sieć i jak bardzo bywa zajęta — większa sieć oznacza więcej zadań w kolejce. Dla **deweloperów AI i partnerów** to rzut oka na dostępną pojemność obliczeniową przed integracją z platformą.
+
+Liczby pobieramy na żywo, więc nie oczekuj, że będą się zgadzać ze stanem sprzed godziny. Traktuj je jako odczyt kierunkowy, a nie zobowiązanie SLA — kolejka i mix maszyn zmieniają się z minuty na minutę.
+
+## Otwórz dashboard
+
+<CardGroup cols={2}>
+  <Card title="Statystyki sieci na żywo" icon="chart-line" href="https://gamerhash.com/en/stats">
+    Liczby w czasie rzeczywistym z publicznego dashboardu — urządzenia, GPU, VRAM, CPU, RAM, storage.
+  </Card>
+  <Card title="Wymagania sprzętowe" icon="microchip" href="/pl/ai/hardware-requirements">
+    Czego potrzebujesz, żeby dodać swoje GPU do sieci.
+  </Card>
+</CardGroup>

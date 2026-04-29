@@ -34,7 +34,7 @@
             "tab": "Documentation",
             "groups": [
               {
-                "group": "Welcome",
+                "group": "Introduction",
                 "pages": ["index"]
               },
               {
@@ -50,32 +50,29 @@
                 "group": "GamerHash AI",
                 "pages": [
                   "ai/overview",
-                  "ai/modules",
-                  "ai/ghxp",
                   "ai/hardware-requirements",
+                  "ai/modules",
                   "ai/earning",
+                  "ai/ghxp",
+                  "ai/stats",
                   "ai/privacy"
                 ]
               },
               {
-                "group": "deAPI",
-                "pages": ["deapi/overview", "deapi/getting-started"]
-              },
-              {
-                "group": "Apps",
-                "pages": ["apps/mobile", "apps/store"]
-              },
-              {
-                "group": "Use Cases",
-                "pages": ["use-cases/gamers", "use-cases/gpu-contributors"]
-              },
-              {
-                "group": "Roadmap",
-                "pages": ["roadmap"]
+                "group": "GamerHash Mobile App",
+                "pages": ["apps/mobile"]
               },
               {
                 "group": "Tutorials",
                 "pages": ["tutorials/install-ai-app", "tutorials/earn-with-gpu"]
+              },
+              {
+                "group": "Use Cases",
+                "pages": ["use-cases/gamers", "use-cases/gpu-contributors", "use-cases/ai-builders"]
+              },
+              {
+                "group": "Roadmap",
+                "pages": ["roadmap"]
               },
               {
                 "group": "Resources",
@@ -117,32 +114,29 @@
                 "group": "GamerHash AI",
                 "pages": [
                   "pl/ai/overview",
-                  "pl/ai/modules",
-                  "pl/ai/ghxp",
                   "pl/ai/hardware-requirements",
+                  "pl/ai/modules",
                   "pl/ai/earning",
+                  "pl/ai/ghxp",
+                  "pl/ai/stats",
                   "pl/ai/privacy"
                 ]
               },
               {
-                "group": "deAPI",
-                "pages": ["pl/deapi/overview", "pl/deapi/getting-started"]
-              },
-              {
-                "group": "Aplikacje",
-                "pages": ["pl/apps/mobile", "pl/apps/store"]
-              },
-              {
-                "group": "Zastosowania",
-                "pages": ["pl/use-cases/gamers", "pl/use-cases/gpu-contributors"]
-              },
-              {
-                "group": "Roadmapa",
-                "pages": ["pl/roadmap"]
+                "group": "GamerHash Mobile App",
+                "pages": ["pl/apps/mobile"]
               },
               {
                 "group": "Tutoriale",
                 "pages": ["pl/tutorials/install-ai-app", "pl/tutorials/earn-with-gpu"]
+              },
+              {
+                "group": "Zastosowania",
+                "pages": ["pl/use-cases/gamers", "pl/use-cases/gpu-contributors", "pl/use-cases/ai-builders"]
+              },
+              {
+                "group": "Roadmapa",
+                "pages": ["pl/roadmap"]
               },
               {
                 "group": "Zasoby",
@@ -184,32 +178,29 @@
                 "group": "GamerHash AI",
                 "pages": [
                   "ko/ai/overview",
-                  "ko/ai/modules",
-                  "ko/ai/ghxp",
                   "ko/ai/hardware-requirements",
+                  "ko/ai/modules",
                   "ko/ai/earning",
+                  "ko/ai/ghxp",
+                  "ko/ai/stats",
                   "ko/ai/privacy"
                 ]
               },
               {
-                "group": "deAPI",
-                "pages": ["ko/deapi/overview", "ko/deapi/getting-started"]
-              },
-              {
-                "group": "앱",
-                "pages": ["ko/apps/mobile", "ko/apps/store"]
-              },
-              {
-                "group": "사용 사례",
-                "pages": ["ko/use-cases/gamers", "ko/use-cases/gpu-contributors"]
-              },
-              {
-                "group": "로드맵",
-                "pages": ["ko/roadmap"]
+                "group": "GamerHash Mobile App",
+                "pages": ["ko/apps/mobile"]
               },
               {
                 "group": "튜토리얼",
                 "pages": ["ko/tutorials/install-ai-app", "ko/tutorials/earn-with-gpu"]
+              },
+              {
+                "group": "사용 사례",
+                "pages": ["ko/use-cases/gamers", "ko/use-cases/gpu-contributors", "ko/use-cases/ai-builders"]
+              },
+              {
+                "group": "로드맵",
+                "pages": ["ko/roadmap"]
               },
               {
                 "group": "리소스",
@@ -240,11 +231,6 @@
           "anchor": "Website",
           "href": "https://gamerhash.com",
           "icon": "globe"
-        },
-        {
-          "anchor": "deAPI",
-          "href": "https://deapi.ai",
-          "icon": "code"
         }
       ]
     }
@@ -261,7 +247,7 @@
       }
     ],
     "primary": {
-      "type": "button",
+      "type": "link",
       "label": "Download App",
       "href": "https://gamerhash.com/en/app-download"
     }

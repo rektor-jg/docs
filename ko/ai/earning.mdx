@@ -1,74 +1,97 @@
 ---
 title: "수익 모델"
-description: "GPU 공유가 어떻게 보상하는가 — 워크로드당 GUSD, GHXP 멀티플라이어, 그리고 크레딧 활용법."
+description: "GPU 공유로 어떻게 수익이 나는지. 워크로드당 GUSD, GHXP 배율, 적립금 활용법."
 ---
 
-수익 모듈은 AI App을 무료 로컬 AI 워크스테이션에서 부수입원으로 전환합니다. 한 번 활성화하면 나머지는 네트워크가 처리합니다.
+Earn 모듈은 무료 로컬 AI 워크스테이션이던 AI App을 부수입원으로 바꿔줍니다. [AI OPTIMAL](/ko/ai/hardware-requirements#ai-optimal--earn-from-gpu-sharing) 하드웨어 기준을 만족하고 옵트인하면 두 가지 흐름으로 보상이 들어옵니다.
+
+- **워크로드당 GUSD** — GPU에서 추론 작업이 끝날 때마다 자동 적립됩니다.
+- **시즌 풀에서 받는 GHX** — 두 달마다 락업된 GHXP가 시즌 GHX 풀에서 본인의 분배 비율을 결정합니다. 자세한 내용은 [GHXP 시즌](/ko/ai/ghxp#seasons) 문서를 참고하세요.
+
+한 번 옵트인해 두면 나머지는 네트워크가 알아서 처리합니다.
 
 <Frame>
-  <img src="/images/earning-flow.svg" alt="수익 흐름: 유휴 GPU가 AI 워크로드를 받고, 추론을 완료하고, GUSD가 적립되고, GHXP 랭크가 보상에 곱셈을 적용하면, 사용자가 GHX로 전환하거나 USDC로 출금하거나 스토어에서 사용할 수 있습니다." />
+  <img src="/images/earning-flow.png" alt="Earning flow: idle GPU receives an AI workload, completes inference, gets credited in GUSD, GHXP level multiplies the reward, then the user can convert to GHX, withdraw USDC, or spend in the store." />
 </Frame>
 
-## 작동 방식
+## 설정
 
-1. **활성화** — 수익 모듈을 켭니다. 원하면 시간 / GPU 사용량 상한을 설정합니다.
-2. **네트워크가 워크로드를 할당** — 텍스트, 이미지, 비디오, 임베딩, 트랜스크립션 등 본인의 VRAM에 맞고 큐에 있는 작업.
-3. **GPU가 실행** — 일반적으로 워크로드 유형에 따라 몇 초에서 몇 분.
-4. **GUSD로 보상** — 완료 시 앱 내 지갑에 적립됩니다. 1 GUSD ≈ 1 USD.
-5. **GHXP 랭크가 보상에 곱셈 적용** — 동일한 워크로드라도 랭크가 높은 기여자가 더 많이 받습니다.
+설치부터 첫 보상까지 5단계입니다.
 
-## 머신당 수익을 결정하는 요소
+1. **AI App 다운로드** — [gamerhash.com](https://gamerhash.com/en/app-download)에서 무료 Windows 설치 파일을 받습니다.
+2. **로그인** — 이메일 또는 Google 로그인. 계정이 없으면 첫 실행 시 자동으로 생성됩니다.
+3. **EARN 모듈 설치** — 앱 안에서 활성화하면 필요한 컴포넌트가 자동으로 다운로드됩니다.
+4. **모델 팩 다운로드** — 일단 시작하려면 **Basic**, 가장 보상이 큰 워크로드 클래스까지 받으려면 **Full**.
+5. **배정 대기** — 본인 VRAM에 맞고 온라인 상태일 때마다 네트워크가 자동으로 작업을 디스패치합니다. 작업이 끝날 때마다 **GUSD**가 적립됩니다.
 
-수익은 본인이 모두 통제할 수 없는 몇 가지 변수에 따라 달라집니다.
+큐 조정, 수동 수락, 작업별 설정은 없습니다. PC만 켜두면 됩니다. 보상의 대부분은 작업이 들어올 때 온라인이었는지로 결정됩니다.
 
-- **GPU 클래스 및 VRAM** — 4080은 3060보다 더 높은 보상의 워크로드 클래스를 잠금 해제합니다.
-- **가동 시간** — 온라인 시간이 길수록 더 많은 워크로드가 매칭됩니다.
-- **GHXP 랭크** — 오래 실행하고 GHX를 보유한 계정은 워크로드당 더 많이 받습니다.
-- **네트워크 수요** — 보상은 deAPI 거래량에 따라 확장됩니다. 수요가 늘면 기여자 보상도 늘어납니다.
-- **지역 / 지연 시간** — 일부 워크로드는 저지연 디스패치를 위해 지리적 선호도가 있습니다.
+## 머신당 수익을 결정하는 요인
 
-AI App 내 대시보드는 시간당 실시간 수익과 누적 합계를 보여줍니다.
+수익은 몇 가지 변수로 결정되며, 모두 본인이 제어할 수 있는 것은 아닙니다.
 
-## GUSD로 할 수 있는 것
+- **GPU 등급과 VRAM** — 수익은 **VRAM 16 GB**부터 가능하며, 메모리가 클수록 더 높은 보상의 워크로드 클래스에 들어갑니다. 자세한 건 [하드웨어 요구사항](/ko/ai/hardware-requirements)을 참고하세요.
+- **가동 시간** — 온라인 시간이 길수록 매칭되는 작업도 많아집니다.
+- **GHXP 레벨** — 꾸준히 돌리고 GHX를 보유한 계정일수록 워크로드당 보상이 큽니다.
+- **시즌 종료 시점의 락업 GHXP** — 시즌 GHX 풀에서의 분배 비율은 락업한 GHXP 양에 비례합니다.
+- **네트워크 수요** — 보상은 네트워크가 판매하는 컴퓨팅 규모에 따라 늘어납니다. 수요가 커지면 기여자 보상도 함께 커집니다.
 
-GUSD는 플랫폼 내부의 가상 화폐로, USD에 1:1로 페깅되어 있습니다. 세 가지 출금 경로가 있습니다.
+AI App 대시보드에서 시간당 실시간 수익과 누적 수익을 바로 확인할 수 있습니다.
+
+## GUSD 활용 방법
+
+GUSD는 플랫폼 내부의 결제 단위입니다. 출구는 세 가지입니다.
 
 <CardGroup cols={3}>
   <Card title="GHX로 전환" icon="arrow-right-arrow-left">
-    이더리움, BNB Chain 또는 Solana에서 HODL하세요. 최대 25% APR을 위한 스테이킹 또는 LP — [GHX 스테이킹 문서](https://docs.gamercoin.com/tokenomics/staking)를 참고하세요.
+    Ethereum, BNB Chain, Solana 어디서든 보유. 최대 25% APR로 스테이킹 또는 LP. [GHX 스테이킹 문서](https://docs.gamercoin.com/tokenomics/staking) 참고.
   </Card>
-  <Card title="USDC 출금" icon="building-columns">
-    통합을 통해 Binance로 출금. 내부 이체에는 GamerHash 수수료가 없습니다.
+  <Card title="USDC로 출금" icon="building-columns">
+    BNB Chain 지갑으로 직접 출금. Binance 입금 주소, BSC용 MetaMask, BEP-20 지갑 모두 가능합니다. GamerHash 수수료 없음.
   </Card>
   <Card title="스토어에서 사용" icon="cart-shopping">
-    600개 이상의 디지털 상품 — 게임, 기프트 카드, 선불 바우처. [스토어](/ko/apps/store)를 참고하세요.
+    600여 종의 디지털 상품, 게임, 기프트 카드, 선불 바우처. [스토어](https://gamerhash.com/en/shop)에서 확인하세요.
   </Card>
 </CardGroup>
 
-## 이것이 *아닌* 것
+## 이건 *아닙니다*
 
-- **마이닝이 아닙니다.** PoW 없음, 해시 레이트 없음, 알고리즘 튜닝 없음. 플랫폼은 AI 추론 작업을 처리합니다.
-- **암호화폐 거래가 아닙니다.** GUSD는 USD에 상응하는 안정적인 크레딧이며, GHX 전환은 선택입니다.
-- **보장되지 않습니다.** 수익은 수요에 따라 달라집니다. 수익 측면에는 고정 APR이 없으며, APR은 [스테이킹](https://docs.gamercoin.com/tokenomics/staking) 측면에만 존재합니다.
-
-## 신규 사용자 우대
-
-가입 후 **30일 동안** 신규 기여자는 적립된 수익의 **100%**를 그대로 받습니다. 30일 이후에는 표준 랭크 기반 분배가 적용됩니다 — 현재 비율은 앱 내 대시보드를 참고하세요.
+- **마이닝이 아닙니다.** PoW도, 해시레이트도, 알고리즘 튜닝도 없습니다. 플랫폼은 AI 추론 작업을 처리합니다.
+- **암호화폐 트레이딩이 아닙니다.** GUSD는 내부 적립금이며, GHX 전환은 본인 선택입니다. 보상을 받기 위해 꼭 전환할 필요는 없습니다.
+- **수익이 보장되지 않습니다.** 수익은 네트워크 수요에 따라 달라집니다. Earn 쪽에는 고정 APR이 없습니다. APR은 [스테이킹](https://docs.gamercoin.com/tokenomics/staking)에만 적용됩니다.
 
 ## 최적화 팁
 
-- **앱을 지속적으로 실행하세요** — 보상 대부분은 워크로드가 도착했을 때 온라인 상태에 있어 받는 것입니다.
-- GHXP 부스트를 위해 **GHX를 일부 보유하세요** ([GHXP](/ko/ai/ghxp) 참고).
-- **게임 세션과 충돌하지 않게 하세요** — GPU 사용량 상한을 설정해 앱이 게임과 VRAM을 두고 경쟁하지 않게 하세요.
-- **드라이버와 앱을 업데이트하세요** — 성능 개선이 끊임없이 배포됩니다. 오래된 스택은 워크로드를 놓칩니다.
+- **앱을 계속 켜두세요.** 보상의 대부분은 작업이 들어오는 시점에 온라인이었는지로 결정됩니다.
+- **MetaMask나 인앱 지갑에 GHX를 일정 부분 보유**해 GHXP Boost를 활용하세요([GHXP](/ko/ai/ghxp) 참고). MetaMask 연결을 끊으면 부스트도 함께 꺼집니다.
+- **시즌마다 GHXP를 잊지 말고 락업하세요.** 락업하지 않으면 누적된 GHXP가 있어도 GHX 풀에서 분배받지 못합니다.
+- **게임 안 할 때 그냥 켜두세요.** 게임을 실행하면 모듈이 자동으로 빠지므로, 따로 스케줄을 잡을 필요가 없습니다.
+- **드라이버와 앱을 최신으로 유지하세요.** 성능 개선이 계속 들어오기 때문에, 오래된 스택은 워크로드를 놓치게 됩니다.
 
-## 다음
+## 더 읽을거리
 
 <CardGroup cols={2}>
-  <Card title="하드웨어 요구 사항" icon="microchip" href="/ko/ai/hardware-requirements">
-    본인 GPU가 어떤 워크로드에 적합한지.
+  <Card title="$GHX가 흔한 토큰이 아닌 이유" icon="coins" href="https://medium.com/we-are-the-gamerhash/why-ghx-isnt-just-another-token-1ce77aa720e4">
+    GHX를 보유하는 이유를 토큰 관점에서 — 유틸리티, 공급량, GHXP 부스트.
+  </Card>
+  <Card title="마이닝에서 AI로: GamerHash의 전환" icon="arrow-trend-up" href="https://medium.com/we-are-the-gamerhash/from-mining-to-ai-the-gamerhash-evolution-75bf96424530">
+    같은 유휴 GPU 가설이 PoW 해시보다 AI 추론에서 더 큰 수익을 내는 이유.
+  </Card>
+</CardGroup>
+
+## 다음 단계
+
+<CardGroup cols={2}>
+  <Card title="하드웨어 요구사항" icon="microchip" href="/ko/ai/hardware-requirements">
+    AI READY vs AI OPTIMAL — 내 GPU가 어디까지 가능한지.
+  </Card>
+  <Card title="GHXP 및 시즌" icon="bolt" href="/ko/ai/ghxp">
+    GHXP가 어떻게 쌓이고, 시즌마다 락업되어 GHX 보상으로 이어지는지.
   </Card>
   <Card title="프라이버시" icon="shield" href="/ko/ai/privacy">
-    무엇이 전송되고, 무엇이 기록되며, 무엇이 로컬에 남는지.
+    무엇이 전송되고, 기록되고, 로컬에만 남는지.
+  </Card>
+  <Card title="수익 계산기" icon="calculator" href="https://gamerhash.com/en/calculator">
+    현재 네트워크 수요 기준의 GPU별 예상 수익.
   </Card>
 </CardGroup>
