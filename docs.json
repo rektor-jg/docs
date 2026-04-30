@@ -42,8 +42,10 @@
                 "pages": [
                   "ecosystem/what-is-gamerhash",
                   "ecosystem/history",
+                  "ecosystem/legacy-miner",
                   "ecosystem/business-model",
-                  "ecosystem/community"
+                  "ecosystem/community",
+                  "team"
                 ]
               },
               {
@@ -61,6 +63,10 @@
               {
                 "group": "GamerHash Mobile App",
                 "pages": ["apps/mobile"]
+              },
+              {
+                "group": "Web Platform",
+                "pages": ["platform/web-platform", "platform/wallets"]
               },
               {
                 "group": "Tutorials",
@@ -106,8 +112,10 @@
                 "pages": [
                   "pl/ecosystem/what-is-gamerhash",
                   "pl/ecosystem/history",
+                  "pl/ecosystem/legacy-miner",
                   "pl/ecosystem/business-model",
-                  "pl/ecosystem/community"
+                  "pl/ecosystem/community",
+                  "pl/team"
                 ]
               },
               {
@@ -125,6 +133,10 @@
               {
                 "group": "GamerHash Mobile App",
                 "pages": ["pl/apps/mobile"]
+              },
+              {
+                "group": "Platforma webowa",
+                "pages": ["pl/platform/web-platform", "pl/platform/wallets"]
               },
               {
                 "group": "Tutoriale",
@@ -170,8 +182,10 @@
                 "pages": [
                   "ko/ecosystem/what-is-gamerhash",
                   "ko/ecosystem/history",
+                  "ko/ecosystem/legacy-miner",
                   "ko/ecosystem/business-model",
-                  "ko/ecosystem/community"
+                  "ko/ecosystem/community",
+                  "ko/team"
                 ]
               },
               {
@@ -189,6 +203,10 @@
               {
                 "group": "GamerHash Mobile App",
                 "pages": ["ko/apps/mobile"]
+              },
+              {
+                "group": "웹 플랫폼",
+                "pages": ["ko/platform/web-platform", "ko/platform/wallets"]
               },
               {
                 "group": "튜토리얼",

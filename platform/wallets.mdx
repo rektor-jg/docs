@@ -1,0 +1,52 @@
+---
+title: "Wallets"
+description: "What lives in your GamerHash account — three wallets and one points system."
+---
+
+import { Eth, Bsc, Sol } from '/snippets/chains.mdx'
+
+Every GamerHash account ships with three built-in wallets plus an engagement-points balance.
+
+<CardGroup cols={2}>
+  <Card title="GHX" icon="coins">
+    Native ecosystem token. Acquired by converting GUSD. Spend in Store or withdraw to <Eth />, <Bsc />, or <Sol />.
+  </Card>
+  <Card title="GUSD" icon="dollar-sign">
+    Internal earning credit, pegged 1:1 to USD. Spend in Store, convert to GHX, or cash out as USDC.
+  </Card>
+  <Card title="BTC (legacy)" icon="bitcoin">
+    Mining-era balances from before the [Miner wind-down](/ecosystem/legacy-miner). Withdraw any time; no new inflows.
+  </Card>
+  <Card title="GHXP points" icon="bolt">
+    Engagement points (not money). Multiply your AI App rewards and decide seasonal GHX payouts.
+  </Card>
+</CardGroup>
+
+## GHX Wallet
+
+GHX is the native token of the GamerHash ecosystem. You acquire it by converting your GUSD balance — it isn't paid out directly from AI workloads. Use it for:
+
+- GamerHash Store purchases
+- Withdrawals to external self-custody wallets — <Eth />, <Bsc />, or <Sol />
+
+For full token details — contracts, distribution, staking, and how to acquire GHX — see the [GamerCoin docs](https://docs.gamercoin.com/tokenomics/overview).
+
+## GUSD Wallet
+
+GUSD is GamerHash's internal earning currency, pegged 1:1 to the US dollar. It's credited as you complete AI inference workloads in the GamerHash AI App.
+
+GUSD isn't a standalone token — it's an internal credit balance. Three exit routes:
+
+- **Spend in the [Store](/platform/web-platform)** — games, gift cards, vouchers, paid in GUSD directly.
+- **Convert to GHX** — onchain on <Eth />, <Bsc />, or <Sol />, then HODL, stake, or transfer.
+- **Withdraw as USDC** — via Binance integration in the AI App earning module. Out to any BNB Chain wallet.
+
+## Legacy: BTC Wallet
+
+Through January 2026, the BTC wallet held mining rewards (denominated in mBTC, 0.001 BTC) from the original [Miner App](/ecosystem/legacy-miner). It remains accessible to anyone with a historical balance — withdraw to an external Bitcoin wallet at any time. New BTC inflows ended with the mining wind-down.
+
+## GHXP engagement points
+
+GHXP isn't a wallet — they're **engagement points** accrued for running the AI App and holding GHX. Your GHXP level acts as a multiplier on AI App rewards and decides your share of the seasonal GHX pool.
+
+See [GHXP](/ai/ghxp) for the full mechanic.

@@ -1,0 +1,52 @@
+---
+title: "지갑"
+description: "GamerHash 계정에 들어 있는 것 — 지갑 셋과 포인트 시스템 하나."
+---
+
+import { Eth, Bsc, Sol } from '/snippets/chains.mdx'
+
+모든 GamerHash 계정에는 세 개의 내장 지갑과 활동 포인트 잔고가 함께 제공됩니다.
+
+<CardGroup cols={2}>
+  <Card title="GHX" icon="coins">
+    네이티브 이코노시스템 토큰. GUSD를 변환해 획득. Store에서 사용하거나 <Eth />, <Bsc />, <Sol />로 출금.
+  </Card>
+  <Card title="GUSD" icon="dollar-sign">
+    내부 수익 크레딧, USD에 1:1 페그. Store에서 사용, GHX로 변환, 또는 USDC로 출금.
+  </Card>
+  <Card title="BTC (legacy)" icon="bitcoin">
+    [Miner 종료](/ecosystem/legacy-miner) 이전 마이닝 시대의 잔고. 언제든 출금 가능; 신규 입금 없음.
+  </Card>
+  <Card title="GHXP points" icon="bolt">
+    활동 포인트(돈이 아님). AI App 보상을 배수로 늘리고 시즌 GHX 지급을 결정.
+  </Card>
+</CardGroup>
+
+## GHX 지갑
+
+GHX는 GamerHash 이코노시스템의 네이티브 토큰입니다. GUSD 잔고를 변환하여 획득합니다 — AI 워크로드에서 직접 지급되지 않습니다. 사용처:
+
+- GamerHash Store 구매
+- 외부 셀프 커스터디 지갑으로 출금 — <Eth />, <Bsc />, <Sol />
+
+토큰의 전체 정보 — 컨트랙트, 분배, 스테이킹, GHX를 얻는 방법 — 는 [GamerCoin docs](https://docs.gamercoin.com/tokenomics/overview)를 참고하세요.
+
+## GUSD 지갑
+
+GUSD는 GamerHash의 내부 수익 통화로 미국 달러에 1:1 페그되어 있습니다. GamerHash AI App에서 AI 인퍼런스 워크로드를 완료할 때 적립됩니다.
+
+GUSD는 독립적인 토큰이 아니라 — 내부 크레딧 잔고입니다. 세 가지 출금 경로:
+
+- **[Store](/platform/web-platform)에서 사용** — 게임, 기프트카드, 바우처를 GUSD로 직접 결제.
+- **GHX로 변환** — <Eth />, <Bsc />, <Sol /> 온체인에서 — 이후 HODL, 스테이킹, 또는 전송.
+- **USDC로 출금** — AI App 수익 모듈의 Binance 연동을 통해. 모든 BNB Chain 지갑으로.
+
+## Legacy: BTC 지갑
+
+2026년 1월까지 BTC 지갑은 오리지널 [Miner App](/ecosystem/legacy-miner)의 마이닝 보상(mBTC, 0.001 BTC 단위)을 보관했습니다. 과거 잔고가 있는 누구나 접근 가능 — 언제든 외부 비트코인 지갑으로 출금하세요. 신규 BTC 입금은 마이닝 종료와 함께 끝났습니다.
+
+## GHXP 활동 포인트
+
+GHXP는 지갑이 아니라 AI App 실행과 GHX 보유로 적립되는 **활동 포인트**입니다. GHXP 레벨은 AI App 보상의 배수로 작용하며, 시즌 GHX 풀에서 차지하는 비율을 결정합니다.
+
+전체 메커니즘은 [GHXP](/ai/ghxp)를 참고하세요.

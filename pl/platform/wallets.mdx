@@ -1,0 +1,52 @@
+---
+title: "Portfele"
+description: "Co znajduje się na koncie GamerHash — trzy portfele i jeden system punktów."
+---
+
+import { Eth, Bsc, Sol } from '/snippets/chains.mdx'
+
+Każde konto GamerHash ma trzy wbudowane portfele plus saldo punktów zaangażowania.
+
+<CardGroup cols={2}>
+  <Card title="GHX" icon="coins">
+    Natywny token ekosystemu. Pozyskiwany przez konwersję GUSD. Wydawaj w Store lub wypłacaj na <Eth />, <Bsc /> albo <Sol />.
+  </Card>
+  <Card title="GUSD" icon="dollar-sign">
+    Wewnętrzny kredyt zarobkowy, peg 1:1 do USD. Wydaj w Store, zamień na GHX lub wypłać jako USDC.
+  </Card>
+  <Card title="BTC (legacy)" icon="bitcoin">
+    Salda z ery miningu sprzed [wygaszenia Miner App](/ecosystem/legacy-miner). Wypłać kiedy chcesz; brak nowych wpływów.
+  </Card>
+  <Card title="GHXP points" icon="bolt">
+    Punkty zaangażowania (nie pieniądze). Mnożą zarobki z AI App i decydują o sezonowych wypłatach GHX.
+  </Card>
+</CardGroup>
+
+## Portfel GHX
+
+GHX to natywny token ekosystemu GamerHash. Pozyskujesz go konwertując saldo GUSD — nie jest wypłacany bezpośrednio z workloadów AI. Używasz go do:
+
+- zakupów w GamerHash Store
+- wypłat na zewnętrzne portfele self-custody — <Eth />, <Bsc /> lub <Sol />
+
+Pełne informacje o tokenie — kontrakty, dystrybucja, staking, jak zdobyć GHX — znajdziesz w [GamerCoin docs](https://docs.gamercoin.com/tokenomics/overview).
+
+## Portfel GUSD
+
+GUSD to wewnętrzna waluta zarobkowa GamerHash, peg 1:1 do dolara amerykańskiego. Naliczana, gdy realizujesz workloady inferencji AI w GamerHash AI App.
+
+GUSD nie jest oddzielnym tokenem — to wewnętrzne saldo kredytowe. Trzy ścieżki wyjścia:
+
+- **Wydaj w [Store](/platform/web-platform)** — gry, karty podarunkowe, vouchery, płatność bezpośrednio w GUSD.
+- **Zamień na GHX** — onchain na <Eth />, <Bsc /> lub <Sol />, potem HODL, staking lub transfer.
+- **Wypłać jako USDC** — przez integrację Binance w module zarobkowym AI App. Na dowolny portfel BNB Chain.
+
+## Legacy: portfel BTC
+
+Do stycznia 2026 r. portfel BTC trzymał nagrody miningowe (denominowane w mBTC, 0,001 BTC) z oryginalnego [Miner App](/ecosystem/legacy-miner). Pozostaje dostępny dla każdego, kto ma historyczne saldo — możesz wypłacić środki na zewnętrzny portfel Bitcoin w dowolnym momencie. Nowe wpływy BTC zakończyły się wraz z wygaszeniem miningu.
+
+## GHXP punkty zaangażowania
+
+GHXP to nie portfel — to **punkty zaangażowania** naliczane za uruchamianie AI App i trzymanie GHX. Twój poziom GHXP działa jak mnożnik na zarobkach z AI App i decyduje o twoim udziale w sezonowej puli GHX.
+
+Pełna mechanika — zobacz [GHXP](/ai/ghxp).
